@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
+import CtaBand from "../components/CtaBand.astro";
 import industries from "../content/industries.json";
 ---
 
@@ -17,7 +18,7 @@ import industries from "../content/industries.json";
     />
   </section>
 
-  <section class="container-page pb-24">
+  <section class="container-page pb-16">
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         industries.industries.map((item) => (
@@ -26,4 +27,6 @@ import industries from "../content/industries.json";
       }
     </div>
   </section>
+
+  <CtaBand />
 </BaseLayout>

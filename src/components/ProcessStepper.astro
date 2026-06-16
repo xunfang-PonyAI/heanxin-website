@@ -41,10 +41,10 @@ const numCls = tone === "dark" ? "bg-white text-brand-700" : "bg-brand-100 text-
           <div class="bg-brand-500 ring-brand-100 mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full text-white ring-4">
             <Icon name={step.icon ?? "default"} class="h-7 w-7" />
           </div>
-          <h3 class={`font-display text-base font-semibold ${titleCls}`}>{step.title.en}</h3>
-          <p class={`text-sm font-medium ${subCls}`}>{step.title.zh}</p>
+          <h3 class={`font-display text-lg font-semibold ${titleCls}`}>{step.title.en}</h3>
+          <p class={`text-[15px] font-medium ${subCls}`}>{step.title.zh}</p>
           {step.desc && (
-            <p class={`mt-2 text-xs leading-relaxed ${descCls}`}>
+            <p class={`mt-2 text-sm leading-relaxed ${descCls}`}>
               {step.desc.en}
               <span class="mt-0.5 block opacity-80">{step.desc.zh}</span>
             </p>

@@ -18,15 +18,16 @@
 
 ## 3. 设计 Token（唯一来源 = `src/styles/global.css`）
 
-- 主色：`brand-500 #1a3a8f`（主）、`brand-700 #0d2b6b`（深）；占位灰 `placeholder #eef1f6`。
-- 字体：英文大标题用 `font-display`（Oswald），正文用 `font-sans`（Inter）；中文回退 Noto Sans SC。
-- **禁止在标记中写死颜色十六进制值**，一律用 Tailwind token 类（如 `bg-brand-500`、`text-brand-700`）。
+- 主色：`brand-500 #1a3a8f`（主）、`brand-700 #0d2b6b`（深）；占位灰 `placeholder #eef1f6`、卡片底 `surface`。
+- 点缀色：`ember-500 #f97316`（安全橙，约 10% 用量：eyebrow/下划线/序号/数字/主 CTA/hover）；白底小号橙字用 `ember-700` 保证对比度。
+- 字体：英文大标题用 `font-display`（Outfit），正文用 `font-sans`（Work Sans）；中文回退 Noto Sans SC。
+- **禁止在标记中写死颜色十六进制值**，一律用 Tailwind token 类（如 `bg-brand-500`、`text-ember-700`）。
 - 卡片统一用 `.card-base`，容器统一用 `.container-page`，小标题用 `.eyebrow`。
 
 ## 4. 组件规范
 
 - 复用 `src/components/` 既有组件，**禁止**为单页重复造一次性卡片。
-- 现有组件：`Hero`、`SectionHeader`、`IconFeatureCard`、`NumberedCard`、`ProductCard`、`ProcessStepper`、`PhotoPlaceholder`、`HighlightStat`、`WorldMapDots`、`WaveDivider`、`Icon`、`Header`、`Footer`。
+- 现有组件：`Hero`、`SectionHeader`、`IconFeatureCard`、`NumberedCard`、`ProductCard`、`ProcessStepper`、`PhotoPlaceholder`、`HighlightStat`、`CtaBand`、`WorldMapDots`、`WaveDivider`、`Icon`、`Header`、`Footer`。
 - 组件命名 PascalCase；所有文案 props 使用 `LocalizedText`（`{ en, zh }`）类型。
 - 新图标加到 `Icon.astro` 的 `paths` 表，line 风格、24×24、`stroke="currentColor"`。
 

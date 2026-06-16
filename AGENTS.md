@@ -23,7 +23,8 @@ npm run format   # Prettier 格式化
 ## 硬性约束
 
 - 内部链接/资源一律用 `url()`（`src/lib/i18n.ts`），禁止裸绝对路径。
-- 颜色只用 `src/styles/global.css` `@theme` 中的 token，禁止硬编码十六进制。
+- 颜色只用 `src/styles/global.css` `@theme` 中的 token：主色深蓝 `brand-*`，点缀安全橙 `ember-*`（约 10% 用量），禁止硬编码十六进制。
+- 字体：标题 Outfit（`font-display`），正文 Work Sans（`font-sans`），中文 Noto Sans SC。
 - 文案进 `src/content/*.json`，结构 `{ en, zh }`，组件同时渲染双语。
 - 复用 `src/components/` 既有组件，禁止为单页重复造卡片。
 - 禁止后端/SSR/重型 UI 库；保持轻量、低依赖。

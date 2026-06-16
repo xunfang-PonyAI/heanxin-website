@@ -2,6 +2,7 @@
 import type { LocalizedText } from "../lib/i18n";
 import { url } from "../lib/i18n";
 import WorldMapDots from "./WorldMapDots.astro";
+import Icon from "./Icon.astro";
 
 interface Cta {
   label: LocalizedText;
@@ -58,7 +59,7 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, compact = false } = 
       <div class="max-w-3xl">
         {
           eyebrow && (
-            <p class="text-accent-soft eyebrow">
+            <p class="eyebrow text-ember-400">
               {eyebrow.en} · {eyebrow.zh}
             </p>
           )
@@ -68,12 +69,16 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, compact = false } = 
         >
           {title.en}
         </h1>
-        <p class="text-brand-100 mt-3 text-xl font-medium sm:text-2xl">{title.zh}</p>
+        <p class="text-brand-100 mt-3 text-2xl font-medium sm:text-3xl">{title.zh}</p>
+        <div class="mt-6 flex items-center gap-1.5" aria-hidden="true">
+          <span class="bg-ember-500 h-1.5 w-12 rounded-full"></span>
+          <span class="h-1.5 w-20 rounded-full bg-white/40"></span>
+        </div>
         {
           subtitle && (
-            <p class="text-brand-100/90 mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">
+            <p class="text-brand-100/90 mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">
               {subtitle.en}
-              <span class="mt-1 block text-sm opacity-80">{subtitle.zh}</span>
+              <span class="mt-1 block text-base opacity-80">{subtitle.zh}</span>
             </p>
           )
         }
@@ -83,15 +88,16 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, compact = false } = 
               {primaryCta && (
                 <a
                   href={url(primaryCta.href)}
-                  class="text-brand-700 hover:bg-brand-50 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold shadow-lg transition"
+                  class="bg-ember-500 hover:bg-ember-600 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-ember)] transition"
                 >
                   {primaryCta.label.en} · {primaryCta.label.zh}
+                  <Icon name="arrowRight" class="h-5 w-5" />
                 </a>
               )}
               {secondaryCta && (
                 <a
                   href={url(secondaryCta.href)}
-                  class="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                  class="inline-flex items-center rounded-full border border-white/50 px-7 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
                 >
                   {secondaryCta.label.en} · {secondaryCta.label.zh}
                 </a>

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import NumberedCard from "../components/NumberedCard.astro";
+import CtaBand from "../components/CtaBand.astro";
 import products from "../content/products.json";
 ---
 
@@ -17,9 +18,11 @@ import products from "../content/products.json";
     />
   </section>
 
-  <section class="container-page pb-24">
+  <section class="container-page pb-16">
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {products.categories.map((c) => <NumberedCard no={c.no} title={c.title} desc={c.desc} />)}
     </div>
   </section>
+
+  <CtaBand />
 </BaseLayout>

@@ -14,17 +14,20 @@ const { no, title, desc } = Astro.props;
   class="card-base group relative h-full overflow-hidden p-6 transition-transform duration-200 hover:-translate-y-1"
 >
   <span
-    class="font-display text-brand-100 group-hover:text-brand-200 absolute top-3 right-4 text-5xl leading-none font-bold transition-colors"
+    class="bg-ember-500 absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+    aria-hidden="true"></span>
+  <span
+    class="font-display text-ember-100 group-hover:text-ember-200 absolute top-3 right-4 text-6xl leading-none font-bold transition-colors"
     aria-hidden="true">{no}</span
   >
-  <p class="font-display text-accent text-sm font-semibold tracking-widest">{no}</p>
-  <h3 class="font-display text-brand-700 mt-2 text-lg font-semibold">{title.en}</h3>
-  <p class="text-muted mt-0.5 text-sm font-medium">{title.zh}</p>
+  <p class="font-display text-ember-700 text-sm font-bold tracking-widest">{no}</p>
+  <h3 class="font-display text-brand-700 mt-2 text-xl font-semibold">{title.en}</h3>
+  <p class="text-muted mt-1 text-base font-medium">{title.zh}</p>
   {
     desc && (
-      <p class="text-muted mt-3 text-sm leading-relaxed">
+      <p class="text-muted mt-3 text-[15px] leading-relaxed">
         {desc.en}
-        <span class="mt-1 block text-xs opacity-80">{desc.zh}</span>
+        <span class="mt-1.5 block text-sm opacity-90">{desc.zh}</span>
       </p>
     )
   }

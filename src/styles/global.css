@@ -2,40 +2,53 @@
 
 /*
   Design tokens — SINGLE SOURCE OF TRUTH for the whole site.
-  Extracted from the client brochure (page1-7). Do NOT hard-code colors in markup;
-  always reference these tokens via Tailwind utilities (e.g. bg-brand-600, text-ink).
+  Deep brand blue (from the client brochure) stays the primary identity;
+  a warm "ember" orange is the secondary accent that adds energy and breaks the
+  all-blue monotony (skill-recommended industrial pairing: navy + safety orange).
+  Do NOT hard-code colors in markup; always use tokens (e.g. bg-brand-600, text-ember-500).
 */
 @theme {
-  /* Brand — deep corporate blue */
-  --color-brand-50: #eef2fb;
-  --color-brand-100: #d5e0f4;
-  --color-brand-200: #aac1ea;
-  --color-brand-300: #7a9ce0;
-  --color-brand-400: #3f63c4;
+  /* Brand — deep corporate blue (primary identity) */
+  --color-brand-50: #eef3fc;
+  --color-brand-100: #d6e2f7;
+  --color-brand-200: #aec6ee;
+  --color-brand-300: #7ba0e0;
+  --color-brand-400: #4470c9;
   --color-brand-500: #1a3a8f; /* primary */
   --color-brand-600: #142f73;
   --color-brand-700: #0d2b6b; /* dark */
   --color-brand-800: #0a1f4d;
   --color-brand-900: #071537;
 
-  /* Accent / supporting */
+  /* Ember — warm safety orange (secondary accent, ~10% usage) */
+  --color-ember-50: #fff7ed;
+  --color-ember-100: #ffedd5;
+  --color-ember-200: #fed7aa;
+  --color-ember-300: #fdba74;
+  --color-ember-400: #fb923c;
+  --color-ember-500: #f97316; /* accent */
+  --color-ember-600: #ea580c;
+  --color-ember-700: #c2410c;
+
+  /* Accent / supporting blue (used on dark sections) */
   --color-accent: #2e6bd6;
   --color-accent-soft: #5b8def;
 
   /* Neutrals */
-  --color-ink: #15192b; /* body text */
-  --color-muted: #5b6478; /* secondary text */
-  --color-line: #e3e7ef; /* borders */
+  --color-ink: #131725; /* body text */
+  --color-muted: #515a6e; /* secondary text (darker for AA contrast) */
+  --color-line: #e4e8f0; /* borders */
   --color-placeholder: #eef1f6; /* image placeholders */
-  --color-surface: #f4f7fb; /* card surface — brochure light blue-grey */
+  --color-surface: #f3f6fc; /* card surface — light blue-grey */
 
-  /* Typography */
-  --font-display: "Oswald", "Noto Sans SC", system-ui, sans-serif;
-  --font-sans: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  /* Typography — Outfit (geometric display) + Work Sans (warm, readable body) */
+  --font-display: "Outfit", "Noto Sans SC", system-ui, sans-serif;
+  --font-sans: "Work Sans", "Noto Sans SC", system-ui, sans-serif;
 
   /* Radius & shadow */
   --radius-card: 0.875rem;
-  --shadow-card: 0 10px 30px -12px rgba(13, 43, 107, 0.25);
+  --shadow-card: 0 16px 40px -18px rgba(13, 43, 107, 0.3);
+  --shadow-ember: 0 12px 30px -12px rgba(234, 88, 12, 0.35);
 }
 
 /* Base */
@@ -45,9 +58,12 @@ html {
 
 body {
   font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px base — larger, more readable body copy */
+  line-height: 1.65;
   color: var(--color-ink);
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* Reusable layout helpers (kept tiny on purpose) */
@@ -57,12 +73,31 @@ body {
   }
 
   .eyebrow {
-    @apply font-display text-accent text-sm font-medium tracking-[0.22em] uppercase;
+    @apply font-display text-ember-700 text-sm font-semibold tracking-[0.2em] uppercase;
   }
 
   .card-base {
     @apply border-line rounded-[var(--radius-card)] border bg-white shadow-[var(--shadow-card)];
   }
+
+  /* Two-tone accent underline used under section titles */
+  .accent-bar {
+    @apply flex items-center gap-1.5;
+  }
+  .accent-bar > span:nth-child(1) {
+    @apply bg-ember-500 h-1 w-10 rounded-full;
+  }
+  .accent-bar > span:nth-child(2) {
+    @apply bg-brand-300 h-1 w-16 rounded-full;
+  }
+  .accent-bar > span:nth-child(3) {
+    @apply bg-ember-500 h-1.5 w-1.5 rounded-full;
+  }
+}
+
+/* Subtle tinted section background for vertical rhythm */
+.section-tint {
+  background: linear-gradient(180deg, #f7f9fd 0%, #eef3fb 100%);
 }
 
 /* Decorative wave divider used between dark and light sections */
