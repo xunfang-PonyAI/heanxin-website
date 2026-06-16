@@ -1,5 +1,6 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
+import T from "./T.astro";
 
 interface Props {
   eyebrow?: LocalizedText;
@@ -22,16 +23,13 @@ const barCenter = align === "center" ? "justify-center" : "";
   {
     eyebrow && (
       <p class={`eyebrow ${eyebrowColor}`}>
-        {eyebrow.en} · {eyebrow.zh}
+        <T text={eyebrow} />
       </p>
     )
   }
-  <h2
-    class={`font-display mt-3 text-4xl font-bold tracking-tight uppercase sm:text-5xl ${titleColor}`}
-  >
-    {title.en}
+  <h2 class={`font-display mt-3 text-4xl font-bold tracking-tight sm:text-5xl ${titleColor}`}>
+    <span lang="en" class="uppercase">{title.en}</span><span lang="zh">{title.zh}</span>
   </h2>
-  <p class={`mt-2 text-xl font-semibold sm:text-2xl ${subColor}`}>{title.zh}</p>
   <div class={`accent-bar mt-5 ${barCenter}`} aria-hidden="true">
     <span></span>
     <span></span>
@@ -40,9 +38,7 @@ const barCenter = align === "center" ? "justify-center" : "";
   {
     subtitle && (
       <p class={`mt-5 text-lg leading-relaxed ${subColor}`}>
-        {subtitle.en}
-        <br />
-        <span class="text-base opacity-80">{subtitle.zh}</span>
+        <T text={subtitle} />
       </p>
     )
   }

@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import T from "../components/T.astro";
 import { site } from "../lib/i18n";
 import about from "../content/about.json";
 
@@ -16,8 +17,7 @@ const { contact } = site;
   <section class="container-page pt-16 pb-12">
     <SectionHeader eyebrow={about.header.eyebrow} title={about.header.title} align="left" />
     <p class="text-muted mt-6 max-w-3xl leading-relaxed">
-      {about.intro.body.en}
-      <span class="mt-2 block text-sm opacity-80">{about.intro.body.zh}</span>
+      <T text={about.intro.body} />
     </p>
   </section>
 
@@ -38,10 +38,21 @@ const { contact } = site;
   <section class="container-page py-16">
     <div class="card-base from-brand-600 to-brand-800 bg-gradient-to-br p-8 text-white sm:p-12">
       <h2 class="font-display text-2xl font-semibold uppercase sm:text-3xl">
-        Get in Touch · 联系我们
+        <span lang="en">Get in Touch</span><span lang="zh">联系我们</span>
       </h2>
       <div class="text-brand-100 mt-6 grid gap-4 text-sm sm:grid-cols-3">
-        <p><span class="block font-semibold text-white">地址 Address</span>{contact.address.zh}</p>
+        <p>
+          <span class="block font-semibold text-white">
+            <span lang="en">Address</span><span lang="zh">地址</span>
+          </span>
+          <a
+            href={contact.mapUrl}
+            target="_blank"
+            rel="noopener"
+            class="underline-offset-2 transition hover:text-white hover:underline"
+            aria-label="在高德地图中查看地址 · View address on Amap"><T text={contact.address} /></a
+          >
+        </p>
         <p>
           <span class="block font-semibold text-white">WhatsApp</span>
           <a class="hover:text-white" href={`https://wa.me/${contact.phoneRaw}`}>{contact.phone}</a>

@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import T from "../components/T.astro";
 import { url } from "../lib/i18n";
 import home from "../content/home.json";
 import about from "../content/about.json";
@@ -32,14 +33,13 @@ import about from "../content/about.json";
       <div>
         <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} align="left" />
         <p class="text-muted mt-5 leading-relaxed">
-          {home.intro.body.en}
-          <span class="mt-2 block text-sm opacity-80">{home.intro.body.zh}</span>
+          <T text={home.intro.body} />
         </p>
         <a
           href={url("/about")}
           class="bg-brand-500 hover:bg-brand-600 mt-7 inline-flex rounded-full px-6 py-3 text-sm font-semibold text-white transition"
         >
-          了解更多 · Learn More
+          <span lang="zh">了解更多</span><span lang="en">Learn More</span>
         </a>
       </div>
       <div class="grid grid-cols-2 gap-4">

@@ -1,6 +1,7 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
 import Icon from "./Icon.astro";
+import T from "./T.astro";
 
 interface Step {
   icon?: string;
@@ -20,7 +21,6 @@ const cardCls =
     ? "border-white/15 bg-white/5 backdrop-blur-sm"
     : "border-line bg-white shadow-[var(--shadow-card)]";
 const titleCls = tone === "dark" ? "text-white" : "text-brand-700";
-const subCls = tone === "dark" ? "text-brand-100" : "text-muted";
 const descCls = tone === "dark" ? "text-brand-100/85" : "text-muted";
 const arrowCls = tone === "dark" ? "text-white/40" : "text-brand-300";
 const numCls = tone === "dark" ? "bg-white text-brand-700" : "bg-brand-100 text-brand-700";
@@ -41,12 +41,12 @@ const numCls = tone === "dark" ? "bg-white text-brand-700" : "bg-brand-100 text-
           <div class="bg-brand-500 ring-brand-100 mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full text-white ring-4">
             <Icon name={step.icon ?? "default"} class="h-7 w-7" />
           </div>
-          <h3 class={`font-display text-lg font-semibold ${titleCls}`}>{step.title.en}</h3>
-          <p class={`text-[15px] font-medium ${subCls}`}>{step.title.zh}</p>
+          <h3 class={`font-display text-lg font-semibold ${titleCls}`}>
+            <T text={step.title} />
+          </h3>
           {step.desc && (
             <p class={`mt-2 text-sm leading-relaxed ${descCls}`}>
-              {step.desc.en}
-              <span class="mt-0.5 block opacity-80">{step.desc.zh}</span>
+              <T text={step.desc} />
             </p>
           )}
         </div>

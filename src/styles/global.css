@@ -107,3 +107,13 @@ body {
   height: auto;
   line-height: 0;
 }
+
+/* Bilingual language switch — show only the active language.
+   The initial language is set by an inline script in BaseLayout (no FOUC);
+   without JavaScript, Chinese is shown by default. */
+html:not([data-lang="en"]) [lang="en"] {
+  display: none;
+}
+html[data-lang="en"] [lang="zh"] {
+  display: none;
+}

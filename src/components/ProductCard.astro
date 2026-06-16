@@ -1,6 +1,7 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
 import PhotoPlaceholder from "./PhotoPlaceholder.astro";
+import T from "./T.astro";
 
 interface Props {
   title: LocalizedText;
@@ -15,7 +16,6 @@ const { title, alt } = Astro.props;
 >
   <PhotoPlaceholder alt={alt} ratio="square" labelStyle="none" class="rounded-none border-0" />
   <div class="p-4">
-    <h3 class="font-display text-brand-700 text-base font-semibold">{title.en}</h3>
-    <p class="text-muted mt-0.5 text-sm">{title.zh}</p>
+    <h3 class="font-display text-brand-700 text-base font-semibold"><T text={title} /></h3>
   </div>
 </div>

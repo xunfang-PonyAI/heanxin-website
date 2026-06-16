@@ -1,0 +1,12 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+
+interface Props {
+  text: LocalizedText;
+  class?: string;
+}
+
+const { text, class: className } = Astro.props;
+---
+
+<span lang="en" class={className}>{text.en}</span><span lang="zh" class={className}>{text.zh}</span>

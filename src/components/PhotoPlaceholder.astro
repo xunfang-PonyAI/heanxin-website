@@ -1,6 +1,7 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
 import Icon from "./Icon.astro";
+import T from "./T.astro";
 
 interface Props {
   alt: LocalizedText;
@@ -27,13 +28,16 @@ const ratioCls: Record<string, string> = {
   <div class="border-brand-200/70 absolute inset-2.5 rounded-lg border-2 border-dashed"></div>
   <div class="text-brand-300 absolute inset-0 flex flex-col items-center justify-center gap-1.5">
     <Icon name="camera" class="h-8 w-8" />
-    <span class="text-brand-400/80 text-xs font-medium">Insert Image · 插入图片</span>
+    <span class="text-brand-400/80 text-xs font-medium">
+      <span lang="en">Insert Image</span><span lang="zh">插入图片</span>
+    </span>
   </div>
   {
     labelStyle === "strip" && (
       <div class="bg-brand-500 absolute inset-x-0 bottom-0 px-4 py-2.5">
-        <span class="font-display block text-sm font-semibold text-white">{alt.en}</span>
-        <span class="text-brand-100 block text-xs">{alt.zh}</span>
+        <span class="font-display block text-sm font-semibold text-white">
+          <T text={alt} />
+        </span>
       </div>
     )
   }

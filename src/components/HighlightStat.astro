@@ -1,6 +1,7 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
 import Icon from "./Icon.astro";
+import T from "./T.astro";
 
 interface Props {
   icon?: string;
@@ -22,14 +23,12 @@ const { icon, title, desc } = Astro.props;
     )
   }
   <div>
-    <h3 class="font-display text-xl font-semibold text-white">{title.en}</h3>
-    <p class="text-brand-100 mt-1 text-base font-medium">{title.zh}</p>
+    <h3 class="font-display text-xl font-semibold text-white"><T text={title} /></h3>
   </div>
   {
     desc && (
       <p class="text-brand-100/85 text-[15px] leading-relaxed">
-        {desc.en}
-        <span class="mt-1 block text-sm opacity-80">{desc.zh}</span>
+        <T text={desc} />
       </p>
     )
   }

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { url } from "../lib/i18n";
+import T from "../components/T.astro";
 ---
 
 <BaseLayout title="页面未找到 404" description="抱歉，您访问的页面不存在。">
@@ -9,18 +10,18 @@ import { url } from "../lib/i18n";
   >
     <p class="font-display text-brand-200 text-7xl font-bold">404</p>
     <h1 class="font-display text-brand-700 mt-4 text-2xl font-semibold">
-      页面未找到 · Page Not Found
+      <span lang="zh">页面未找到</span><span lang="en">Page Not Found</span>
     </h1>
     <p class="text-muted mt-3 max-w-md">
-      抱歉，您访问的页面不存在或已被移动。
-      <span class="mt-1 block text-sm">Sorry, the page you are looking for could not be found.</span
+      <span lang="zh">抱歉，您访问的页面不存在或已被移动。</span><span lang="en"
+        >Sorry, the page you are looking for could not be found.</span
       >
     </p>
     <a
       href={url("/")}
       class="bg-brand-500 hover:bg-brand-600 mt-8 inline-flex rounded-full px-6 py-3 text-sm font-semibold text-white transition"
     >
-      返回首页 · Back to Home
+      <span lang="zh">返回首页</span><span lang="en">Back to Home</span>
     </a>
   </section>
 </BaseLayout>

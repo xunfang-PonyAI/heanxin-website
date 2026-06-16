@@ -27,14 +27,16 @@
 ## 4. 组件规范
 
 - 复用 `src/components/` 既有组件，**禁止**为单页重复造一次性卡片。
-- 现有组件：`Hero`、`SectionHeader`、`IconFeatureCard`、`NumberedCard`、`ProductCard`、`ProcessStepper`、`PhotoPlaceholder`、`HighlightStat`、`CtaBand`、`WorldMapDots`、`WaveDivider`、`Icon`、`Header`、`Footer`。
+- 现有组件：`Hero`、`SectionHeader`、`IconFeatureCard`、`NumberedCard`、`ProductCard`、`ProcessStepper`、`PhotoPlaceholder`、`HighlightStat`、`CtaBand`、`WorldMapDots`、`WaveDivider`、`Icon`、`T`、`Header`、`Footer`。
 - 组件命名 PascalCase；所有文案 props 使用 `LocalizedText`（`{ en, zh }`）类型。
 - 新图标加到 `Icon.astro` 的 `paths` 表，line 风格、24×24、`stroke="currentColor"`。
 
-## 5. 双语规则
+## 5. 双语规则（语言切换，非中英并列）
 
 - 所有可见文案来自 `src/content/*.json`，每条均为 `{ "en": "...", "zh": "..." }`。
-- 组件需**同时渲染中英文**（英文为主、中文为辅或并列），不要写死两套 DOM。
+- 渲染双语文本一律用 `T` 组件（`<T text={…} />`），或手写 `<span lang="en">…</span><span lang="zh">…</span>`；同一时间**只显示一种语言**，由 `html[data-lang]` + CSS 控制，禁止中英文同时并列。
+- 首次访问按浏览器语言自动选择（中文环境→中文，否则英文），选择存 localStorage；Header 的语言切换按钮切换并持久化。
+- 初始化与切换脚本在 `BaseLayout` （`<script is:inline>`），保持纯静态、无 FOUC、两种语言都在源码里（利于 SEO）。
 - 改文案只动 JSON，不动组件。
 
 ## 6. 可访问性（A11y）

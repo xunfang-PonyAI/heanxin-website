@@ -1,5 +1,7 @@
 ---
 import { site, url } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import T from "./T.astro";
 
 const { nav, company } = site;
 const current = Astro.url.pathname.replace(/\/$/, "");
@@ -21,7 +23,11 @@ function isActive(href: string): boolean {
         <span class="font-display text-brand-700 block text-sm font-bold tracking-wide uppercase"
           >{company.shortName.en}</span
         >
-        <span class="text-muted block text-xs">{company.shortName.zh}五金塑胶</span>
+        <span class="text-muted block text-xs">
+          <span lang="zh">{company.shortName.zh}五金塑胶</span><span lang="en"
+            >Hardware &amp; Plastic</span
+          >
+        </span>
       </span>
     </a>
 
@@ -38,20 +44,31 @@ function isActive(href: string): boolean {
                 : "text-ink hover:text-brand-600 hover:bg-brand-50/60"
             }`}
           >
-            {item.label.zh}
+            <T text={item.label} />
           </a>
         ))
       }
     </nav>
 
-    <a
-      href={`https://wa.me/${site.contact.phoneRaw}`}
-      target="_blank"
-      rel="noopener"
-      class="bg-brand-500 hover:bg-brand-600 hidden rounded-full px-4 py-2 text-sm font-semibold text-white transition lg:inline-flex"
-    >
-      WhatsApp
-    </a>
+    <div class="hidden items-center gap-2 lg:flex">
+      <button
+        type="button"
+        data-lang-toggle
+        class="text-brand-700 hover:bg-brand-50 border-line inline-flex items-center gap-1.5 rounded-full border px-3 py-2 text-sm font-semibold transition"
+        aria-label="Switch language / 切换语言"
+      >
+        <Icon name="globe" class="h-4 w-4" />
+        <span lang="zh">EN</span><span lang="en">中文</span>
+      </button>
+      <a
+        href={`https://wa.me/${site.contact.phoneRaw}`}
+        target="_blank"
+        rel="noopener"
+        class="bg-brand-500 hover:bg-brand-600 inline-flex rounded-full px-4 py-2 text-sm font-semibold text-white transition"
+      >
+        WhatsApp
+      </a>
+    </div>
 
     <!-- Mobile menu (pure CSS, no JS) -->
     <details class="group relative lg:hidden">
@@ -84,10 +101,18 @@ function isActive(href: string): boolean {
                 isActive(item.href) ? "text-brand-600 bg-brand-50" : "text-ink hover:bg-brand-50/60"
               }`}
             >
-              {item.label.zh} <span class="text-muted text-xs">{item.label.en}</span>
+              <T text={item.label} />
             </a>
           ))
         }
+        <button
+          type="button"
+          data-lang-toggle
+          class="text-brand-700 hover:bg-brand-50 mt-1 flex w-full items-center gap-1.5 rounded-md px-3 py-2 text-sm font-semibold"
+        >
+          <Icon name="globe" class="h-4 w-4" />
+          <span lang="zh">Switch to English</span><span lang="en">切换为中文</span>
+        </button>
       </nav>
     </details>
   </div>

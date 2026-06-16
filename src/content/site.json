@@ -17,7 +17,8 @@
     },
     "phone": "+86 191 6633 8895",
     "phoneRaw": "8619166338895",
-    "email": "mia@haxplastic.com"
+    "email": "mia@haxplastic.com",
+    "mapUrl": "https://uri.amap.com/search?keyword=广东省东莞市石排镇庙边王路606号&src=heanxin&coordinate=gaode&callnative=1"
   },
   "nav": [
     { "href": "/", "label": { "en": "Home", "zh": "首页" } },

@@ -44,8 +44,22 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh" data-lang="zh">
   <head>
+    <script is:inline>
+      // Set the display language before paint (no FOUC). First-time visitors:
+      // Chinese if the browser prefers Chinese, otherwise English. Choice persists.
+      (function () {
+        try {
+          var stored = localStorage.getItem("lang");
+          var nav = (navigator.language || "").toLowerCase();
+          var lang = stored || (nav.indexOf("zh") === 0 ? "zh" : "en");
+          var el = document.documentElement;
+          el.setAttribute("data-lang", lang);
+          el.setAttribute("lang", lang);
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={url("favicon.svg")} />
@@ -85,5 +99,19 @@ const jsonLd = {
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      // Toggle between Chinese and English; persist the choice.
+      document.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-lang-toggle]");
+        if (!btn) return;
+        var el = document.documentElement;
+        var next = el.getAttribute("data-lang") === "en" ? "zh" : "en";
+        el.setAttribute("data-lang", next);
+        el.setAttribute("lang", next);
+        try {
+          localStorage.setItem("lang", next);
+        } catch (e) {}
+      });
+    </script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
 import Icon from "./Icon.astro";
+import T from "./T.astro";
 
 interface Props {
   icon?: string;
@@ -29,15 +30,14 @@ const { icon, no, title, desc } = Astro.props;
     <div class="min-w-0">
       <h3 class="font-display text-brand-700 text-xl font-semibold">
         {no && <span class="text-ember-600">{no}) </span>}
-        {title.en}
+        <T text={title} />
       </h3>
-      <p class="text-muted mt-1 text-base font-medium">{title.zh}</p>
     </div>
   </div>
   {
     desc && (
       <p class="text-muted border-line mt-4 border-t pt-4 text-[15px] leading-relaxed">
-        {desc.en}
+        <T text={desc} />
         <span class="mt-1.5 block text-sm opacity-90">{desc.zh}</span>
       </p>
     )
