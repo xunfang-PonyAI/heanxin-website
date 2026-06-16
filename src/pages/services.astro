@@ -21,14 +21,18 @@ import services from "../content/services.json";
 
   <section class="container-page pb-20">
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {services.services.map((s) => <IconFeatureCard icon={s.icon} title={s.title} desc={s.desc} />)}
+      {
+        services.services.map((s, i) => (
+          <IconFeatureCard no={String(i + 1)} icon={s.icon} title={s.title} desc={s.desc} />
+        ))
+      }
     </div>
   </section>
 
-  <section class="bg-brand-700 py-20">
+  <section class="bg-surface border-line border-y py-20">
     <div class="container-page">
-      <SectionHeader title={services.process.title} tone="dark" />
-      <div class="mt-12">
+      <SectionHeader title={services.process.title} />
+      <div class="mt-14">
         <ProcessStepper steps={services.process.steps} />
       </div>
     </div>

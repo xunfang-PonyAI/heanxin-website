@@ -1,7 +1,10 @@
 {
   "hero": {
     "eyebrow": { "en": "Custom Plastic & Hardware Manufacturing", "zh": "塑胶与五金定制制造" },
-    "title": { "en": "Precision Plastic Injection & Mold Solutions", "zh": "精密塑胶注塑与模具一站式方案" },
+    "title": {
+      "en": "Precision Plastic Injection & Mold Solutions",
+      "zh": "精密塑胶注塑与模具一站式方案"
+    },
     "subtitle": {
       "en": "From mold design to mass production, Heanxin delivers custom injection parts, insert molding and hardware-plastic combined components for OEM / ODM customers.",
       "zh": "从模具设计到批量生产，禾安鑫为 OEM / ODM 客户提供定制注塑件、嵌件注塑及五金塑胶组合件。"
@@ -13,22 +16,34 @@
     {
       "icon": "factory",
       "title": { "en": "One-stop Manufacturing", "zh": "一站式制造" },
-      "desc": { "en": "Mold development, injection molding and assembly under one roof.", "zh": "模具开发、注塑成型与组装一体化。" }
+      "desc": {
+        "en": "Mold development, injection molding and assembly under one roof.",
+        "zh": "模具开发、注塑成型与组装一体化。"
+      }
     },
     {
       "icon": "shield",
       "title": { "en": "Strict Quality Control", "zh": "严格品质管控" },
-      "desc": { "en": "Full-process inspection from incoming material to shipment.", "zh": "从来料到出货的全流程检验。" }
+      "desc": {
+        "en": "Full-process inspection from incoming material to shipment.",
+        "zh": "从来料到出货的全流程检验。"
+      }
     },
     {
       "icon": "handshake",
       "title": { "en": "OEM / ODM Experience", "zh": "OEM / ODM 经验" },
-      "desc": { "en": "Flexible customization for global brands and buyers.", "zh": "为全球品牌与买家提供灵活定制。" }
+      "desc": {
+        "en": "Flexible customization for global brands and buyers.",
+        "zh": "为全球品牌与买家提供灵活定制。"
+      }
     }
   ],
   "intro": {
     "eyebrow": { "en": "Who We Are", "zh": "关于我们" },
-    "title": { "en": "Your Reliable Plastic Manufacturing Partner", "zh": "值得信赖的塑胶制造伙伴" },
+    "title": {
+      "en": "Your Reliable Plastic Manufacturing Partner",
+      "zh": "值得信赖的塑胶制造伙伴"
+    },
     "body": {
       "en": "Heanxin specializes in plastic injection molding, mold development and hardware-plastic combined parts. We support customers from product idea and DFM analysis through to tooling, mass production and quality assurance.",
       "zh": "禾安鑫专注于塑胶注塑、模具开发与五金塑胶组合件，协助客户从产品构想、可制造性分析，到模具开发、批量生产与品质保证的全流程落地。"

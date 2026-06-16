@@ -12,12 +12,7 @@ import mold from "../content/mold.json";
   title="模具开发与生产能力"
   description="禾安鑫拥有自有模具车间与最大 800 吨注塑机群，提供从模具设计、CNC 加工、试模到量产维护的完整模具开发与精密注塑生产能力。"
 >
-  <Hero
-    eyebrow={mold.hero.eyebrow}
-    title={mold.hero.title}
-    subtitle={mold.hero.subtitle}
-    compact
-  />
+  <Hero eyebrow={mold.hero.eyebrow} title={mold.hero.title} subtitle={mold.hero.subtitle} compact />
 
   <section class="bg-brand-700 py-20">
     <div class="container-page">
@@ -36,12 +31,13 @@ import mold from "../content/mold.json";
 
   <section class="from-brand-600 to-brand-800 bg-gradient-to-br py-20">
     <div class="container-page">
-      <SectionHeader
-        title={{ en: "Production Capability", zh: "生产能力亮点" }}
-        tone="dark"
-      />
+      <SectionHeader title={{ en: "Production Capability", zh: "生产能力亮点" }} tone="dark" />
       <div class="mt-12 grid gap-6 sm:grid-cols-3">
-        {mold.capabilities.map((c) => <HighlightStat icon={c.icon} title={c.title} desc={c.desc} />)}
+        {
+          mold.capabilities.map((c) => (
+            <HighlightStat icon={c.icon} title={c.title} desc={c.desc} />
+          ))
+        }
       </div>
     </div>
   </section>

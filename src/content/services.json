@@ -11,43 +11,85 @@
     {
       "icon": "injection",
       "title": { "en": "Custom Injection Molding", "zh": "定制注塑成型" },
-      "desc": { "en": "Precision plastic parts produced to your specifications.", "zh": "按客户规格生产的精密塑胶零件。" }
+      "desc": {
+        "en": "Precision plastic parts produced to your specifications.",
+        "zh": "按客户规格生产的精密塑胶零件。"
+      }
     },
     {
       "icon": "mold",
       "title": { "en": "Mold Development", "zh": "模具开发" },
-      "desc": { "en": "In-house mold design and tooling for fast iteration.", "zh": "自有模具设计与开发，快速迭代。" }
+      "desc": {
+        "en": "In-house mold design and tooling for fast iteration.",
+        "zh": "自有模具设计与开发，快速迭代。"
+      }
     },
     {
       "icon": "insert",
       "title": { "en": "Insert Molding", "zh": "嵌件注塑" },
-      "desc": { "en": "Metal-plastic inserts molded in a single process.", "zh": "金属与塑胶嵌件一次成型。" }
+      "desc": {
+        "en": "Metal-plastic inserts molded in a single process.",
+        "zh": "金属与塑胶嵌件一次成型。"
+      }
     },
     {
       "icon": "combine",
       "title": { "en": "Hardware-Plastic Parts", "zh": "五金塑胶组合件" },
-      "desc": { "en": "Combined components integrating metal and plastic.", "zh": "整合五金与塑胶的组合零件。" }
+      "desc": {
+        "en": "Combined components integrating metal and plastic.",
+        "zh": "整合五金与塑胶的组合零件。"
+      }
     },
     {
       "icon": "oem",
       "title": { "en": "OEM / ODM", "zh": "OEM / ODM 代工" },
-      "desc": { "en": "Flexible contract manufacturing for brands.", "zh": "为品牌提供灵活的代工制造。" }
+      "desc": {
+        "en": "Flexible contract manufacturing for brands.",
+        "zh": "为品牌提供灵活的代工制造。"
+      }
     },
     {
       "icon": "assembly",
       "title": { "en": "Assembly & Finishing", "zh": "组装与后处理" },
-      "desc": { "en": "Secondary processing, assembly and packaging.", "zh": "二次加工、组装与包装。" }
+      "desc": {
+        "en": "Secondary processing, assembly and packaging.",
+        "zh": "二次加工、组装与包装。"
+      }
     }
   ],
   "process": {
     "title": { "en": "Our Customization Process", "zh": "定制服务流程" },
     "steps": [
-      { "title": { "en": "Requirement", "zh": "需求沟通" }, "desc": { "en": "Understand your product and goals.", "zh": "了解产品与目标。" } },
-      { "title": { "en": "DFM & Design", "zh": "设计与 DFM" }, "desc": { "en": "Design-for-manufacturing analysis.", "zh": "可制造性分析与设计。" } },
-      { "title": { "en": "Mold Making", "zh": "模具制造" }, "desc": { "en": "Precision mold fabrication.", "zh": "精密模具加工。" } },
-      { "title": { "en": "Sampling", "zh": "打样试模" }, "desc": { "en": "Trial molding and validation.", "zh": "试模与验证。" } },
-      { "title": { "en": "Mass Production", "zh": "批量生产" }, "desc": { "en": "Stable, scaled manufacturing.", "zh": "稳定的规模化生产。" } },
-      { "title": { "en": "QC & Delivery", "zh": "品检交付" }, "desc": { "en": "Inspection and on-time shipment.", "zh": "检验与准时出货。" } }
+      {
+        "icon": "chat",
+        "title": { "en": "Requirement", "zh": "需求沟通" },
+        "desc": { "en": "Understand your product and goals.", "zh": "了解产品与目标。" }
+      },
+      {
+        "icon": "drawing",
+        "title": { "en": "DFM & Design", "zh": "设计与 DFM" },
+        "desc": { "en": "Design-for-manufacturing analysis.", "zh": "可制造性分析与设计。" }
+      },
+      {
+        "icon": "mold",
+        "title": { "en": "Mold Making", "zh": "模具制造" },
+        "desc": { "en": "Precision mold fabrication.", "zh": "精密模具加工。" }
+      },
+      {
+        "icon": "injection",
+        "title": { "en": "Sampling", "zh": "打样试模" },
+        "desc": { "en": "Trial molding and validation.", "zh": "试模与验证。" }
+      },
+      {
+        "icon": "press",
+        "title": { "en": "Mass Production", "zh": "批量生产" },
+        "desc": { "en": "Stable, scaled manufacturing.", "zh": "稳定的规模化生产。" }
+      },
+      {
+        "icon": "shield",
+        "title": { "en": "QC & Delivery", "zh": "品检交付" },
+        "desc": { "en": "Inspection and on-time shipment.", "zh": "检验与准时出货。" }
+      }
     ]
   },
   "gallery": [

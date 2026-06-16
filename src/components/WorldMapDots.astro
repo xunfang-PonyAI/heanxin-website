@@ -1,0 +1,45 @@
+---
+// Decorative dotted world-map motif used across the brochure.
+// Purely ornamental; hidden from assistive tech.
+interface Props {
+  class?: string;
+  color?: string;
+}
+
+const { class: className = "", color = "currentColor" } = Astro.props;
+
+// Sparse dot grid roughly shaped like continents (stylised, not geographic).
+const rows = [
+  "0011111000000000001111100000",
+  "0111111110000000011111111000",
+  "0111111111000001111111111100",
+  "0011111111100011111111111000",
+  "0001111110000111111100011000",
+  "0000111100001111111000000000",
+  "0000011000011111100000011000",
+  "0000001000001111000000111100",
+  "0000000000000110000001111110",
+  "0000000000000000000000111100",
+];
+const cell = 12;
+const r = 1.6;
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${rows[0].length * cell} ${rows.length * cell}`}
+  fill={color}
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  preserveAspectRatio="xMidYMid meet"
+>
+  {
+    rows.map((row, y) =>
+      row
+        .split("")
+        .map((c, x) =>
+          c === "1" ? <circle cx={x * cell + cell / 2} cy={y * cell + cell / 2} r={r} /> : null
+        )
+    )
+  }
+</svg>

@@ -10,12 +10,36 @@
   "process": {
     "title": { "en": "Mold Development Process", "zh": "模具开发流程" },
     "steps": [
-      { "title": { "en": "Mold Design", "zh": "模具设计" }, "desc": { "en": "DFM and 3D mold design.", "zh": "DFM 与三维模具设计。" } },
-      { "title": { "en": "CNC / EDM", "zh": "CNC / 电火花" }, "desc": { "en": "Precision machining of mold cores.", "zh": "模芯精密加工。" } },
-      { "title": { "en": "Mold Assembly", "zh": "模具装配" }, "desc": { "en": "Fitting and polishing.", "zh": "合模与抛光。" } },
-      { "title": { "en": "Trial (T0)", "zh": "试模 T0" }, "desc": { "en": "First-shot trial and review.", "zh": "首次试模与评审。" } },
-      { "title": { "en": "Tuning", "zh": "调试优化" }, "desc": { "en": "Adjust to meet tolerances.", "zh": "调整以达到公差要求。" } },
-      { "title": { "en": "Maintenance", "zh": "模具维护" }, "desc": { "en": "Ongoing care for stable output.", "zh": "持续保养确保稳定产出。" } }
+      {
+        "icon": "monitor",
+        "title": { "en": "Mold Design", "zh": "模具设计" },
+        "desc": { "en": "DFM and 3D mold design.", "zh": "DFM 与三维模具设计。" }
+      },
+      {
+        "icon": "cnc",
+        "title": { "en": "CNC / EDM", "zh": "CNC / 电火花" },
+        "desc": { "en": "Precision machining of mold cores.", "zh": "模芯精密加工。" }
+      },
+      {
+        "icon": "tooling",
+        "title": { "en": "Mold Assembly", "zh": "模具装配" },
+        "desc": { "en": "Fitting and polishing.", "zh": "合模与招光。" }
+      },
+      {
+        "icon": "injection",
+        "title": { "en": "Trial (T0)", "zh": "试模 T0" },
+        "desc": { "en": "First-shot trial and review.", "zh": "首次试模与评审。" }
+      },
+      {
+        "icon": "precision",
+        "title": { "en": "Tuning", "zh": "调试优化" },
+        "desc": { "en": "Adjust to meet tolerances.", "zh": "调整以达到公差要求。" }
+      },
+      {
+        "icon": "tooling",
+        "title": { "en": "Maintenance", "zh": "模具维护" },
+        "desc": { "en": "Ongoing care for stable output.", "zh": "持续保养确保稳定产出。" }
+      }
     ]
   },
   "gallery": [
@@ -28,17 +52,26 @@
     {
       "icon": "press",
       "title": { "en": "Injection Machines up to 800T", "zh": "注塑机最大 800T" },
-      "desc": { "en": "A range of tonnage for parts large and small.", "zh": "多种吨位，兼顾大小零件。" }
+      "desc": {
+        "en": "A range of tonnage for parts large and small.",
+        "zh": "多种吨位，兼顾大小零件。"
+      }
     },
     {
       "icon": "tooling",
       "title": { "en": "In-house Mold Workshop", "zh": "自有模具车间" },
-      "desc": { "en": "Faster iteration and tighter quality control.", "zh": "迭代更快，品质更可控。" }
+      "desc": {
+        "en": "Faster iteration and tighter quality control.",
+        "zh": "迭代更快，品质更可控。"
+      }
     },
     {
       "icon": "precision",
       "title": { "en": "Precision Tolerance", "zh": "精密公差" },
-      "desc": { "en": "Tight-tolerance molding for demanding parts.", "zh": "面向高要求零件的精密成型。" }
+      "desc": {
+        "en": "Tight-tolerance molding for demanding parts.",
+        "zh": "面向高要求零件的精密成型。"
+      }
     }
   ]
 }

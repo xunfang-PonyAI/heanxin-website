@@ -27,6 +27,7 @@
   --color-muted: #5b6478; /* secondary text */
   --color-line: #e3e7ef; /* borders */
   --color-placeholder: #eef1f6; /* image placeholders */
+  --color-surface: #f4f7fb; /* card surface — brochure light blue-grey */
 
   /* Typography */
   --font-display: "Oswald", "Noto Sans SC", system-ui, sans-serif;
@@ -56,11 +57,11 @@ body {
   }
 
   .eyebrow {
-    @apply font-display text-sm font-medium uppercase tracking-[0.22em] text-accent;
+    @apply font-display text-accent text-sm font-medium tracking-[0.22em] uppercase;
   }
 
   .card-base {
-    @apply rounded-[var(--radius-card)] border border-line bg-white shadow-[var(--shadow-card)];
+    @apply border-line rounded-[var(--radius-card)] border bg-white shadow-[var(--shadow-card)];
   }
 }
 

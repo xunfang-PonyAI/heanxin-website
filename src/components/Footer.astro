@@ -1,20 +1,42 @@
 ---
 import { site, url } from "../lib/i18n";
-import WaveDivider from "./WaveDivider.astro";
 import Icon from "./Icon.astro";
+import WorldMapDots from "./WorldMapDots.astro";
 
 const { company, contact, footer, nav } = site;
 const year = new Date().getFullYear();
 ---
 
 <footer class="relative mt-24">
-  <WaveDivider fill="#0d2b6b" />
-  <div class="bg-brand-700 text-brand-100">
-    <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="sm:col-span-2 lg:col-span-2">
+  <!-- Layered wave transition into the dark footer -->
+  <div class="relative -mb-px leading-[0]" aria-hidden="true">
+    <svg
+      class="block h-[90px] w-full sm:h-[120px]"
+      viewBox="0 0 1440 120"
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="#142f73"
+        fill-opacity="0.55"
+        d="M0,72 C240,24 480,120 720,84 C960,48 1200,16 1440,64 L1440,120 L0,120 Z"></path>
+      <path
+        fill="#0d2b6b"
+        d="M0,88 C240,48 480,112 720,80 C960,48 1200,104 1440,72 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <div class="bg-brand-700 text-brand-100 relative overflow-hidden">
+    <WorldMapDots
+      class="text-brand-400/20 pointer-events-none absolute top-6 right-0 hidden w-[420px] lg:block"
+    />
+    <div
+      class="container-page relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.4fr]"
+    >
+      <div>
         <div class="flex items-center gap-2.5">
           <span
-            class="font-display flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 text-lg font-bold text-white"
+            class="font-display flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-lg font-bold text-white"
             >禾</span
           >
           <span class="font-display text-base font-bold tracking-wide text-white uppercase"
@@ -22,7 +44,7 @@ const year = new Date().getFullYear();
           >
         </div>
         <p class="mt-1 text-sm font-medium text-white">{company.name.zh}</p>
-        <p class="mt-4 max-w-md text-sm leading-relaxed text-brand-100/85">
+        <p class="text-brand-100/85 mt-4 max-w-md text-sm leading-relaxed">
           {footer.blurb.en}
           <span class="mt-1 block opacity-80">{footer.blurb.zh}</span>
         </p>
@@ -49,28 +71,40 @@ const year = new Date().getFullYear();
         <h2 class="font-display text-sm font-semibold tracking-wider text-white uppercase">
           Contact · 联系
         </h2>
-        <ul class="mt-4 space-y-3 text-sm">
-          <li class="flex gap-2">
-            <Icon name="home" class="h-5 w-5 shrink-0 opacity-70" />
-            <span>{contact.address.zh}</span>
+        <ul class="mt-4 space-y-3.5 text-sm">
+          <li class="flex items-start gap-3">
+            <span
+              class="bg-brand-500 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
+            >
+              <Icon name="location" class="h-4.5 w-4.5" />
+            </span>
+            <span class="pt-1.5">{contact.address.zh}</span>
           </li>
           <li>
             <a
               href={`https://wa.me/${contact.phoneRaw}`}
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 transition hover:text-white"
+              class="group inline-flex items-center gap-3 transition hover:text-white"
             >
-              <Icon name="handshake" class="h-5 w-5 shrink-0 opacity-70" />
+              <span
+                class="bg-brand-500 group-hover:bg-accent inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition"
+              >
+                <Icon name="chat" class="h-4.5 w-4.5" />
+              </span>
               WhatsApp: {contact.phone}
             </a>
           </li>
           <li>
             <a
               href={`mailto:${contact.email}`}
-              class="inline-flex items-center gap-2 transition hover:text-white"
+              class="group inline-flex items-center gap-3 transition hover:text-white"
             >
-              <Icon name="medical" class="h-5 w-5 shrink-0 opacity-70" />
+              <span
+                class="bg-brand-500 group-hover:bg-accent inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition"
+              >
+                <Icon name="mail" class="h-4.5 w-4.5" />
+              </span>
               {contact.email}
             </a>
           </li>
@@ -78,9 +112,9 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="border-t border-white/10">
+    <div class="relative border-t border-white/10">
       <div
-        class="container-page flex flex-col gap-2 py-5 text-xs text-brand-100/70 sm:flex-row sm:items-center sm:justify-between"
+        class="container-page text-brand-100/70 flex flex-col gap-2 py-5 text-xs sm:flex-row sm:items-center sm:justify-between"
       >
         <p>© {year} {company.name.en}. All rights reserved.</p>
         <p>{company.name.zh} · 版权所有</p>

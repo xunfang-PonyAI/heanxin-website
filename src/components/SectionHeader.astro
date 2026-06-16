@@ -14,19 +14,33 @@ const { eyebrow, title, subtitle, align = "center", tone = "light" } = Astro.pro
 const alignCls = align === "center" ? "mx-auto text-center" : "text-left";
 const titleColor = tone === "dark" ? "text-white" : "text-brand-700";
 const subColor = tone === "dark" ? "text-brand-100" : "text-muted";
+const barCenter = align === "center" ? "justify-center" : "";
+const barMain = tone === "dark" ? "bg-white" : "bg-brand-500";
+const barTail = tone === "dark" ? "bg-brand-100/50" : "bg-brand-300/60";
 ---
 
 <div class={`max-w-2xl ${alignCls}`}>
-  {eyebrow && <p class="eyebrow">{eyebrow.en} · {eyebrow.zh}</p>}
+  {
+    eyebrow && (
+      <p class="eyebrow">
+        {eyebrow.en} · {eyebrow.zh}
+      </p>
+    )
+  }
   <h2
-    class={`font-display mt-3 text-3xl font-semibold tracking-tight uppercase sm:text-4xl ${titleColor}`}
+    class={`font-display mt-3 text-3xl font-bold tracking-tight uppercase sm:text-4xl ${titleColor}`}
   >
     {title.en}
   </h2>
-  <p class={`mt-1 text-lg font-medium ${subColor}`}>{title.zh}</p>
+  <p class={`mt-1 text-lg font-semibold ${subColor}`}>{title.zh}</p>
+  <div class={`mt-4 flex items-center gap-1.5 ${barCenter}`} aria-hidden="true">
+    <span class={`h-1 w-10 rounded-full ${barMain}`}></span>
+    <span class={`h-1 w-16 rounded-full ${barTail}`}></span>
+    <span class={`h-1.5 w-1.5 rounded-full ${barMain}`}></span>
+  </div>
   {
     subtitle && (
-      <p class={`mt-4 text-base leading-relaxed ${subColor}`}>
+      <p class={`mt-5 text-base leading-relaxed ${subColor}`}>
         {subtitle.en}
         <br />
         <span class="text-sm opacity-80">{subtitle.zh}</span>

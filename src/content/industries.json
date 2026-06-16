@@ -8,11 +8,41 @@
     }
   },
   "industries": [
-    { "icon": "chip", "title": { "en": "Electronic Devices", "zh": "电子设备" }, "desc": { "en": "Housings and structural parts for electronics.", "zh": "电子产品外壳与结构件。" } },
-    { "icon": "control", "title": { "en": "Industrial Control", "zh": "工业控制" }, "desc": { "en": "Durable components for control equipment.", "zh": "工业控制设备的耐用部件。" } },
-    { "icon": "home", "title": { "en": "Smart Home", "zh": "智能家居" }, "desc": { "en": "Parts for connected home products.", "zh": "智能家居产品零部件。" } },
-    { "icon": "appliance", "title": { "en": "Small Appliances", "zh": "小型家电" }, "desc": { "en": "Reliable molded parts for appliances.", "zh": "小家电可靠成型件。" } },
-    { "icon": "car", "title": { "en": "Automotive Electronics", "zh": "汽车电子" }, "desc": { "en": "Precision parts for automotive systems.", "zh": "汽车电子系统精密零件。" } },
-    { "icon": "medical", "title": { "en": "Medical & Health", "zh": "医疗健康" }, "desc": { "en": "Components for medical and health devices.", "zh": "医疗与健康设备组件。" } }
+    {
+      "icon": "chip",
+      "title": { "en": "Electronic Devices", "zh": "电子设备" },
+      "desc": {
+        "en": "Housings and structural parts for electronics.",
+        "zh": "电子产品外壳与结构件。"
+      }
+    },
+    {
+      "icon": "control",
+      "title": { "en": "Industrial Control", "zh": "工业控制" },
+      "desc": {
+        "en": "Durable components for control equipment.",
+        "zh": "工业控制设备的耐用部件。"
+      }
+    },
+    {
+      "icon": "home",
+      "title": { "en": "Smart Home", "zh": "智能家居" },
+      "desc": { "en": "Parts for connected home products.", "zh": "智能家居产品零部件。" }
+    },
+    {
+      "icon": "appliance",
+      "title": { "en": "Small Appliances", "zh": "小型家电" },
+      "desc": { "en": "Reliable molded parts for appliances.", "zh": "小家电可靠成型件。" }
+    },
+    {
+      "icon": "car",
+      "title": { "en": "Automotive Electronics", "zh": "汽车电子" },
+      "desc": { "en": "Precision parts for automotive systems.", "zh": "汽车电子系统精密零件。" }
+    },
+    {
+      "icon": "medical",
+      "title": { "en": "Medical & Health", "zh": "医疗健康" },
+      "desc": { "en": "Components for medical and health devices.", "zh": "医疗与健康设备组件。" }
+    }
   ]
 }

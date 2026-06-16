@@ -5,11 +5,11 @@ import Icon from "./Icon.astro";
 interface Props {
   alt: LocalizedText;
   ratio?: "video" | "square" | "wide" | "portrait";
-  label?: boolean;
+  labelStyle?: "strip" | "caption" | "none";
   class?: string;
 }
 
-const { alt, ratio = "video", label = true, class: className = "" } = Astro.props;
+const { alt, ratio = "video", labelStyle = "strip", class: className = "" } = Astro.props;
 
 const ratioCls: Record<string, string> = {
   video: "aspect-video",
@@ -20,16 +20,28 @@ const ratioCls: Record<string, string> = {
 ---
 
 <div
-  class={`bg-placeholder text-brand-300 flex flex-col items-center justify-center gap-2 overflow-hidden rounded-[var(--radius-card)] border border-line ${ratioCls[ratio]} ${className}`}
+  class={`bg-surface relative overflow-hidden rounded-[var(--radius-card)] border border-line ${ratioCls[ratio]} ${className}`}
   role="img"
   aria-label={`${alt.en} / ${alt.zh}`}
 >
-  <Icon name="camera" class="h-8 w-8" />
+  <div class="border-brand-200/70 absolute inset-2.5 rounded-lg border-2 border-dashed"></div>
+  <div class="text-brand-300 absolute inset-0 flex flex-col items-center justify-center gap-1.5">
+    <Icon name="camera" class="h-8 w-8" />
+    <span class="text-brand-400/80 text-xs font-medium">Insert Image · 插入图片</span>
+  </div>
   {
-    label && (
-      <span class="px-3 text-center text-xs font-medium text-brand-400/80">
-        {alt.zh}
-      </span>
+    labelStyle === "strip" && (
+      <div class="bg-brand-500 absolute inset-x-0 bottom-0 px-4 py-2.5">
+        <span class="font-display block text-sm font-semibold text-white">{alt.en}</span>
+        <span class="text-brand-100 block text-xs">{alt.zh}</span>
+      </div>
+    )
+  }
+  {
+    labelStyle === "caption" && (
+      <div class="absolute inset-x-0 bottom-0 px-3 pb-2 text-center">
+        <span class="text-brand-400/80 text-xs font-medium">{alt.zh}</span>
+      </div>
     )
   }
 </div>

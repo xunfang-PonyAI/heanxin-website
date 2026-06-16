@@ -8,24 +8,70 @@
     }
   },
   "products": [
-    { "title": { "en": "Custom Part 01", "zh": "定制产品 01" }, "alt": { "en": "Custom molded product 01", "zh": "定制成型产品 01" } },
-    { "title": { "en": "Custom Part 02", "zh": "定制产品 02" }, "alt": { "en": "Custom molded product 02", "zh": "定制成型产品 02" } },
-    { "title": { "en": "Custom Part 03", "zh": "定制产品 03" }, "alt": { "en": "Custom molded product 03", "zh": "定制成型产品 03" } },
-    { "title": { "en": "Custom Part 04", "zh": "定制产品 04" }, "alt": { "en": "Custom molded product 04", "zh": "定制成型产品 04" } },
-    { "title": { "en": "Custom Part 05", "zh": "定制产品 05" }, "alt": { "en": "Custom molded product 05", "zh": "定制成型产品 05" } },
-    { "title": { "en": "Custom Part 06", "zh": "定制产品 06" }, "alt": { "en": "Custom molded product 06", "zh": "定制成型产品 06" } },
-    { "title": { "en": "Custom Part 07", "zh": "定制产品 07" }, "alt": { "en": "Custom molded product 07", "zh": "定制成型产品 07" } },
-    { "title": { "en": "Custom Part 08", "zh": "定制产品 08" }, "alt": { "en": "Custom molded product 08", "zh": "定制成型产品 08" } },
-    { "title": { "en": "Custom Part 09", "zh": "定制产品 09" }, "alt": { "en": "Custom molded product 09", "zh": "定制成型产品 09" } },
-    { "title": { "en": "Custom Part 10", "zh": "定制产品 10" }, "alt": { "en": "Custom molded product 10", "zh": "定制成型产品 10" } }
+    {
+      "title": { "en": "Custom Part 01", "zh": "定制产品 01" },
+      "alt": { "en": "Custom molded product 01", "zh": "定制成型产品 01" }
+    },
+    {
+      "title": { "en": "Custom Part 02", "zh": "定制产品 02" },
+      "alt": { "en": "Custom molded product 02", "zh": "定制成型产品 02" }
+    },
+    {
+      "title": { "en": "Custom Part 03", "zh": "定制产品 03" },
+      "alt": { "en": "Custom molded product 03", "zh": "定制成型产品 03" }
+    },
+    {
+      "title": { "en": "Custom Part 04", "zh": "定制产品 04" },
+      "alt": { "en": "Custom molded product 04", "zh": "定制成型产品 04" }
+    },
+    {
+      "title": { "en": "Custom Part 05", "zh": "定制产品 05" },
+      "alt": { "en": "Custom molded product 05", "zh": "定制成型产品 05" }
+    },
+    {
+      "title": { "en": "Custom Part 06", "zh": "定制产品 06" },
+      "alt": { "en": "Custom molded product 06", "zh": "定制成型产品 06" }
+    },
+    {
+      "title": { "en": "Custom Part 07", "zh": "定制产品 07" },
+      "alt": { "en": "Custom molded product 07", "zh": "定制成型产品 07" }
+    },
+    {
+      "title": { "en": "Custom Part 08", "zh": "定制产品 08" },
+      "alt": { "en": "Custom molded product 08", "zh": "定制成型产品 08" }
+    },
+    {
+      "title": { "en": "Custom Part 09", "zh": "定制产品 09" },
+      "alt": { "en": "Custom molded product 09", "zh": "定制成型产品 09" }
+    },
+    {
+      "title": { "en": "Custom Part 10", "zh": "定制产品 10" },
+      "alt": { "en": "Custom molded product 10", "zh": "定制成型产品 10" }
+    }
   ],
   "whyChooseUs": {
     "title": { "en": "Why Choose Us", "zh": "为何选择我们" },
     "reasons": [
-      { "icon": "custom", "title": { "en": "Strong Customization", "zh": "强定制能力" }, "desc": { "en": "From concept to finished part.", "zh": "从概念到成品全程支持。" } },
-      { "icon": "shield", "title": { "en": "Quality Assurance", "zh": "品质保证" }, "desc": { "en": "Full-process inspection.", "zh": "全流程检验把控。" } },
-      { "icon": "clock", "title": { "en": "On-time Delivery", "zh": "准时交付" }, "desc": { "en": "Reliable lead times.", "zh": "稳定可靠的交期。" } },
-      { "icon": "price", "title": { "en": "Competitive Pricing", "zh": "价格优势" }, "desc": { "en": "Efficient in-house production.", "zh": "自有产线，成本高效。" } }
+      {
+        "icon": "custom",
+        "title": { "en": "Strong Customization", "zh": "强定制能力" },
+        "desc": { "en": "From concept to finished part.", "zh": "从概念到成品全程支持。" }
+      },
+      {
+        "icon": "shield",
+        "title": { "en": "Quality Assurance", "zh": "品质保证" },
+        "desc": { "en": "Full-process inspection.", "zh": "全流程检验把控。" }
+      },
+      {
+        "icon": "clock",
+        "title": { "en": "On-time Delivery", "zh": "准时交付" },
+        "desc": { "en": "Reliable lead times.", "zh": "稳定可靠的交期。" }
+      },
+      {
+        "icon": "price",
+        "title": { "en": "Competitive Pricing", "zh": "价格优势" },
+        "desc": { "en": "Efficient in-house production.", "zh": "自有产线，成本高效。" }
+      }
     ]
   }
 }

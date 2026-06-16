@@ -27,14 +27,10 @@ import about from "../content/about.json";
     </div>
   </section>
 
-  <section class="bg-brand-50/50 border-y border-line py-20">
+  <section class="bg-brand-50/50 border-line border-y py-20">
     <div class="container-page grid items-center gap-12 lg:grid-cols-2">
       <div>
-        <SectionHeader
-          eyebrow={home.intro.eyebrow}
-          title={home.intro.title}
-          align="left"
-        />
+        <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} align="left" />
         <p class="text-muted mt-5 leading-relaxed">
           {home.intro.body.en}
           <span class="mt-2 block text-sm opacity-80">{home.intro.body.zh}</span>

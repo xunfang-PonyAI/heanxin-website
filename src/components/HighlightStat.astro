@@ -11,23 +11,25 @@ interface Props {
 const { icon, title, desc } = Astro.props;
 ---
 
-<div class="flex h-full flex-col items-center gap-3 rounded-[var(--radius-card)] border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm">
+<div
+  class="flex h-full flex-col items-center gap-4 rounded-[var(--radius-card)] border border-white/15 bg-white/5 p-7 text-center backdrop-blur-sm"
+>
   {
     icon && (
-      <div class="text-brand-100 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
-        <Icon name={icon} class="h-6 w-6" />
+      <div class="text-brand-600 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg ring-4 ring-white/20">
+        <Icon name={icon} class="h-8 w-8" />
       </div>
     )
   }
   <div>
-    <h3 class="font-display text-base font-semibold text-white">{title.en}</h3>
-    <p class="text-brand-100 mt-0.5 text-sm">{title.zh}</p>
+    <h3 class="font-display text-lg font-semibold text-white">{title.en}</h3>
+    <p class="text-brand-100 mt-0.5 text-sm font-medium">{title.zh}</p>
   </div>
   {
     desc && (
-      <p class="text-brand-100/85 text-xs leading-relaxed">
+      <p class="text-brand-100/85 text-sm leading-relaxed">
         {desc.en}
-        <span class="mt-0.5 block opacity-80">{desc.zh}</span>
+        <span class="mt-0.5 block text-xs opacity-80">{desc.zh}</span>
       </p>
     )
   }

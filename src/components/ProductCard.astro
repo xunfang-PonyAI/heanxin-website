@@ -10,8 +10,10 @@ interface Props {
 const { title, alt } = Astro.props;
 ---
 
-<div class="card-base group h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-  <PhotoPlaceholder alt={alt} ratio="square" class="rounded-none border-0" />
+<div
+  class="card-base group h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1"
+>
+  <PhotoPlaceholder alt={alt} ratio="square" labelStyle="none" class="rounded-none border-0" />
   <div class="p-4">
     <h3 class="font-display text-brand-700 text-base font-semibold">{title.en}</h3>
     <p class="text-muted mt-0.5 text-sm">{title.zh}</p>

@@ -27,7 +27,7 @@ const { contact } = site;
     </div>
   </section>
 
-  <section class="bg-brand-50/50 border-y border-line py-16">
+  <section class="bg-brand-50/50 border-line border-y py-16">
     <div class="container-page">
       <div class="grid gap-6 sm:grid-cols-3">
         {about.stats.map((s) => <IconFeatureCard icon="handshake" title={s.title} desc={s.desc} />)}
@@ -40,7 +40,7 @@ const { contact } = site;
       <h2 class="font-display text-2xl font-semibold uppercase sm:text-3xl">
         Get in Touch · 联系我们
       </h2>
-      <div class="mt-6 grid gap-4 text-sm text-brand-100 sm:grid-cols-3">
+      <div class="text-brand-100 mt-6 grid gap-4 text-sm sm:grid-cols-3">
         <p><span class="block font-semibold text-white">地址 Address</span>{contact.address.zh}</p>
         <p>
           <span class="block font-semibold text-white">WhatsApp</span>

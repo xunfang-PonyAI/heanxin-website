@@ -8,11 +8,35 @@
     }
   },
   "categories": [
-    { "no": "01", "title": { "en": "Plastic Injection Parts", "zh": "塑胶注塑件" }, "desc": { "en": "Custom-molded plastic components.", "zh": "定制成型塑胶零件。" } },
-    { "no": "02", "title": { "en": "Precision Molds", "zh": "精密模具" }, "desc": { "en": "High-precision tooling for production.", "zh": "用于量产的高精度模具。" } },
-    { "no": "03", "title": { "en": "Hardware-Plastic Parts", "zh": "五金塑胶组合件" }, "desc": { "en": "Integrated metal-and-plastic components.", "zh": "五金与塑胶一体化部件。" } },
-    { "no": "04", "title": { "en": "Insert-Molded Parts", "zh": "嵌件注塑件" }, "desc": { "en": "Inserts encapsulated in plastic.", "zh": "嵌件包覆成型零件。" } },
-    { "no": "05", "title": { "en": "Housings & Enclosures", "zh": "外壳与机壳" }, "desc": { "en": "Protective shells for devices.", "zh": "设备保护外壳。" } },
-    { "no": "06", "title": { "en": "Custom Assemblies", "zh": "定制组装件" }, "desc": { "en": "Assembled and finished modules.", "zh": "组装与后处理模块。" } }
+    {
+      "no": "01",
+      "title": { "en": "Plastic Injection Parts", "zh": "塑胶注塑件" },
+      "desc": { "en": "Custom-molded plastic components.", "zh": "定制成型塑胶零件。" }
+    },
+    {
+      "no": "02",
+      "title": { "en": "Precision Molds", "zh": "精密模具" },
+      "desc": { "en": "High-precision tooling for production.", "zh": "用于量产的高精度模具。" }
+    },
+    {
+      "no": "03",
+      "title": { "en": "Hardware-Plastic Parts", "zh": "五金塑胶组合件" },
+      "desc": { "en": "Integrated metal-and-plastic components.", "zh": "五金与塑胶一体化部件。" }
+    },
+    {
+      "no": "04",
+      "title": { "en": "Insert-Molded Parts", "zh": "嵌件注塑件" },
+      "desc": { "en": "Inserts encapsulated in plastic.", "zh": "嵌件包覆成型零件。" }
+    },
+    {
+      "no": "05",
+      "title": { "en": "Housings & Enclosures", "zh": "外壳与机壳" },
+      "desc": { "en": "Protective shells for devices.", "zh": "设备保护外壳。" }
+    },
+    {
+      "no": "06",
+      "title": { "en": "Custom Assemblies", "zh": "定制组装件" },
+      "desc": { "en": "Assembled and finished modules.", "zh": "组装与后处理模块。" }
+    }
   ]
 }

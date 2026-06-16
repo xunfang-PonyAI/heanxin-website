@@ -1,6 +1,9 @@
 {
   "company": {
-    "name": { "en": "Dongguan Heanxin Hardware & Plastic Products Co., Ltd.", "zh": "东莞市禾安鑫五金塑胶制品有限公司" },
+    "name": {
+      "en": "Dongguan Heanxin Hardware & Plastic Products Co., Ltd.",
+      "zh": "东莞市禾安鑫五金塑胶制品有限公司"
+    },
     "shortName": { "en": "Heanxin", "zh": "禾安鑫" },
     "tagline": {
       "en": "Plastic Injection Molding · Mold Development · OEM / ODM",

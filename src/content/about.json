@@ -18,7 +18,10 @@
   "stats": [
     {
       "title": { "en": "One-stop Service", "zh": "一站式服务" },
-      "desc": { "en": "Design, mold, molding and assembly in-house.", "zh": "设计、开模、注塑、组装一体化。" }
+      "desc": {
+        "en": "Design, mold, molding and assembly in-house.",
+        "zh": "设计、开模、注塑、组装一体化。"
+      }
     },
     {
       "title": { "en": "Experienced Team", "zh": "专业团队" },
@@ -26,7 +29,10 @@
     },
     {
       "title": { "en": "Flexible Customization", "zh": "灵活定制" },
-      "desc": { "en": "Tailored solutions for diverse industries.", "zh": "面向多行业的定制化解决方案。" }
+      "desc": {
+        "en": "Tailored solutions for diverse industries.",
+        "zh": "面向多行业的定制化解决方案。"
+      }
     }
   ]
 }

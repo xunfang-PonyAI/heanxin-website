@@ -1,35 +1,68 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
+import Icon from "./Icon.astro";
 
 interface Step {
+  icon?: string;
   title: LocalizedText;
   desc?: LocalizedText;
 }
 
 interface Props {
   steps: Step[];
+  tone?: "light" | "dark";
 }
 
-const { steps } = Astro.props;
+const { steps, tone = "light" } = Astro.props;
+
+const cardCls =
+  tone === "dark"
+    ? "border-white/15 bg-white/5 backdrop-blur-sm"
+    : "border-line bg-white shadow-[var(--shadow-card)]";
+const titleCls = tone === "dark" ? "text-white" : "text-brand-700";
+const subCls = tone === "dark" ? "text-brand-100" : "text-muted";
+const descCls = tone === "dark" ? "text-brand-100/85" : "text-muted";
+const arrowCls = tone === "dark" ? "text-white/40" : "text-brand-300";
+const numCls = tone === "dark" ? "bg-white text-brand-700" : "bg-brand-100 text-brand-700";
 ---
 
-<ol class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+<ol class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
   {
     steps.map((step, i) => (
-      <li class="card-base relative flex h-full items-start gap-4 p-5">
-        <span class="bg-brand-500 font-display flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-white">
-          {String(i + 1).padStart(2, "0")}
-        </span>
-        <div>
-          <h3 class="font-display text-brand-700 text-base font-semibold">{step.title.en}</h3>
-          <p class="text-muted text-sm font-medium">{step.title.zh}</p>
+      <li class="relative flex h-full">
+        <div
+          class={`relative flex h-full w-full flex-col items-center rounded-[var(--radius-card)] border px-5 pt-8 pb-6 text-center ${cardCls}`}
+        >
+          <span
+            class={`font-display absolute -top-3 right-4 flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${numCls}`}
+          >
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <div class="bg-brand-500 ring-brand-100 mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full text-white ring-4">
+            <Icon name={step.icon ?? "default"} class="h-7 w-7" />
+          </div>
+          <h3 class={`font-display text-base font-semibold ${titleCls}`}>{step.title.en}</h3>
+          <p class={`text-sm font-medium ${subCls}`}>{step.title.zh}</p>
           {step.desc && (
-            <p class="text-muted mt-2 text-xs leading-relaxed">
+            <p class={`mt-2 text-xs leading-relaxed ${descCls}`}>
               {step.desc.en}
               <span class="mt-0.5 block opacity-80">{step.desc.zh}</span>
             </p>
           )}
         </div>
+        {i < steps.length - 1 && (
+          <span
+            class:list={[
+              "pointer-events-none absolute top-1/2 -right-3 z-10 hidden -translate-x-px -translate-y-1/2 sm:block",
+              arrowCls,
+              (i + 1) % 2 === 0 && "sm:hidden",
+              (i + 1) % 3 === 0 ? "lg:hidden" : "lg:block",
+            ]}
+            aria-hidden="true"
+          >
+            <Icon name="arrowRight" class="h-5 w-5" />
+          </span>
+        )}
       </li>
     ))
   }
