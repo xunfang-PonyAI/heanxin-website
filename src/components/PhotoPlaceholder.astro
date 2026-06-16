@@ -44,7 +44,9 @@ const ratioCls: Record<string, string> = {
   {
     labelStyle === "caption" && (
       <div class="absolute inset-x-0 bottom-0 px-3 pb-2 text-center">
-        <span class="text-brand-400/80 text-xs font-medium">{alt.zh}</span>
+        <span class="text-brand-400/80 text-xs font-medium">
+          <T text={alt} />
+        </span>
       </div>
     )
   }
