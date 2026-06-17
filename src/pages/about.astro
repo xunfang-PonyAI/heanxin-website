@@ -4,10 +4,7 @@ import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import T from "../components/T.astro";
-import { site } from "../lib/i18n";
 import about from "../content/about.json";
-
-const { contact } = site;
 ---
 
 <BaseLayout
@@ -31,36 +28,6 @@ const { contact } = site;
     <div class="container-page">
       <div class="grid gap-5 sm:grid-cols-3">
         {about.stats.map((s) => <IconFeatureCard icon="handshake" title={s.title} desc={s.desc} />)}
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="container-page scroll-mt-24 py-14">
-    <div class="card-base from-brand-600 to-brand-800 bg-gradient-to-br p-8 text-white sm:p-12">
-      <h2 class="font-display text-2xl font-semibold uppercase sm:text-3xl">
-        <span lang="en">Get in Touch</span><span lang="zh">联系我们</span>
-      </h2>
-      <div class="text-brand-100 mt-6 grid gap-4 text-sm sm:grid-cols-3">
-        <p>
-          <span class="block font-semibold text-white">
-            <span lang="en">Address</span><span lang="zh">地址</span>
-          </span>
-          <a
-            href={contact.mapUrl}
-            target="_blank"
-            rel="noopener"
-            class="underline-offset-2 transition hover:text-white hover:underline"
-            aria-label="在高德地图中查看地址 · View address on Amap"><T text={contact.address} /></a
-          >
-        </p>
-        <p>
-          <span class="block font-semibold text-white">WhatsApp</span>
-          <a class="hover:text-white" href={`https://wa.me/${contact.phoneRaw}`}>{contact.phone}</a>
-        </p>
-        <p>
-          <span class="block font-semibold text-white">Email</span>
-          <a class="hover:text-white" href={`mailto:${contact.email}`}>{contact.email}</a>
-        </p>
       </div>
     </div>
   </section>
