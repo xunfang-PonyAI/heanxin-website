@@ -22,14 +22,14 @@ import about from "../content/about.json";
     secondaryCta={{ label: home.hero.secondaryCta, href: "/about#contact" }}
   />
 
-  <section class="container-page py-20">
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <section class="container-page py-14">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {home.highlights.map((h) => <IconFeatureCard icon={h.icon} title={h.title} desc={h.desc} />)}
     </div>
   </section>
 
-  <section class="section-tint border-line border-y py-20">
-    <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+  <section class="section-tint border-line border-y py-14">
+    <div class="container-page grid items-center gap-10 lg:grid-cols-2">
       <div>
         <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} align="left" />
         <p class="text-muted mt-5 leading-relaxed">
@@ -45,16 +45,6 @@ import about from "../content/about.json";
       <div class="grid grid-cols-2 gap-4">
         {about.workshops.map((w) => <PhotoPlaceholder alt={w.alt} ratio="square" />)}
       </div>
-    </div>
-  </section>
-
-  <section class="container-page py-20">
-    <SectionHeader
-      eyebrow={about.stats[0].title}
-      title={{ en: "Why Work With Heanxin", zh: "为何选择禾安鑫" }}
-    />
-    <div class="mt-12 grid gap-6 sm:grid-cols-3">
-      {about.stats.map((s) => <IconFeatureCard icon="shield" title={s.title} desc={s.desc} />)}
     </div>
   </section>
 </BaseLayout>

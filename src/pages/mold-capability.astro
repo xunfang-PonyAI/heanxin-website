@@ -14,25 +14,25 @@ import mold from "../content/mold.json";
 >
   <Hero eyebrow={mold.hero.eyebrow} title={mold.hero.title} subtitle={mold.hero.subtitle} compact />
 
-  <section class="bg-brand-700 py-20">
+  <section class="bg-brand-700 py-14">
     <div class="container-page">
       <SectionHeader title={mold.process.title} tone="dark" />
-      <div class="mt-12">
+      <div class="mt-10">
         <ProcessStepper steps={mold.process.steps} />
       </div>
     </div>
   </section>
 
-  <section class="container-page py-20">
+  <section class="container-page py-14">
     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
       {mold.gallery.map((g) => <PhotoPlaceholder alt={g.alt} ratio="square" />)}
     </div>
   </section>
 
-  <section class="from-brand-600 to-brand-800 bg-gradient-to-br py-20">
+  <section class="from-brand-600 to-brand-800 bg-gradient-to-br py-14">
     <div class="container-page">
       <SectionHeader title={{ en: "Production Capability", zh: "生产能力亮点" }} tone="dark" />
-      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+      <div class="mt-10 grid gap-5 sm:grid-cols-3">
         {
           mold.capabilities.map((c) => (
             <HighlightStat icon={c.icon} title={c.title} desc={c.desc} />

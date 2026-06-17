@@ -10,7 +10,7 @@ import industries from "../content/industries.json";
   title="应用领域"
   description="禾安鑫的定制塑胶与五金塑胶组合件广泛应用于电子设备、工业控制、智能家居、小型家电、汽车电子及医疗健康设备等行业。"
 >
-  <section class="container-page pt-16 pb-12">
+  <section class="container-page pt-12 pb-8">
     <SectionHeader
       eyebrow={industries.header.eyebrow}
       title={industries.header.title}
@@ -18,8 +18,8 @@ import industries from "../content/industries.json";
     />
   </section>
 
-  <section class="container-page pb-16">
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <section class="container-page pb-12">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         industries.industries.map((item) => (
           <IconFeatureCard icon={item.icon} title={item.title} desc={item.desc} />

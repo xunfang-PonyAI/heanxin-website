@@ -14,28 +14,28 @@ const { contact } = site;
   title="公司简介"
   description="东莞市禾安鑫五金塑胶制品有限公司是一家专注塑胶注塑、模具开发、嵌件注塑与五金塑胶组合件的一站式 OEM / ODM 制造企业。"
 >
-  <section class="container-page pt-16 pb-12">
+  <section class="container-page pt-12 pb-8">
     <SectionHeader eyebrow={about.header.eyebrow} title={about.header.title} align="left" />
     <p class="text-muted mt-6 max-w-3xl leading-relaxed">
       <T text={about.intro.body} />
     </p>
   </section>
 
-  <section class="container-page pb-16">
+  <section class="container-page pb-12">
     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
       {about.workshops.map((w) => <PhotoPlaceholder alt={w.alt} ratio="square" />)}
     </div>
   </section>
 
-  <section class="section-tint border-line border-y py-16">
+  <section class="section-tint border-line border-y py-14">
     <div class="container-page">
-      <div class="grid gap-6 sm:grid-cols-3">
+      <div class="grid gap-5 sm:grid-cols-3">
         {about.stats.map((s) => <IconFeatureCard icon="handshake" title={s.title} desc={s.desc} />)}
       </div>
     </div>
   </section>
 
-  <section id="contact" class="container-page scroll-mt-24 py-16">
+  <section id="contact" class="container-page scroll-mt-24 py-14">
     <div class="card-base from-brand-600 to-brand-800 bg-gradient-to-br p-8 text-white sm:p-12">
       <h2 class="font-display text-2xl font-semibold uppercase sm:text-3xl">
         <span lang="en">Get in Touch</span><span lang="zh">联系我们</span>

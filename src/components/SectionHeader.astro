@@ -30,14 +30,14 @@ const barCenter = align === "center" ? "justify-center" : "";
   <h2 class={`font-display mt-3 text-4xl font-bold tracking-tight sm:text-5xl ${titleColor}`}>
     <span lang="en" class="uppercase">{title.en}</span><span lang="zh">{title.zh}</span>
   </h2>
-  <div class={`accent-bar mt-5 ${barCenter}`} aria-hidden="true">
+  <div class={`accent-bar mt-4 ${barCenter}`} aria-hidden="true">
     <span></span>
     <span></span>
     <span></span>
   </div>
   {
     subtitle && (
-      <p class={`mt-5 text-lg leading-relaxed ${subColor}`}>
+      <p class={`mt-4 text-lg leading-relaxed ${subColor}`}>
         <T text={subtitle} />
       </p>
     )

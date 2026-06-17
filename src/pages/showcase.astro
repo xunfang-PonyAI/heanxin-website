@@ -10,7 +10,7 @@ import showcase from "../content/showcase.json";
   title="定制产品展示"
   description="浏览禾安鑫的定制塑胶与五金塑胶产品展示，了解我们在强定制能力、品质保证、准时交付与价格优势方面的核心优势。"
 >
-  <section class="container-page pt-16 pb-12">
+  <section class="container-page pt-12 pb-8">
     <SectionHeader
       eyebrow={showcase.header.eyebrow}
       title={showcase.header.title}
@@ -18,16 +18,16 @@ import showcase from "../content/showcase.json";
     />
   </section>
 
-  <section class="container-page pb-20">
+  <section class="container-page pb-14">
     <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
       {showcase.products.map((p) => <ProductCard title={p.title} alt={p.alt} />)}
     </div>
   </section>
 
-  <section class="section-tint border-line border-t py-20">
+  <section class="section-tint border-line border-t py-14">
     <div class="container-page">
       <SectionHeader title={showcase.whyChooseUs.title} />
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {
           showcase.whyChooseUs.reasons.map((r) => (
             <IconFeatureCard icon={r.icon} title={r.title} desc={r.desc} />
