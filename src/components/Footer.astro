@@ -1,10 +1,10 @@
 ---
-import { site, url } from "../lib/i18n";
+import { site } from "../lib/i18n";
 import Icon from "./Icon.astro";
 import WorldMapDots from "./WorldMapDots.astro";
 import T from "./T.astro";
 
-const { company, contact, footer, nav } = site;
+const { company, contact, footer } = site;
 const year = new Date().getFullYear();
 ---
 
@@ -32,7 +32,7 @@ const year = new Date().getFullYear();
       class="text-brand-400/20 pointer-events-none absolute top-6 right-0 hidden w-[420px] lg:block"
     />
     <div
-      class="container-page relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.4fr]"
+      class="container-page relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.6fr_1.4fr]"
     >
       <div>
         <div class="flex items-center gap-2.5">
@@ -48,23 +48,6 @@ const year = new Date().getFullYear();
         <p class="text-brand-100/85 mt-4 max-w-md text-sm leading-relaxed">
           <T text={footer.blurb} />
         </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-sm font-semibold tracking-wider text-white uppercase">
-          <span lang="en">Navigation</span><span lang="zh">导航</span>
-        </h2>
-        <ul class="mt-4 space-y-2 text-sm">
-          {
-            nav.map((item) => (
-              <li>
-                <a href={url(item.href)} class="transition hover:text-white">
-                  <T text={item.label} />
-                </a>
-              </li>
-            ))
-          }
-        </ul>
       </div>
 
       <div>
