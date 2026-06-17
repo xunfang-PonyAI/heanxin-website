@@ -27,7 +27,7 @@
 ## 4. 组件规范
 
 - 复用 `src/components/` 既有组件，**禁止**为单页重复造一次性卡片。
-- 现有组件：`Hero`、`SectionHeader`、`IconFeatureCard`、`NumberedCard`、`ProductCard`、`ProcessStepper`、`PhotoPlaceholder`、`HighlightStat`、`CtaBand`、`WorldMapDots`、`WaveDivider`、`Icon`、`T`、`Header`、`Footer`。
+- 现有组件：`Hero`、`SectionHeader`、`IconFeatureCard`、`NumberedCard`、`ProductCard`、`ProcessStepper`、`PhotoPlaceholder`、`HighlightStat`、`WorldMapDots`、`WaveDivider`、`Icon`、`T`、`Header`、`Footer`。
 - 组件命名 PascalCase；所有文案 props 使用 `LocalizedText`（`{ en, zh }`）类型。
 - 新图标加到 `Icon.astro` 的 `paths` 表，line 风格、24×24、`stroke="currentColor"`。
 
