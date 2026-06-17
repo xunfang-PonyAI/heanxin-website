@@ -81,7 +81,7 @@
         "desc": { "en": "Trial molding and validation.", "zh": "试模与验证。" }
       },
       {
-        "icon": "press",
+        "icon": "boxes",
         "title": { "en": "Mass Production", "zh": "批量生产" },
         "desc": { "en": "Stable, scaled manufacturing.", "zh": "稳定的规模化生产。" }
       },

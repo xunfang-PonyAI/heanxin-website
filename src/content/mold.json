@@ -50,7 +50,7 @@
   ],
   "capabilities": [
     {
-      "icon": "press",
+      "icon": "factory",
       "title": { "en": "Injection Machines up to 800T", "zh": "注塑机最大 800T" },
       "desc": {
         "en": "A range of tonnage for parts large and small.",

@@ -1,5 +1,14 @@
 ---
 import "../styles/global.css";
+// Self-hosted Latin fonts — no external Google Fonts request (reliable in China).
+import "@fontsource/outfit/400.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/outfit/800.css";
+import "@fontsource/work-sans/400.css";
+import "@fontsource/work-sans/500.css";
+import "@fontsource/work-sans/600.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { site, url } from "../lib/i18n";
@@ -15,6 +24,7 @@ const { company, contact } = site;
 const fullTitle = `${title} | ${company.shortName.zh} Heanxin`;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL(url("og-image.svg"), Astro.site).toString();
+const homeUrl = new URL(url("/"), Astro.site).toString();
 
 // Structured data helps OEM/ODM buyers find the company via search engines.
 const jsonLd = {
@@ -22,7 +32,8 @@ const jsonLd = {
   "@type": "Organization",
   name: company.name.en,
   alternateName: company.name.zh,
-  url: Astro.site?.toString(),
+  url: homeUrl,
+  logo: ogImage,
   email: contact.email,
   telephone: contact.phone,
   description: description,
@@ -32,6 +43,14 @@ const jsonLd = {
     addressLocality: "Dongguan",
     addressRegion: "Guangdong",
     addressCountry: "CN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: contact.phone,
+    email: contact.email,
+    areaServed: "Worldwide",
+    availableLanguage: ["zh-CN", "en"],
   },
   makesOffer: [
     "Plastic Injection Molding",
@@ -77,14 +96,6 @@ const jsonLd = {
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content={company.name.en} />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>

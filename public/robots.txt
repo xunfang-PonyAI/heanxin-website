@@ -1,0 +1,5 @@
+# https://xunfang-ponyai.github.io/heanxin-website/
+User-agent: *
+Allow: /
+
+Sitemap: https://xunfang-ponyai.github.io/heanxin-website/sitemap-index.xml

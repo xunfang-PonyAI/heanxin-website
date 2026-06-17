@@ -41,9 +41,11 @@
   --color-placeholder: #eef1f6; /* image placeholders */
   --color-surface: #f3f6fc; /* card surface — light blue-grey */
 
-  /* Typography — Outfit (geometric display) + Work Sans (warm, readable body) */
-  --font-display: "Outfit", "Noto Sans SC", system-ui, sans-serif;
-  --font-sans: "Work Sans", "Noto Sans SC", system-ui, sans-serif;
+  /* Typography — Outfit (display) + Work Sans (body), Latin self-hosted via @fontsource.
+     Chinese falls back to system fonts (PingFang SC on Apple, Microsoft YaHei on
+     Windows) to avoid shipping heavy CJK webfonts. */
+  --font-display: "Outfit", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --font-sans: "Work Sans", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
 
   /* Radius & shadow */
   --radius-card: 0.875rem;
