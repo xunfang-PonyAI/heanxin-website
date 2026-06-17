@@ -1,0 +1,88 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import PhotoPlaceholder from "./PhotoPlaceholder.astro";
+import Icon from "./Icon.astro";
+import T from "./T.astro";
+
+interface Slide {
+  title: LocalizedText;
+  alt: LocalizedText;
+}
+
+interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+---
+
+<div
+  class="carousel relative mx-auto max-w-4xl"
+  data-carousel
+  role="group"
+  aria-roledescription="carousel"
+  tabindex="0"
+>
+  <div
+    class="carousel-viewport border-line relative overflow-hidden rounded-[var(--radius-card)] border shadow-[var(--shadow-card)]"
+  >
+    <ul class="carousel-track" data-carousel-track>
+      {
+        slides.map((s, i) => (
+          <li
+            class="carousel-slide"
+            data-carousel-slide
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${i + 1} / ${slides.length}`}
+          >
+            <figure class="m-0">
+              <PhotoPlaceholder
+                alt={s.alt}
+                ratio="video"
+                labelStyle="none"
+                class="rounded-none border-0"
+              />
+              <figcaption class="bg-surface border-line border-t px-4 py-4 text-center">
+                <span class="font-display text-brand-700 text-lg font-semibold">
+                  <T text={s.title} />
+                </span>
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div
+      class="carousel-controls pointer-events-none absolute inset-x-0 top-0 aspect-video items-center justify-between px-3 sm:px-4"
+    >
+      <button
+        type="button"
+        class="carousel-arrow bg-brand-700/65 pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-white ring-1 ring-white/25 backdrop-blur-sm transition hover:bg-ember-500"
+        data-carousel-prev
+      >
+        <span class="sr-only"><span lang="zh">上一张</span><span lang="en">Previous</span></span>
+        <Icon name="chevronLeft" class="h-6 w-6" />
+      </button>
+      <button
+        type="button"
+        class="carousel-arrow bg-brand-700/65 pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-white ring-1 ring-white/25 backdrop-blur-sm transition hover:bg-ember-500"
+        data-carousel-next
+      >
+        <span class="sr-only"><span lang="zh">下一张</span><span lang="en">Next</span></span>
+        <Icon name="chevronRight" class="h-6 w-6" />
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel-dots mt-5 items-center justify-center gap-2.5" data-carousel-dots>
+    {
+      slides.map((_, i) => (
+        <button type="button" class="carousel-dot" data-carousel-dot aria-label={`${i + 1}`} />
+      ))
+    }
+  </div>
+
+  <span class="sr-only" aria-live="polite" data-carousel-status></span>
+</div>

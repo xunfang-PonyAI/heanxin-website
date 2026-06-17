@@ -214,3 +214,56 @@ html[data-lang="en"] [lang="zh"] {
     animation: none !important;
   }
 }
+
+/* ============================================================
+   Product carousel — single large slide, horizontal scroll-snap.
+   No-JS / crawlers: the track stays horizontally scrollable so all
+   slides remain reachable; controls show only after JS enhancement.
+   ============================================================ */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+/* Controls appear only once JS has enhanced the carousel. */
+.carousel-controls,
+.carousel-dots {
+  display: none;
+}
+[data-carousel-ready] .carousel-controls {
+  display: flex;
+}
+[data-carousel-ready] .carousel-dots {
+  display: flex;
+}
+.carousel-dot {
+  height: 0.625rem;
+  width: 0.625rem;
+  border-radius: 9999px;
+  background: var(--color-brand-200);
+  transition:
+    width 0.25s ease,
+    background-color 0.25s ease;
+}
+.carousel-dot:hover {
+  background: var(--color-brand-400);
+}
+.carousel-dot.is-active {
+  width: 1.5rem;
+  background: var(--color-ember-500);
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    scroll-behavior: auto;
+  }
+}

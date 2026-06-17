@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import ProductCard from "../components/ProductCard.astro";
+import Carousel from "../components/Carousel.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
 import showcase from "../content/showcase.json";
 ---
@@ -20,9 +20,7 @@ import showcase from "../content/showcase.json";
   </section>
 
   <section class="container-page pb-14">
-    <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
-      {showcase.products.map((p) => <ProductCard title={p.title} alt={p.alt} />)}
-    </div>
+    <Carousel slides={showcase.products} />
   </section>
 
   <section class="section-tint border-line border-t py-14">
