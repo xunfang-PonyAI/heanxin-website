@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import NumberedCard from "../components/NumberedCard.astro";
+import T from "../components/T.astro";
+import materials from "../content/materials-processes.json";
+import { url } from "../lib/i18n";
+---
+
+<BaseLayout
+  title="材料与工艺"
+  description="禾安鑫可根据外观、强度、耐热、透明、阻燃等需求，匹配 ABS、PC、PC+ABS、PP、PE、PA/尼龙、POM、PMMA 等材料，并提供喷涂、丝印、移印、激光雕刻和电镀等表面工艺。"
+>
+  <section class="container-page pt-12 pb-8">
+    <SectionHeader
+      eyebrow={materials.header.eyebrow}
+      title={materials.header.title}
+      subtitle={materials.header.subtitle}
+      as="h1"
+    />
+  </section>
+
+  <section class="container-page pb-14">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        materials.materials.map((item) => (
+          <NumberedCard no={item.no} title={item.title} desc={item.desc} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-tint border-line border-y py-14">
+    <div class="container-page">
+      <SectionHeader
+        eyebrow={{ en: "Finishing Options", zh: "表面处理" }}
+        title={{ en: "Surface Processes", zh: "表面工艺" }}
+      />
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          materials.processes.map((item) => (
+            <NumberedCard no={item.no} title={item.title} desc={item.desc} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-14">
+    <div class="bg-deep rounded-[var(--radius-card)] p-6 text-white sm:p-8">
+      <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div>
+          <p class="eyebrow text-ember-300"><T text={materials.cta.title} /></p>
+          <p class="text-brand-100/85 mt-3 max-w-2xl leading-relaxed">
+            <T text={materials.cta.desc} />
+          </p>
+        </div>
+        <div class="flex justify-start lg:justify-end">
+          <a
+            href={url("/#quote")}
+            class="bg-ember-500 hover:bg-ember-600 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+          >
+            <T text={materials.cta.button} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

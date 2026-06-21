@@ -79,7 +79,54 @@ function assertQuotePath() {
   }
 }
 
-const checks = [assertQuotePath];
+function assertMaterialsProcessesPage() {
+  const site = readJson("src/content/site.json");
+  const materials = readJson("src/content/materials-processes.json");
+  const page = readText("src/pages/materials-processes.astro");
+  const header = readText("src/components/Header.astro");
+
+  const navItem = site.nav.find((item) => item.href === "/materials-processes");
+  assert(navItem, "site.nav must include /materials-processes");
+  assert(navItem.label.en === "Materials & Processes", "materials nav English label is required");
+  assert(navItem.label.zh === "材料工艺", "materials nav Chinese label is required");
+
+  assertContains(header, "xl:flex", "Header desktop navigation breakpoint");
+  assertContains(header, "xl:hidden", "Header mobile navigation breakpoint");
+  assertContains(page, "materials-processes.json", "Materials page");
+  assertContains(page, "SectionHeader", "Materials page");
+  assertContains(page, "/#quote", "Materials page quote link");
+
+  const requiredMaterials = [
+    "ABS",
+    "PC",
+    "PC+ABS",
+    "PP",
+    "PE",
+    "PA / Nylon",
+    "POM",
+    "PMMA",
+    "Flame-retardant Materials",
+    "Transparent Materials",
+  ];
+  const materialNames = materials.materials.map((item) => item.title.en);
+  for (const material of requiredMaterials) {
+    assert(materialNames.includes(material), `materials list must include ${material}`);
+  }
+
+  const requiredProcesses = [
+    "Spray Painting",
+    "Screen Printing",
+    "Pad Printing",
+    "Laser Engraving",
+    "Electroplating",
+  ];
+  const processNames = materials.processes.map((item) => item.title.en);
+  for (const process of requiredProcesses) {
+    assert(processNames.includes(process), `process list must include ${process}`);
+  }
+}
+
+const checks = [assertQuotePath, assertMaterialsProcessesPage];
 
 for (const check of checks) {
   check();

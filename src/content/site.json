@@ -24,6 +24,10 @@
     { "href": "/", "label": { "en": "Home", "zh": "首页" } },
     { "href": "/about", "label": { "en": "About", "zh": "公司简介" } },
     { "href": "/services", "label": { "en": "Services", "zh": "定制服务" } },
+    {
+      "href": "/materials-processes",
+      "label": { "en": "Materials & Processes", "zh": "材料工艺" }
+    },
     { "href": "/industries", "label": { "en": "Industries", "zh": "应用领域" } },
     { "href": "/mold-capability", "label": { "en": "Capability", "zh": "模具产能" } },
     { "href": "/products", "label": { "en": "Products", "zh": "产品分类" } },

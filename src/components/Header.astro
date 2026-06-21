@@ -32,7 +32,7 @@ function isActive(href: string): boolean {
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-1 xl:flex" aria-label="Primary">
       {
         nav.map((item) => (
           <a
@@ -50,7 +50,7 @@ function isActive(href: string): boolean {
       }
     </nav>
 
-    <div class="hidden items-center gap-2 lg:flex">
+    <div class="hidden items-center gap-2 xl:flex">
       <a
         href={url(quoteCta.href)}
         class="bg-ember-500 hover:bg-ember-600 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5"
@@ -70,7 +70,7 @@ function isActive(href: string): boolean {
     </div>
 
     <!-- Mobile menu (pure CSS, no JS) -->
-    <details class="group relative lg:hidden">
+    <details class="group relative xl:hidden">
       <summary
         class="text-brand-700 flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md"
         aria-label="Menu"

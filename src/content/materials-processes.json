@@ -1,0 +1,106 @@
+{
+  "header": {
+    "eyebrow": { "en": "Materials & Finishes", "zh": "材料与工艺" },
+    "title": {
+      "en": "Materials and Surface Processes",
+      "zh": "材料与表面工艺"
+    },
+    "subtitle": {
+      "en": "Choose the right resin, then match it with the right finishing process for performance, appearance and cost.",
+      "zh": "先选对材料，再匹配合适的表面工艺，平衡性能、外观与成本。"
+    }
+  },
+  "materials": [
+    {
+      "no": "01",
+      "title": { "en": "ABS", "zh": "ABS" },
+      "desc": { "en": "Impact-resistant and easy to finish.", "zh": "抗冲击，易后处理。" }
+    },
+    {
+      "no": "02",
+      "title": { "en": "PC", "zh": "PC" },
+      "desc": { "en": "High transparency and heat resistance.", "zh": "高透明度与耐热性。" }
+    },
+    {
+      "no": "03",
+      "title": { "en": "PC+ABS", "zh": "PC+ABS" },
+      "desc": { "en": "Balanced toughness and moldability.", "zh": "兼顾韧性与成型性。" }
+    },
+    {
+      "no": "04",
+      "title": { "en": "PP", "zh": "PP" },
+      "desc": { "en": "Lightweight and chemical resistant.", "zh": "轻量且耐化学性好。" }
+    },
+    {
+      "no": "05",
+      "title": { "en": "PE", "zh": "PE" },
+      "desc": { "en": "Flexible and moisture resistant.", "zh": "柔韧，耐潮性好。" }
+    },
+    {
+      "no": "06",
+      "title": { "en": "PA / Nylon", "zh": "PA / 尼龙" },
+      "desc": { "en": "Strong and wear resistant.", "zh": "强度高，耐磨。" }
+    },
+    {
+      "no": "07",
+      "title": { "en": "POM", "zh": "POM" },
+      "desc": { "en": "Low friction for precision parts.", "zh": "低摩擦，适合精密零件。" }
+    },
+    {
+      "no": "08",
+      "title": { "en": "PMMA", "zh": "PMMA" },
+      "desc": { "en": "Excellent optical clarity.", "zh": "优异的光学透明度。" }
+    },
+    {
+      "no": "09",
+      "title": { "en": "Flame-retardant Materials", "zh": "阻燃材料" },
+      "desc": {
+        "en": "For safety-focused applications.",
+        "zh": "适用于安全要求较高的产品。"
+      }
+    },
+    {
+      "no": "10",
+      "title": { "en": "Transparent Materials", "zh": "透明材料" },
+      "desc": {
+        "en": "For visible windows and covers.",
+        "zh": "适用于可视窗口与透明罩件。"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "no": "01",
+      "title": { "en": "Spray Painting", "zh": "喷涂" },
+      "desc": { "en": "Add color and surface protection.", "zh": "增加颜色与表面保护。" }
+    },
+    {
+      "no": "02",
+      "title": { "en": "Screen Printing", "zh": "丝印" },
+      "desc": { "en": "Print graphics or labels cleanly.", "zh": "适合图案与标识印刷。" }
+    },
+    {
+      "no": "03",
+      "title": { "en": "Pad Printing", "zh": "移印" },
+      "desc": { "en": "Print on curved or complex surfaces.", "zh": "适合曲面与异形表面。" }
+    },
+    {
+      "no": "04",
+      "title": { "en": "Laser Engraving", "zh": "激光雕刻" },
+      "desc": { "en": "Permanent marking and traceability.", "zh": "永久标记与追溯。" }
+    },
+    {
+      "no": "05",
+      "title": { "en": "Electroplating", "zh": "电镀" },
+      "desc": { "en": "Enhance appearance and durability.", "zh": "提升外观和耐久性。" }
+    }
+  ],
+  "cta": {
+    "title": { "en": "Need help selecting a material?", "zh": "需要帮您选材吗？" },
+    "button": { "en": "Get a Quote", "zh": "获取报价" },
+    "desc": {
+      "en": "Send us your drawings and performance requirements, and we will recommend the right resin and finishing route.",
+      "zh": "发送图纸和性能要求，我们会为您推荐合适的材料与工艺路线。"
+    }
+  }
+}
