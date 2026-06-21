@@ -248,12 +248,50 @@ function assertAboutDepth() {
   assertContains(page, "about.cooperation", "About page");
 }
 
+function assertHomeBuyerJourney() {
+  const home = readJson("src/content/home.json");
+  const page = readText("src/pages/index.astro");
+
+  assertLocalized(home.productEntry.title, "home.productEntry.title");
+  assert(
+    Array.isArray(home.productEntry.featuredNos) && home.productEntry.featuredNos.length >= 3,
+    "home.productEntry.featuredNos must include homepage product entries"
+  );
+  for (const no of ["01", "02", "05"]) {
+    assert(home.productEntry.featuredNos.includes(no), `home product entry must include ${no}`);
+  }
+
+  assertLocalized(home.processPreview.title, "home.processPreview.title");
+  assert(
+    Array.isArray(home.processPreview.steps) && home.processPreview.steps.length >= 4,
+    "home.processPreview.steps must outline buyer workflow"
+  );
+
+  const requiredTrustTitles = [
+    "20+ Years Manufacturing Experience",
+    "Up to 800T Injection Capacity",
+    "OEM / ODM Project Support",
+    "One-stop Manufacturing Workflow",
+  ];
+  const trustTitles = home.trustStats.map((item) => item.title.en);
+  for (const title of requiredTrustTitles) {
+    assert(trustTitles.includes(title), `home.trustStats must include ${title}`);
+  }
+
+  assertContains(page, "home.productEntry", "Home page product entry");
+  assertContains(page, "featuredProducts", "Home page featured products");
+  assertContains(page, "home.processPreview", "Home page process preview");
+  assertContains(page, "home.trustStats", "Home page trust stats");
+  assertContains(page, "/#quote", "Home page quote CTA");
+}
+
 const checks = [
   assertQuotePath,
   assertMaterialsProcessesPage,
   assertNewsSeoPages,
   assertProductTaxonomy,
   assertAboutDepth,
+  assertHomeBuyerJourney,
 ];
 
 for (const check of checks) {

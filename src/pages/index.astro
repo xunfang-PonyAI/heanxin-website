@@ -3,10 +3,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
+import ProductTaxonomyCard from "../components/ProductTaxonomyCard.astro";
+import ProcessStepper from "../components/ProcessStepper.astro";
+import HighlightStat from "../components/HighlightStat.astro";
 import QuoteSection from "../components/QuoteSection.astro";
 import T from "../components/T.astro";
 import { url } from "../lib/i18n";
 import home from "../content/home.json";
+import products from "../content/products.json";
+
+const featuredProducts = products.categories.filter((category) =>
+  home.productEntry.featuredNos.includes(category.no)
+);
 ---
 
 <BaseLayout
@@ -27,6 +35,34 @@ import home from "../content/home.json";
     </div>
   </section>
 
+  <section class="container-page pb-16">
+    <SectionHeader
+      eyebrow={home.productEntry.eyebrow}
+      title={home.productEntry.title}
+      subtitle={home.productEntry.subtitle}
+    />
+    <div class="mt-10 grid gap-5 lg:grid-cols-3">
+      {
+        featuredProducts.map((category) => (
+          <ProductTaxonomyCard
+            no={category.no}
+            title={category.title}
+            desc={category.desc}
+            examples={category.examples}
+          />
+        ))
+      }
+    </div>
+    <div class="mt-8 flex justify-center">
+      <a
+        href={url("/products")}
+        class="border-line text-brand-700 hover:bg-brand-50 inline-flex items-center rounded-full border px-6 py-3 text-sm font-semibold transition"
+      >
+        <T text={home.productEntry.cta} />
+      </a>
+    </div>
+  </section>
+
   <section class="section-tint border-line border-y py-16">
     <div class="container-page">
       <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} />
@@ -40,6 +76,33 @@ import home from "../content/home.json";
         >
           <span lang="zh">了解更多</span><span lang="en">Learn More</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-16">
+    <SectionHeader
+      eyebrow={home.processPreview.eyebrow}
+      title={home.processPreview.title}
+      subtitle={home.processPreview.subtitle}
+    />
+    <div class="mt-10">
+      <ProcessStepper steps={home.processPreview.steps} />
+    </div>
+  </section>
+
+  <section class="bg-brand-700 py-16">
+    <div class="container-page">
+      <SectionHeader
+        title={{ en: "Why Buyers Choose Heanxin", zh: "为什么选择禾安鑫" }}
+        tone="dark"
+      />
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          home.trustStats.map((stat) => (
+            <HighlightStat icon={stat.icon} title={stat.title} desc={stat.desc} />
+          ))
+        }
       </div>
     </div>
   </section>

@@ -48,5 +48,105 @@
       "en": "Heanxin specializes in plastic injection molding, mold development and hardware-plastic combined parts. We support customers from product idea and DFM analysis through to tooling, mass production and quality assurance.",
       "zh": "禾安鑫专注于塑胶注塑、模具开发与五金塑胶组合件，协助客户从产品构想、可制造性分析，到模具开发、批量生产与品质保证的全流程落地。"
     }
-  }
+  },
+  "productEntry": {
+    "eyebrow": { "en": "What Buyers Ask For", "zh": "买家常见需求" },
+    "title": {
+      "en": "Start With the Product Category",
+      "zh": "从产品品类开始了解"
+    },
+    "subtitle": {
+      "en": "Most custom projects begin with enclosures, industrial plastic components or insert-molded metal-plastic parts. See whether your product fits these common entry points.",
+      "zh": "多数定制项目从外壳、工业塑胶零部件或五金塑胶嵌件成型件开始。您可以先判断产品是否属于这些常见入口。"
+    },
+    "featuredNos": ["01", "02", "05"],
+    "cta": { "en": "View All Products", "zh": "查看全部产品" }
+  },
+  "processPreview": {
+    "eyebrow": { "en": "How a Project Moves", "zh": "项目如何推进" },
+    "title": {
+      "en": "From Drawings to Production",
+      "zh": "从图纸到量产交付"
+    },
+    "subtitle": {
+      "en": "A clear path helps buyers understand what information to prepare and where manufacturing decisions are made.",
+      "zh": "清晰流程能帮助客户了解需要准备哪些资料，以及关键制造决策在哪些阶段完成。"
+    },
+    "steps": [
+      {
+        "icon": "chat",
+        "title": { "en": "Requirement Review", "zh": "需求评审" },
+        "desc": {
+          "en": "Review drawings, samples, material needs and quantity.",
+          "zh": "评审图纸、样品、材料要求和预计数量。"
+        }
+      },
+      {
+        "icon": "drawing",
+        "title": { "en": "DFM & Quotation", "zh": "DFM 与报价" },
+        "desc": {
+          "en": "Confirm manufacturability, tooling direction and cost.",
+          "zh": "确认可制造性、模具方向和成本。"
+        }
+      },
+      {
+        "icon": "mold",
+        "title": { "en": "Tooling & Sampling", "zh": "开模与试样" },
+        "desc": {
+          "en": "Build the mold, trial mold and verify samples.",
+          "zh": "制作模具、试模并验证样品。"
+        }
+      },
+      {
+        "icon": "injection",
+        "title": { "en": "Injection Production", "zh": "注塑量产" },
+        "desc": {
+          "en": "Move into stable injection molding and process control.",
+          "zh": "进入稳定注塑生产和过程管控。"
+        }
+      },
+      {
+        "icon": "shield",
+        "title": { "en": "QC & Delivery", "zh": "品检交付" },
+        "desc": {
+          "en": "Inspect, assemble, pack and ship the order.",
+          "zh": "检验、组装、包装并完成出货。"
+        }
+      }
+    ]
+  },
+  "trustStats": [
+    {
+      "icon": "factory",
+      "title": { "en": "20+ Years Manufacturing Experience", "zh": "20+ 年制造经验" },
+      "desc": {
+        "en": "Practical production knowledge for custom plastic projects.",
+        "zh": "面向定制塑胶项目的实际生产经验。"
+      }
+    },
+    {
+      "icon": "press",
+      "title": { "en": "Up to 800T Injection Capacity", "zh": "最大 800T 注塑能力" },
+      "desc": {
+        "en": "Supports small and medium plastic parts across multiple industries.",
+        "zh": "支持多行业中小型塑胶件生产需求。"
+      }
+    },
+    {
+      "icon": "oem",
+      "title": { "en": "OEM / ODM Project Support", "zh": "OEM / ODM 项目支持" },
+      "desc": {
+        "en": "From drawings and samples to mold development and production.",
+        "zh": "从图纸、样品到模具开发与量产交付。"
+      }
+    },
+    {
+      "icon": "assembly",
+      "title": { "en": "One-stop Manufacturing Workflow", "zh": "一站式制造流程" },
+      "desc": {
+        "en": "Tooling, injection molding, hardware matching and assembly.",
+        "zh": "模具、注塑、五金配套与组装一体化。"
+      }
+    }
+  ]
 }
