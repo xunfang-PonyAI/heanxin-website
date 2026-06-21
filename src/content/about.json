@@ -5,9 +5,30 @@
   },
   "intro": {
     "body": {
-      "en": "Dongguan Heanxin Hardware & Plastic Products Co., Ltd. is a manufacturer specializing in plastic injection molding, mold development, insert molding and hardware-plastic combined parts. With an experienced engineering team and an in-house mold workshop, we provide one-stop OEM / ODM services covering design, tooling, production and assembly.",
-      "zh": "东莞市禾安鑫五金塑胶制品有限公司是一家专注于塑胶注塑、模具开发、嵌件注塑及五金塑胶组合件的制造企业。凭借经验丰富的工程团队与自有模具车间，我们为客户提供涵盖设计、开模、生产到组装的一站式 OEM / ODM 服务。"
+      "en": "Dongguan Heanxin Hardware & Plastic Products Co., Ltd. is a custom manufacturer focused on plastic injection molding, mold development, hardware-plastic combined parts and OEM / ODM production.",
+      "zh": "东莞市禾安鑫五金塑胶制品有限公司是一家专注塑胶注塑、模具开发、五金塑胶组合件和 OEM / ODM 生产的定制制造企业。"
     }
+  },
+  "profile": {
+    "eyebrow": { "en": "Who We Are", "zh": "企业定位" },
+    "title": {
+      "en": "A One-stop Plastic Injection Manufacturing Partner",
+      "zh": "一站式塑胶注塑制造伙伴"
+    },
+    "paragraphs": [
+      {
+        "en": "Heanxin integrates product review, engineering design support, mold manufacturing, plastic injection molding, hardware matching, assembly and packaging. The company serves buyers who need reliable small and medium custom plastic parts rather than only standard off-the-shelf products.",
+        "zh": "禾安鑫整合产品评审、工程设计协助、模具制造、塑胶注塑、五金配套、组装与包装等环节，服务需要中小型定制塑胶件的客户，而不是只提供标准现货产品。"
+      },
+      {
+        "en": "Our work covers electronic housings, industrial plastic components, smart home and small appliance parts, automotive small plastic parts, medical and health equipment housings, hardware-plastic combined parts and plastic mold development.",
+        "zh": "我们的制造范围覆盖电子塑胶外壳、工业设备塑胶零部件、智能家居与小家电配件、汽车小型塑胶件、医疗健康设备外壳、五金塑胶组合件以及塑胶模具设计制造。"
+      },
+      {
+        "en": "For OEM / ODM projects, we help customers move from drawings or samples to tooling, trial molding, stable production and shipment with practical manufacturing feedback at each stage.",
+        "zh": "针对 OEM / ODM 项目，我们协助客户从图纸或样品进入开模、试模、稳定量产与出货，并在各阶段提供贴近制造现场的建议。"
+      }
+    ]
   },
   "facilities": {
     "eyebrow": { "en": "Facilities", "zh": "厂房设施" },
@@ -21,25 +42,157 @@
   ],
   "stats": [
     {
-      "icon": "injection",
-      "title": { "en": "Specialized in Plastics", "zh": "专注塑胶制造" },
+      "icon": "factory",
+      "title": { "en": "Custom Manufacturing", "zh": "定制制造" },
       "desc": {
-        "en": "Focused on injection molding, tooling and hardware-plastic parts.",
-        "zh": "专注注塑成型、模具开发与五金塑胶组合件。"
+        "en": "Focused on customer drawings, samples and project requirements.",
+        "zh": "围绕客户图纸、样品和项目需求开展生产。"
       }
     },
     {
-      "icon": "drawing",
-      "title": { "en": "Experienced Engineers", "zh": "资深工程团队" },
-      "desc": { "en": "Skilled mold and process engineers.", "zh": "经验丰富的模具与工艺工程师。" }
+      "icon": "mold",
+      "title": { "en": "In-house Tooling", "zh": "自有模具能力" },
+      "desc": {
+        "en": "Mold development supports faster engineering iteration.",
+        "zh": "模具开发能力支持更快的工程迭代。"
+      }
     },
     {
-      "icon": "oem",
-      "title": { "en": "One-stop OEM / ODM", "zh": "一站式 OEM / ODM" },
+      "icon": "shield",
+      "title": { "en": "Production Quality", "zh": "量产品质" },
       "desc": {
-        "en": "Design, tooling, production and assembly in one place.",
-        "zh": "设计、开模、生产、组装全程一体化。"
+        "en": "Quality checks support stable delivery across repeat orders.",
+        "zh": "通过品质检查支持多批次稳定交付。"
       }
     }
-  ]
+  ],
+  "capabilities": {
+    "eyebrow": { "en": "Manufacturing Scope", "zh": "制造范围" },
+    "title": { "en": "What We Build", "zh": "我们能制造什么" },
+    "items": [
+      {
+        "icon": "chip",
+        "title": { "en": "Electronic Plastic Housings", "zh": "电子塑胶外壳" },
+        "desc": {
+          "en": "Custom enclosures, covers and structural shells for electronics.",
+          "zh": "电子产品定制外壳、盖件与结构壳体。"
+        }
+      },
+      {
+        "icon": "control",
+        "title": { "en": "Industrial Equipment Plastic Components", "zh": "工业设备塑胶零部件" },
+        "desc": {
+          "en": "Durable molded parts for industrial control and equipment assemblies.",
+          "zh": "用于工业控制和设备配套的耐用注塑件。"
+        }
+      },
+      {
+        "icon": "home",
+        "title": { "en": "Smart Home & Small Appliance Parts", "zh": "智能家居与小家电配件" },
+        "desc": {
+          "en": "Plastic components for connected home devices and small appliances.",
+          "zh": "智能家居设备和小家电产品的塑胶组件。"
+        }
+      },
+      {
+        "icon": "car",
+        "title": { "en": "Automotive Small Plastic Parts", "zh": "汽车小型塑胶件" },
+        "desc": {
+          "en": "Small custom parts for automotive electronics and interior modules.",
+          "zh": "汽车电子和内饰模块用小型定制塑胶件。"
+        }
+      },
+      {
+        "icon": "medical",
+        "title": { "en": "Medical & Health Equipment Housings", "zh": "医疗健康设备外壳" },
+        "desc": {
+          "en": "Plastic shells and components for health device applications.",
+          "zh": "医疗健康设备应用中的塑胶壳体与部件。"
+        }
+      },
+      {
+        "icon": "combine",
+        "title": { "en": "Hardware-Plastic Combined Parts", "zh": "五金塑胶组合件" },
+        "desc": {
+          "en": "Metal and plastic integrated parts through insert molding or assembly.",
+          "zh": "通过嵌件注塑或组装实现的金属塑胶一体化部件。"
+        }
+      },
+      {
+        "icon": "mold",
+        "title": { "en": "Plastic Mold Design & Manufacturing", "zh": "塑胶模具设计制造" },
+        "desc": {
+          "en": "Tooling support from DFM and mold making to trial molding.",
+          "zh": "从 DFM、模具制造到试模验证的模具支持。"
+        }
+      }
+    ]
+  },
+  "advantages": {
+    "eyebrow": { "en": "Why Work With Us", "zh": "合作优势" },
+    "title": {
+      "en": "Practical Advantages for OEM / ODM Buyers",
+      "zh": "面向 OEM / ODM 客户的实际优势"
+    },
+    "items": [
+      {
+        "icon": "factory",
+        "title": { "en": "Manufacturing Experience", "zh": "制造经验" },
+        "desc": {
+          "en": "Practical engineering feedback for custom plastic projects.",
+          "zh": "为定制塑胶项目提供贴近生产的工程建议。"
+        }
+      },
+      {
+        "icon": "custom",
+        "title": { "en": "Small & Medium Custom Parts", "zh": "中小型定制塑胶件" },
+        "desc": {
+          "en": "Focused on parts that need flexible customization and stable repeat orders.",
+          "zh": "专注需要灵活定制和稳定复购的中小型塑胶零件。"
+        }
+      },
+      {
+        "icon": "oem",
+        "title": { "en": "OEM / ODM Support", "zh": "OEM / ODM 支持" },
+        "desc": {
+          "en": "Support from idea, drawing or sample to production-ready parts.",
+          "zh": "支持从想法、图纸或样品到可量产产品的落地。"
+        }
+      },
+      {
+        "icon": "shield",
+        "title": { "en": "Stable Quality Control", "zh": "稳定品质管控" },
+        "desc": {
+          "en": "Inspection and process control support stable delivery.",
+          "zh": "通过检验和过程管控支持稳定交付。"
+        }
+      },
+      {
+        "icon": "assembly",
+        "title": { "en": "One-stop Manufacturing", "zh": "一站式制造" },
+        "desc": {
+          "en": "Tooling, injection molding, hardware matching, assembly and packaging in one workflow.",
+          "zh": "模具、注塑、五金配套、组装与包装形成完整流程。"
+        }
+      }
+    ]
+  },
+  "cooperation": {
+    "eyebrow": { "en": "Cooperation Directions", "zh": "合作方向" },
+    "title": { "en": "Industries We Support", "zh": "可合作行业方向" },
+    "desc": {
+      "en": "We welcome custom plastic projects from electronics, industrial equipment, smart home, small appliances, automotive electronics, medical and health devices and other OEM / ODM product categories.",
+      "zh": "我们欢迎电子产品、工业设备、智能家居、小型家电、汽车电子、医疗健康设备及其他 OEM / ODM 产品方向的定制塑胶项目。"
+    },
+    "industries": [
+      { "en": "Electronic Products", "zh": "电子产品" },
+      { "en": "Industrial Equipment", "zh": "工业设备" },
+      { "en": "Smart Home", "zh": "智能家居" },
+      { "en": "Small Appliances", "zh": "小型家电" },
+      { "en": "Automotive Electronics", "zh": "汽车电子" },
+      { "en": "Medical & Health", "zh": "医疗健康" },
+      { "en": "Other Custom Plastic Products", "zh": "其他定制塑胶产品" }
+    ],
+    "button": { "en": "Discuss Your Project", "zh": "沟通项目需求" }
+  }
 }

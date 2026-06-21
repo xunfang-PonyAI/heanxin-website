@@ -5,6 +5,7 @@ import IconFeatureCard from "../components/IconFeatureCard.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import T from "../components/T.astro";
 import about from "../content/about.json";
+import { url } from "../lib/i18n";
 ---
 
 <BaseLayout
@@ -19,6 +20,26 @@ import about from "../content/about.json";
   </section>
 
   <section class="container-page py-12">
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div>
+        <SectionHeader eyebrow={about.profile.eyebrow} title={about.profile.title} align="left" />
+        <div class="text-muted mt-6 space-y-4 leading-relaxed">
+          {
+            about.profile.paragraphs.map((paragraph) => (
+              <p>
+                <T text={paragraph} />
+              </p>
+            ))
+          }
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+        {about.stats.map((s) => <IconFeatureCard icon={s.icon} title={s.title} desc={s.desc} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-12">
     <SectionHeader eyebrow={about.facilities.eyebrow} title={about.facilities.title} />
     <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
       {about.workshops.map((w) => <PhotoPlaceholder alt={w.alt} ratio="video" />)}
@@ -27,8 +48,55 @@ import about from "../content/about.json";
 
   <section class="section-tint border-line border-y py-14">
     <div class="container-page">
-      <div class="grid gap-5 sm:grid-cols-3">
-        {about.stats.map((s) => <IconFeatureCard icon={s.icon} title={s.title} desc={s.desc} />)}
+      <SectionHeader eyebrow={about.capabilities.eyebrow} title={about.capabilities.title} />
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          about.capabilities.items.map((item) => (
+            <IconFeatureCard icon={item.icon} title={item.title} desc={item.desc} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-14">
+    <SectionHeader eyebrow={about.advantages.eyebrow} title={about.advantages.title} />
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        about.advantages.items.map((item) => (
+          <IconFeatureCard icon={item.icon} title={item.title} desc={item.desc} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bg-deep py-14 text-white">
+    <div class="container-page">
+      <div class="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <SectionHeader
+          eyebrow={about.cooperation.eyebrow}
+          title={about.cooperation.title}
+          subtitle={about.cooperation.desc}
+          align="left"
+          tone="dark"
+        />
+        <div>
+          <div class="flex flex-wrap gap-2.5">
+            {
+              about.cooperation.industries.map((industry) => (
+                <span class="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white">
+                  <T text={industry} />
+                </span>
+              ))
+            }
+          </div>
+          <a
+            href={url("/#quote")}
+            class="bg-ember-500 hover:bg-ember-600 mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+          >
+            <T text={about.cooperation.button} />
+          </a>
+        </div>
       </div>
     </div>
   </section>

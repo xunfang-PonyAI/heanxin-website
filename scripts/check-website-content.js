@@ -202,11 +202,58 @@ function assertProductTaxonomy() {
   assertContains(page, "/#quote", "Products page quote link");
 }
 
+function assertAboutDepth() {
+  const about = readJson("src/content/about.json");
+  const page = readText("src/pages/about.astro");
+
+  assert(
+    Array.isArray(about.profile?.paragraphs) && about.profile.paragraphs.length >= 2,
+    "about.profile.paragraphs must include richer company introduction"
+  );
+
+  const requiredCapabilities = [
+    "Electronic Plastic Housings",
+    "Industrial Equipment Plastic Components",
+    "Smart Home & Small Appliance Parts",
+    "Automotive Small Plastic Parts",
+    "Medical & Health Equipment Housings",
+    "Hardware-Plastic Combined Parts",
+    "Plastic Mold Design & Manufacturing",
+  ];
+  const capabilityNames = about.capabilities.items.map((item) => item.title.en);
+  for (const capability of requiredCapabilities) {
+    assert(capabilityNames.includes(capability), `about capabilities must include ${capability}`);
+  }
+
+  const requiredAdvantages = [
+    "Manufacturing Experience",
+    "Small & Medium Custom Parts",
+    "OEM / ODM Support",
+    "Stable Quality Control",
+    "One-stop Manufacturing",
+  ];
+  const advantageNames = about.advantages.items.map((item) => item.title.en);
+  for (const advantage of requiredAdvantages) {
+    assert(advantageNames.includes(advantage), `about advantages must include ${advantage}`);
+  }
+
+  assert(
+    Array.isArray(about.cooperation.industries) && about.cooperation.industries.length >= 6,
+    "about cooperation directions must include target industries"
+  );
+
+  assertContains(page, "about.profile", "About page");
+  assertContains(page, "about.capabilities", "About page");
+  assertContains(page, "about.advantages", "About page");
+  assertContains(page, "about.cooperation", "About page");
+}
+
 const checks = [
   assertQuotePath,
   assertMaterialsProcessesPage,
   assertNewsSeoPages,
   assertProductTaxonomy,
+  assertAboutDepth,
 ];
 
 for (const check of checks) {
