@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -30,6 +30,23 @@ function assertLocalized(value, label) {
 
 function assertContains(text, expected, label) {
   assert(text.includes(expected), `${label} must contain "${expected}"`);
+}
+
+function listSourceFiles(relativeDir) {
+  const absoluteDir = path.join(root, relativeDir);
+  const entries = readdirSync(absoluteDir);
+  const files = [];
+  for (const entry of entries) {
+    const relativePath = path.join(relativeDir, entry);
+    const absolutePath = path.join(root, relativePath);
+    const stat = statSync(absolutePath);
+    if (stat.isDirectory()) {
+      files.push(...listSourceFiles(relativePath));
+    } else if (/\.(astro|css|ts)$/.test(entry)) {
+      files.push(relativePath.replaceAll("\\", "/"));
+    }
+  }
+  return files;
 }
 
 function assertQuotePath() {
@@ -285,6 +302,33 @@ function assertHomeBuyerJourney() {
   assertContains(page, "/#quote", "Home page quote CTA");
 }
 
+function assertSeoAndEngineeringQuality() {
+  const readme = readText("README.md");
+  const baseLayout = readText("src/layouts/BaseLayout.astro");
+
+  assert(!readme.includes("零运行时 JS"), "README must not claim zero runtime JS");
+  assertContains(readme, "渐进增强", "README runtime description");
+
+  assertContains(baseLayout, '"@type": "WebSite"', "BaseLayout JSON-LD");
+  assertContains(baseLayout, "hasOfferCatalog", "BaseLayout offer catalog structured data");
+
+  const hardcodedHexMatches = [];
+  for (const file of listSourceFiles("src")) {
+    const lines = readText(file).split(/\r?\n/);
+    lines.forEach((line, index) => {
+      if (file === "src/styles/global.css" && line.includes("--color-")) return;
+      const matches = line.match(/#[0-9a-fA-F]{3,8}\b/g);
+      if (matches) {
+        hardcodedHexMatches.push(`${file}:${index + 1} ${matches.join(", ")}`);
+      }
+    });
+  }
+  assert(
+    hardcodedHexMatches.length === 0,
+    `Hard-coded hex colors outside theme tokens:\n${hardcodedHexMatches.join("\n")}`
+  );
+}
+
 const checks = [
   assertQuotePath,
   assertMaterialsProcessesPage,
@@ -292,6 +336,7 @@ const checks = [
   assertProductTaxonomy,
   assertAboutDepth,
   assertHomeBuyerJourney,
+  assertSeoAndEngineeringQuality,
 ];
 
 for (const check of checks) {

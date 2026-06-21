@@ -26,41 +26,68 @@ const fullTitle = `${title} | ${company.shortName.zh} Heanxin`;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL(url("og-image.svg"), Astro.site).toString();
 const homeUrl = new URL(url("/"), Astro.site).toString();
+const serviceOffers = [
+  "Plastic Injection Molding",
+  "Mold Development",
+  "Insert Molding",
+  "Hardware-Plastic Combined Parts",
+  "OEM / ODM Manufacturing",
+  "Assembly and Finishing",
+];
 
 // Structured data helps OEM/ODM buyers find the company via search engines.
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: company.name.en,
-  alternateName: company.name.zh,
-  url: homeUrl,
-  logo: ogImage,
-  email: contact.email,
-  telephone: contact.phone,
-  description: description,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Room 101, No. 606 Miaobianwang Road, Shipai Town",
-    addressLocality: "Dongguan",
-    addressRegion: "Guangdong",
-    addressCountry: "CN",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "sales",
-    telephone: contact.phone,
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${homeUrl}#organization`,
+    name: company.name.en,
+    alternateName: company.name.zh,
+    url: homeUrl,
+    logo: ogImage,
     email: contact.email,
-    areaServed: "Worldwide",
-    availableLanguage: ["zh-CN", "en"],
+    telephone: contact.phone,
+    description: description,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Room 101, No. 606 Miaobianwang Road, Shipai Town",
+      addressLocality: "Dongguan",
+      addressRegion: "Guangdong",
+      addressCountry: "CN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      telephone: contact.phone,
+      email: contact.email,
+      areaServed: "Worldwide",
+      availableLanguage: ["zh-CN", "en"],
+    },
+    makesOffer: serviceOffers,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Plastic injection molding and OEM / ODM services",
+      itemListElement: serviceOffers.map((offer) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: offer,
+        },
+      })),
+    },
   },
-  makesOffer: [
-    "Plastic Injection Molding",
-    "Mold Development",
-    "Insert Molding",
-    "Hardware-Plastic Combined Parts",
-    "OEM / ODM Manufacturing",
-  ],
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: `${company.shortName.en} Website`,
+    alternateName: company.name.zh,
+    url: homeUrl,
+    inLanguage: ["zh-CN", "en"],
+    publisher: {
+      "@id": `${homeUrl}#organization`,
+    },
+  },
+];
 ---
 
 <!doctype html>
@@ -118,6 +145,8 @@ const jsonLd = {
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content={company.name.en} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Smooth cross-page transitions (progressive enhancement; static HTML

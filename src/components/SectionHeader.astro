@@ -35,7 +35,9 @@ const barCenter = align === "center" ? "justify-center" : "";
       </p>
     )
   }
-  <HeadingTag class={`font-display mt-3 text-4xl font-bold tracking-tight sm:text-5xl ${titleColor}`}>
+  <HeadingTag
+    class={`font-display mt-3 text-4xl font-bold tracking-tight sm:text-5xl ${titleColor}`}
+  >
     <span lang="en" class="uppercase">{title.en}</span><span lang="zh">{title.zh}</span>
   </HeadingTag>
   <div class={`accent-bar mt-4 ${barCenter}`} aria-hidden="true">

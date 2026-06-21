@@ -11,10 +11,7 @@ interface Props {
 const { title, alt } = Astro.props;
 ---
 
-<div
-  data-reveal
-  class="card-base card-interactive group h-full overflow-hidden"
->
+<div data-reveal class="card-base card-interactive group h-full overflow-hidden">
   <PhotoPlaceholder alt={alt} ratio="square" labelStyle="none" class="rounded-none border-0" />
   <div class="p-4">
     <h3 class="font-display text-brand-700 text-base font-semibold"><T text={title} /></h3>

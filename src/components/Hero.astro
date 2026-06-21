@@ -22,13 +22,11 @@ interface Props {
 const { eyebrow, title, subtitle, primaryCta, secondaryCta, compact = false } = Astro.props;
 ---
 
-<section
-  class={`bg-deep relative overflow-hidden ${compact ? "py-16" : "py-20 sm:py-24"}`}
->
+<section class={`bg-deep relative overflow-hidden ${compact ? "py-16" : "py-20 sm:py-24"}`}>
   <!-- Decorative circuit grid -->
   <div
     class="pointer-events-none absolute inset-0 opacity-[0.10]"
-    style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 48px 48px;"
+    style="background-image: linear-gradient(color-mix(in srgb, var(--color-brand-100) 70%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--color-brand-100) 70%, transparent) 1px, transparent 1px); background-size: 48px 48px;"
     aria-hidden="true"
   >
   </div>
@@ -90,7 +88,10 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, compact = false } = 
                   class="group bg-ember-500 hover:bg-ember-600 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-ember)] transition hover:-translate-y-0.5"
                 >
                   <T text={primaryCta.label} />
-                  <Icon name="arrowRight" class="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <Icon
+                    name="arrowRight"
+                    class="h-5 w-5 transition-transform group-hover:translate-x-1"
+                  />
                 </a>
               )}
               {secondaryCta && (

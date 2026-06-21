@@ -47,6 +47,7 @@
   --color-line: #e4e8f0; /* borders */
   --color-placeholder: #eef1f6; /* image placeholders */
   --color-surface: #f3f6fc; /* card surface — light blue-grey */
+  --color-canvas: #ffffff;
 
   /* Typography — Outfit (display) + Work Sans (body), Latin self-hosted via @fontsource.
      Chinese falls back to system fonts (PingFang SC on Apple, Microsoft YaHei on
@@ -70,7 +71,7 @@ body {
   font-size: 1.0625rem; /* 17px base — larger, more readable body copy */
   line-height: 1.65;
   color: var(--color-ink);
-  background: #ffffff;
+  background: var(--color-canvas);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -106,7 +107,7 @@ body {
 
 /* Subtle tinted section background for vertical rhythm */
 .section-tint {
-  background: linear-gradient(180deg, #f7f9fd 0%, #eef3fb 100%);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-brand-50) 100%);
 }
 
 /* Decorative wave divider used between dark and light sections */
@@ -143,7 +144,12 @@ html[data-lang="en"] [lang="zh"] {
   background-image:
     radial-gradient(55% 75% at 85% 8%, rgba(56, 189, 248, 0.2), transparent 60%),
     radial-gradient(45% 65% at 8% 92%, rgba(249, 115, 22, 0.12), transparent 60%),
-    linear-gradient(135deg, var(--color-night) 0%, var(--color-brand-700) 48%, var(--color-azure) 100%);
+    linear-gradient(
+      135deg,
+      var(--color-night) 0%,
+      var(--color-brand-700) 48%,
+      var(--color-azure) 100%
+    );
 }
 
 /* Interactive card: soft lift + spark-tinted border on hover */

@@ -2,13 +2,13 @@
 
 东莞市禾安鑫五金塑胶制品有限公司（Dongguan Heanxin Hardware & Plastic Products Co., Ltd.）企业官网。
 
-7 页中英双语画册型静态站点，业务涵盖塑胶注塑、模具开发、嵌件注塑、五金塑胶组合件与 OEM / ODM 代工。
+中英双语画册型静态站点，业务涵盖塑胶注塑、模具开发、嵌件注塑、五金塑胶组合件与 OEM / ODM 代工。
 
 ## 技术栈
 
 - **Astro** + **Tailwind CSS v4** + **TypeScript**，纯静态。
 - 部署：**GitHub Pages 项目页**，线上地址 `https://xunfang-ponyai.github.io/heanxin-website/`。
-- 零运行时 JS、SEO 友好（每页独立 meta + Organization 结构化数据 + sitemap）。
+- 少量渐进增强 JS（语言切换、过渡、滚动动画、轮播），静态 HTML 对搜索引擎可见；SEO 配置包含页面 meta、结构化数据和 sitemap。
 
 ## 开发
 
@@ -28,8 +28,8 @@ src/
 ├─ layouts/      BaseLayout（SEO / JSON-LD / 导航 / 页脚）
 ├─ content/      双语内容 *.json（{ en, zh }）
 ├─ styles/       global.css（设计 token 唯一来源）
-└─ pages/        7 个页面 + 404
-public/          静态资源（favicon、og-image、实拍图）
+└─ pages/        静态页面、新闻详情页 + 404
+public/          静态资源（favicon、og-image）
 .github/         Copilot 指令、提示词、Pages 部署工作流
 ```
 
