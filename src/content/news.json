@@ -19,6 +19,16 @@
         "en": "A buyer-focused guide to matching enclosure requirements with resin performance, finishing needs and production cost.",
         "zh": "从外壳性能、表面处理和生产成本出发，帮助买家选择合适塑胶材料。"
       },
+      "keywords": {
+        "en": [
+          "plastic enclosure",
+          "material selection",
+          "resin performance",
+          "surface finishing",
+          "production cost"
+        ],
+        "zh": ["塑胶外壳", "材料选择", "树脂性能", "表面处理", "生产成本"]
+      },
       "sections": [
         {
           "heading": { "en": "Start with the product environment", "zh": "先看产品使用环境" },
@@ -54,6 +64,17 @@
         "en": "Compare two common enclosure materials across strength, heat resistance, transparency, finishing and budget.",
         "zh": "从强度、耐热、透明、后处理和预算等方面比较两种常见外壳材料。"
       },
+      "keywords": {
+        "en": [
+          "ABS",
+          "PC",
+          "electronic housing",
+          "heat resistance",
+          "transparent plastic",
+          "PC+ABS"
+        ],
+        "zh": ["ABS", "PC", "电子外壳", "耐热", "透明塑胶", "PC+ABS"]
+      },
       "sections": [
         {
           "heading": { "en": "ABS is practical for many housings", "zh": "ABS 适合多数常规外壳" },
@@ -88,6 +109,16 @@
       "summary": {
         "en": "A simple explanation of the injection molding process from resin and mold to sampling, production and inspection.",
         "zh": "用简单方式说明塑胶注塑从材料、模具到打样、量产和检验的基本流程。"
+      },
+      "keywords": {
+        "en": [
+          "plastic injection molding",
+          "mold cavity",
+          "trial molding",
+          "sampling",
+          "quality inspection"
+        ],
+        "zh": ["塑胶注塑", "模具", "试模", "打样", "品质检验"]
       },
       "sections": [
         {
@@ -127,6 +158,17 @@
         "en": "What buyers should prepare before asking for a quote: drawings, material needs, quantities, samples and assembly expectations.",
         "zh": "询价前应准备哪些信息：图纸、材料需求、数量、样品和组装要求。"
       },
+      "keywords": {
+        "en": [
+          "custom plastic project",
+          "quote request",
+          "drawings",
+          "samples",
+          "assembly",
+          "packaging"
+        ],
+        "zh": ["定制塑胶项目", "询价", "图纸", "样品", "组装", "包装"]
+      },
       "sections": [
         {
           "heading": { "en": "Prepare drawings or samples", "zh": "准备图纸或样品" },
@@ -161,6 +203,17 @@
       "summary": {
         "en": "Understand how a custom plastic mold moves from product review and DFM to tooling, trial molding and production maintenance.",
         "zh": "了解定制塑胶模具如何从产品评审、DFM 到开模、试模和量产维护。"
+      },
+      "keywords": {
+        "en": [
+          "plastic mold",
+          "mold development",
+          "DFM",
+          "tooling",
+          "trial molding",
+          "mold maintenance"
+        ],
+        "zh": ["塑胶模具", "模具开发", "DFM", "开模", "试模", "模具维护"]
       },
       "sections": [
         {

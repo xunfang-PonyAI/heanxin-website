@@ -1,9 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsSearch from "../components/NewsSearch.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import T from "../components/T.astro";
 import news from "../content/news.json";
-import { url } from "../lib/i18n";
 ---
 
 <BaseLayout
@@ -20,32 +19,6 @@ import { url } from "../lib/i18n";
   </section>
 
   <section class="container-page pb-14">
-    <div class="grid gap-5 lg:grid-cols-2">
-      {
-        news.articles.map((article) => (
-          <article
-            data-reveal
-            class="card-base card-interactive group relative h-full overflow-hidden p-6"
-          >
-            <p class="text-muted text-sm">{article.date}</p>
-            <h2 class="font-display text-brand-700 mt-3 text-2xl font-semibold">
-              <T text={article.title} />
-            </h2>
-            <p class="text-muted mt-4 text-[15px] leading-relaxed">
-              <T text={article.summary} />
-            </p>
-            <a
-              href={url(`/news/${article.slug}`)}
-              class="text-ember-700 mt-5 inline-flex text-sm font-semibold transition group-hover:translate-x-1"
-            >
-              <>
-                <span lang="en">Read Article</span>
-                <span lang="zh">阅读文章</span>
-              </>
-            </a>
-          </article>
-        ))
-      }
-    </div>
+    <NewsSearch articles={news.articles} />
   </section>
 </BaseLayout>

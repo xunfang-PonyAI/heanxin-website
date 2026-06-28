@@ -28,6 +28,20 @@ function assertLocalized(value, label) {
   assert(typeof value.zh === "string" && value.zh.trim(), `${label}.zh is required`);
 }
 
+function assertLocalizedStringArray(value, label) {
+  assert(value && typeof value === "object", `${label} must be a localized object`);
+  assert(Array.isArray(value.en), `${label}.en must be an array`);
+  assert(Array.isArray(value.zh), `${label}.zh must be an array`);
+  assert(
+    value.en.every((item) => typeof item === "string" && item.trim()),
+    `${label}.en terms`
+  );
+  assert(
+    value.zh.every((item) => typeof item === "string" && item.trim()),
+    `${label}.zh terms`
+  );
+}
+
 function assertContains(text, expected, label) {
   assert(text.includes(expected), `${label} must contain "${expected}"`);
 }
@@ -216,6 +230,7 @@ function assertNewsSeoPages() {
   const news = readJson("src/content/news.json");
   const listPage = readText("src/pages/news.astro");
   const detailPage = readText("src/pages/news/[slug].astro");
+  const searchComponent = readText("src/components/NewsSearch.astro");
 
   const navItem = site.nav.find((item) => item.href === "/news");
   assert(navItem, "site.nav must include /news");
@@ -241,13 +256,29 @@ function assertNewsSeoPages() {
   for (const article of news.articles) {
     assertLocalized(article.title, `news article ${article.slug} title`);
     assertLocalized(article.summary, `news article ${article.slug} summary`);
+    assertLocalizedStringArray(article.keywords, `news article ${article.slug} keywords`);
+    assert(
+      Array.isArray(article.keywords.en) && article.keywords.en.length >= 3,
+      `${article.slug} keywords.en must include searchable terms`
+    );
+    assert(
+      Array.isArray(article.keywords.zh) && article.keywords.zh.length >= 3,
+      `${article.slug} keywords.zh must include searchable terms`
+    );
     assert(typeof article.date === "string" && article.date, `${article.slug} date is required`);
     assert(Array.isArray(article.sections), `${article.slug} sections must be an array`);
     assert(article.sections.length >= 3, `${article.slug} should have useful article sections`);
   }
 
   assertContains(listPage, "news.json", "News list page");
-  assertContains(listPage, "url(", "News list page links");
+  assertContains(listPage, "NewsSearch", "News list page");
+  assertContains(searchComponent, "url(", "News search component links");
+  assertContains(searchComponent, 'type="search"', "News search component");
+  assertContains(searchComponent, "data-news-card", "News search component");
+  assertContains(searchComponent, "data-search-text", "News search component");
+  assertContains(searchComponent, "data-news-empty", "News search component");
+  assertContains(searchComponent, "data-news-clear", "News search component");
+  assertContains(searchComponent, "aria-live", "News search component");
   assertContains(detailPage, "getStaticPaths", "News detail page");
   assertContains(detailPage, "news.json", "News detail page");
   assertContains(detailPage, "article.slug", "News detail page route data");

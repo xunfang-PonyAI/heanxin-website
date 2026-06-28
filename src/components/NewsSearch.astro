@@ -1,0 +1,195 @@
+---
+import T from "./T.astro";
+import { url } from "../lib/i18n";
+
+interface LocalizedText {
+  en: string;
+  zh: string;
+}
+
+interface NewsSection {
+  heading: LocalizedText;
+  body: LocalizedText;
+}
+
+interface NewsArticle {
+  slug: string;
+  date: string;
+  title: LocalizedText;
+  summary: LocalizedText;
+  keywords: {
+    en: string[];
+    zh: string[];
+  };
+  sections: NewsSection[];
+}
+
+interface Props {
+  articles: NewsArticle[];
+}
+
+const { articles } = Astro.props;
+
+const searchTextFor = (article: NewsArticle) =>
+  [
+    article.slug,
+    article.date,
+    article.title.en,
+    article.title.zh,
+    article.summary.en,
+    article.summary.zh,
+    ...article.keywords.en,
+    ...article.keywords.zh,
+    ...article.sections.flatMap((section) => [
+      section.heading.en,
+      section.heading.zh,
+      section.body.en,
+      section.body.zh,
+    ]),
+  ]
+    .join(" ")
+    .toLowerCase();
+---
+
+<div class="space-y-8" data-news-search>
+  <div class="card-base p-4 sm:p-5">
+    <div class="flex flex-col gap-3 lg:flex-row lg:items-center">
+      <label class="sr-only" for="news-search">
+        <span lang="en">Search news articles</span>
+        <span lang="zh">搜索新闻资讯</span>
+      </label>
+      <div class="relative min-w-0 flex-1">
+        <span
+          aria-hidden="true"
+          class="text-brand-400 pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-lg"
+          >⌕</span
+        >
+        <input
+          id="news-search"
+          data-news-input
+          type="search"
+          aria-label="Search news articles / 搜索新闻资讯"
+          placeholder="Search materials, molding, mold... / 搜索材料、注塑、模具..."
+          class="border-line text-ink placeholder:text-muted focus:border-ember-500 focus:ring-ember-200 w-full rounded-full border bg-white py-3 pr-4 pl-11 text-sm transition outline-none focus:ring-4"
+        />
+      </div>
+      <button
+        type="button"
+        data-news-clear
+        class="border-line text-brand-700 hover:border-ember-500 hover:text-ember-700 inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold transition"
+      >
+        <span lang="en">Clear</span>
+        <span lang="zh">清除</span>
+      </button>
+    </div>
+    <p class="text-muted mt-3 text-sm" aria-live="polite" data-news-status>
+      <span lang="en">Showing all articles</span>
+      <span lang="zh">显示全部文章</span>
+    </p>
+  </div>
+
+  <div class="grid gap-5 lg:grid-cols-2" data-news-results>
+    {
+      articles.map((article) => (
+        <article
+          data-reveal
+          data-news-card
+          data-search-text={searchTextFor(article)}
+          class="card-base card-interactive group relative h-full overflow-hidden p-6"
+        >
+          <p class="text-muted text-sm">{article.date}</p>
+          <h2 class="font-display text-brand-700 mt-3 text-2xl font-semibold">
+            <T text={article.title} />
+          </h2>
+          <p class="text-muted mt-4 text-[15px] leading-relaxed">
+            <T text={article.summary} />
+          </p>
+          <a
+            href={url(`/news/${article.slug}`)}
+            class="text-ember-700 mt-5 inline-flex text-sm font-semibold transition group-hover:translate-x-1"
+          >
+            <span lang="en">Read Article</span>
+            <span lang="zh">阅读文章</span>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+
+  <div
+    hidden
+    data-news-empty
+    class="border-line bg-surface rounded-[var(--radius-card)] border border-dashed px-6 py-10 text-center"
+  >
+    <p class="font-display text-brand-700 text-2xl font-semibold">
+      <span lang="en">No matching articles</span>
+      <span lang="zh">没有匹配的文章</span>
+    </p>
+    <p class="text-muted mx-auto mt-3 max-w-2xl text-sm leading-relaxed">
+      <span lang="en">Try a different material, process or project keyword.</span>
+      <span lang="zh">可以尝试其他材料、工艺或项目关键词。</span>
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const roots = document.querySelectorAll("[data-news-search]");
+
+    roots.forEach((root) => {
+      const input = root.querySelector("[data-news-input]");
+      const clear = root.querySelector("[data-news-clear]");
+      const cards = Array.from(root.querySelectorAll("[data-news-card]"));
+      const empty = root.querySelector("[data-news-empty]");
+      const status = root.querySelector("[data-news-status]");
+
+      if (!input || !clear || !empty || !status || cards.length === 0) return;
+
+      const statusText = {
+        enAll: "Showing all articles",
+        zhAll: "显示全部文章",
+        enCount: (count) => `Showing ${count} matching article${count === 1 ? "" : "s"}`,
+        zhCount: (count) => `显示 ${count} 篇匹配文章`,
+      };
+
+      const setStatus = (visibleCount, query) => {
+        const en = status.querySelector('[lang="en"]');
+        const zh = status.querySelector('[lang="zh"]');
+        if (!en || !zh) return;
+
+        if (!query) {
+          en.textContent = statusText.enAll;
+          zh.textContent = statusText.zhAll;
+          return;
+        }
+
+        en.textContent = statusText.enCount(visibleCount);
+        zh.textContent = statusText.zhCount(visibleCount);
+      };
+
+      const filter = () => {
+        const query = input.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const haystack = card.getAttribute("data-search-text") || "";
+          const isVisible = !query || haystack.includes(query);
+          card.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
+        });
+
+        empty.hidden = visibleCount !== 0;
+        setStatus(visibleCount, query);
+      };
+
+      input.addEventListener("input", filter);
+      clear.addEventListener("click", () => {
+        input.value = "";
+        filter();
+        input.focus();
+      });
+
+      filter();
+    });
+  })();
+</script>
