@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import IconFeatureCard from "../components/IconFeatureCard.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProductTaxonomyCard from "../components/ProductTaxonomyCard.astro";
+import ProductShowcaseGrid from "../components/ProductShowcaseGrid.astro";
 import T from "../components/T.astro";
 import products from "../content/products.json";
+import showcase from "../content/showcase.json";
 import { url } from "../lib/i18n";
 ---
 
@@ -36,6 +39,30 @@ import { url } from "../lib/i18n";
   </section>
 
   <section class="section-tint border-line border-y py-14">
+    <div class="container-page">
+      <SectionHeader
+        eyebrow={showcase.header.eyebrow}
+        title={showcase.header.title}
+        subtitle={showcase.header.subtitle}
+      />
+      <div class="mt-10">
+        <ProductShowcaseGrid items={showcase.products} />
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-14">
+    <SectionHeader title={showcase.whyChooseUs.title} />
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        showcase.whyChooseUs.reasons.map((reason) => (
+          <IconFeatureCard icon={reason.icon} title={reason.title} desc={reason.desc} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section-tint border-line border-y py-14">
     <div class="container-page flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
       <div class="max-w-2xl">
         <h2 class="font-display text-brand-700 text-3xl font-bold">
@@ -46,7 +73,7 @@ import { url } from "../lib/i18n";
         </p>
       </div>
       <a
-        href={url("/#quote")}
+        href={url("/contact#quote")}
         class="bg-ember-500 hover:bg-ember-600 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
       >
         <T text={products.cta.button} />

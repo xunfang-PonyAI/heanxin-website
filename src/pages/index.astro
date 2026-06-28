@@ -6,7 +6,7 @@ import IconFeatureCard from "../components/IconFeatureCard.astro";
 import ProductTaxonomyCard from "../components/ProductTaxonomyCard.astro";
 import ProcessStepper from "../components/ProcessStepper.astro";
 import HighlightStat from "../components/HighlightStat.astro";
-import QuoteSection from "../components/QuoteSection.astro";
+import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import T from "../components/T.astro";
 import { url } from "../lib/i18n";
 import home from "../content/home.json";
@@ -25,7 +25,7 @@ const featuredProducts = products.categories.filter((category) =>
     eyebrow={home.hero.eyebrow}
     title={home.hero.title}
     subtitle={home.hero.subtitle}
-    primaryCta={{ label: home.hero.primaryCta, href: "/#quote" }}
+    primaryCta={{ label: home.hero.primaryCta, href: "/contact#quote" }}
     secondaryCta={{ label: home.hero.secondaryCta, href: "/products" }}
   />
 
@@ -81,6 +81,13 @@ const featuredProducts = products.categories.filter((category) =>
   </section>
 
   <section class="container-page py-16">
+    <SectionHeader eyebrow={home.factoryVisuals.eyebrow} title={home.factoryVisuals.title} />
+    <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      {home.factoryVisuals.items.map((item) => <PhotoPlaceholder alt={item.alt} ratio="video" />)}
+    </div>
+  </section>
+
+  <section class="container-page py-16">
     <SectionHeader
       eyebrow={home.processPreview.eyebrow}
       title={home.processPreview.title}
@@ -107,5 +114,32 @@ const featuredProducts = products.categories.filter((category) =>
     </div>
   </section>
 
-  <QuoteSection />
+  <section class="section-tint border-line border-y py-14">
+    <div class="container-page flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <div class="max-w-2xl">
+        <p class="eyebrow text-ember-700">
+          <span lang="en">Request a Quote</span><span lang="zh">项目询盘</span>
+        </p>
+        <h2 class="font-display text-brand-700 mt-2 text-3xl font-bold">
+          <span lang="en">Send drawings, samples or project requirements.</span><span lang="zh"
+            >发送图纸、样品或项目需求。</span
+          >
+        </h2>
+        <p class="text-muted mt-3 leading-relaxed">
+          <span lang="en"
+            >Share product type, material, quantity and file status so we can evaluate tooling and
+            production feasibility.</span
+          ><span lang="zh"
+            >请提供产品类型、材料、数量和图纸文件情况，便于我们评估开模和生产可行性。</span
+          >
+        </p>
+      </div>
+      <a
+        href={url("/contact#quote")}
+        class="bg-ember-500 hover:bg-ember-600 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+      >
+        <span lang="en">Get a Quote</span><span lang="zh">获取报价</span>
+      </a>
+    </div>
+  </section>
 </BaseLayout>

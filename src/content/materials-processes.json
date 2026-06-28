@@ -14,57 +14,81 @@
     {
       "no": "01",
       "title": { "en": "ABS", "zh": "ABS" },
-      "desc": { "en": "Impact-resistant and easy to finish.", "zh": "抗冲击，易后处理。" }
+      "desc": {
+        "en": "Good impact resistance and easy finishing, widely used for electronic housings, small appliance parts and general plastic components.",
+        "zh": "抗冲击性能和加工性能较好，适用于电子产品外壳、小家电配件及通用塑胶零部件。"
+      }
     },
     {
       "no": "02",
       "title": { "en": "PC", "zh": "PC" },
-      "desc": { "en": "High transparency and heat resistance.", "zh": "高透明度与耐热性。" }
+      "desc": {
+        "en": "High strength, optical clarity and impact resistance for transparent covers, protective windows and demanding structural parts.",
+        "zh": "强度高、透明性好且抗冲击，适用于透明罩、防护窗口及高要求结构件。"
+      }
     },
     {
       "no": "03",
       "title": { "en": "PC+ABS", "zh": "PC+ABS" },
-      "desc": { "en": "Balanced toughness and moldability.", "zh": "兼顾韧性与成型性。" }
+      "desc": {
+        "en": "Balances PC strength with ABS moldability, commonly used in electronic housings, automotive plastic parts and industrial components.",
+        "zh": "结合 PC 强度与 ABS 加工性，常用于电子外壳、汽车塑胶件和工业塑胶零部件。"
+      }
     },
     {
       "no": "04",
       "title": { "en": "PP", "zh": "PP" },
-      "desc": { "en": "Lightweight and chemical resistant.", "zh": "轻量且耐化学性好。" }
+      "desc": {
+        "en": "Lightweight with good chemical resistance, suitable for home products, containers, fittings and functional plastic parts.",
+        "zh": "材料轻、耐化学性较好，适用于家居产品、容器、配件及功能性塑胶件。"
+      }
     },
     {
       "no": "05",
       "title": { "en": "PE", "zh": "PE" },
-      "desc": { "en": "Flexible and moisture resistant.", "zh": "柔韧，耐潮性好。" }
+      "desc": {
+        "en": "Flexible and chemically stable for packaging parts, protective components and general molded plastic parts.",
+        "zh": "韧性和耐化学性较好，适用于包装件、防护件及通用塑胶零部件。"
+      }
     },
     {
       "no": "06",
       "title": { "en": "PA / Nylon", "zh": "PA / 尼龙" },
-      "desc": { "en": "Strong and wear resistant.", "zh": "强度高，耐磨。" }
+      "desc": {
+        "en": "High strength, wear resistance and mechanical performance for gears, brackets, connectors and structural parts.",
+        "zh": "强度高、耐磨性和机械性能好，适用于齿轮、支架、连接件及结构件。"
+      }
     },
     {
       "no": "07",
       "title": { "en": "POM", "zh": "POM" },
-      "desc": { "en": "Low friction for precision parts.", "zh": "低摩擦，适合精密零件。" }
+      "desc": {
+        "en": "High hardness, wear resistance and dimensional stability for precision plastic parts, gears and sliding mechanisms.",
+        "zh": "硬度高、耐磨且尺寸稳定，适用于精密塑胶件、齿轮和滑动结构。"
+      }
     },
     {
       "no": "08",
       "title": { "en": "PMMA", "zh": "PMMA" },
-      "desc": { "en": "Excellent optical clarity.", "zh": "优异的光学透明度。" }
+      "desc": {
+        "en": "Excellent transparency and surface gloss for clear covers, display parts and appearance-focused plastic products.",
+        "zh": "透明度和表面光泽优良，适用于透明罩、展示件及外观塑胶件。"
+      }
     },
     {
       "no": "09",
       "title": { "en": "Flame-retardant Materials", "zh": "阻燃材料" },
       "desc": {
-        "en": "For safety-focused applications.",
-        "zh": "适用于安全要求较高的产品。"
+        "en": "Used for electronics, electrical components and plastic products with flame-retardant safety requirements.",
+        "zh": "适用于电子产品、电气部件及对阻燃性能有要求的塑胶产品。"
       }
     },
     {
       "no": "10",
       "title": { "en": "Transparent Materials", "zh": "透明材料" },
       "desc": {
-        "en": "For visible windows and covers.",
-        "zh": "适用于可视窗口与透明罩件。"
+        "en": "Used for transparent housings, display components, protective parts and products requiring visible internal structure.",
+        "zh": "适用于透明外壳、展示部件、防护件及对透明度有要求的产品。"
       }
     }
   ],
@@ -93,6 +117,14 @@
       "no": "05",
       "title": { "en": "Electroplating", "zh": "电镀" },
       "desc": { "en": "Enhance appearance and durability.", "zh": "提升外观和耐久性。" }
+    },
+    {
+      "no": "06",
+      "title": { "en": "Assembly", "zh": "组装" },
+      "desc": {
+        "en": "Combine plastic parts with metal hardware, screws, electronics or other accessories according to project needs.",
+        "zh": "根据客户需求，将塑胶件与五金件、电子件、螺丝及其他配件进行组装。"
+      }
     }
   ],
   "cta": {

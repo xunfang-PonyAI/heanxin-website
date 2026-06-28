@@ -53,10 +53,14 @@ function assertQuotePath() {
   const site = readJson("src/content/site.json");
   const home = readJson("src/content/home.json");
   const quote = readJson("src/content/quote.json");
+  const contact = readJson("src/content/contact.json");
   const header = readText("src/components/Header.astro");
-  const index = readText("src/pages/index.astro");
+  const contactPage = readText("src/pages/contact.astro");
 
-  assert(site.quoteCta?.href === "/#quote", "site.quoteCta.href must point to /#quote");
+  assert(
+    site.quoteCta?.href === "/contact#quote",
+    "site.quoteCta.href must point to /contact#quote"
+  );
   assertLocalized(site.quoteCta.label, "site.quoteCta.label");
   assert(site.quoteCta.label.en === "Get a Quote", "site quote CTA English label must be exact");
   assert(site.quoteCta.label.zh === "获取报价", "site quote CTA Chinese label must be exact");
@@ -70,8 +74,10 @@ function assertQuotePath() {
   assert(home.hero.secondaryCta.zh === "查看产品", "home hero secondary CTA should show products");
 
   assertContains(header, "quoteCta", "Header");
-  assertContains(index, "QuoteSection", "Home page");
-  assertContains(index, "primaryCta", "Home page hero");
+  assertContains(contactPage, "QuoteSection", "Contact page");
+  assertContains(contactPage, "contact.json", "Contact page");
+  assertLocalized(contact.header.title, "contact.header.title");
+  assert(Array.isArray(contact.highlights) && contact.highlights.length >= 3, "contact.highlights");
 
   assert(quote.sectionId === "quote", "quote section must expose #quote anchor");
   assertLocalized(quote.header.title, "quote.header.title");
@@ -96,6 +102,67 @@ function assertQuotePath() {
   }
 }
 
+function assertNavigationArchitecture() {
+  const site = readJson("src/content/site.json");
+  const header = readText("src/components/Header.astro");
+
+  const expected = [
+    ["/", "Home", "首页"],
+    ["/about", "About Us", "关于我们"],
+    ["/products", "Products", "产品分类"],
+    ["/capabilities", "Capabilities", "制造能力"],
+    ["/materials-processes", "Materials & Processes", "材料工艺"],
+    ["/industries", "Industries", "应用行业"],
+    ["/news", "News", "新闻资讯"],
+    ["/contact", "Contact Us", "联系我们"],
+  ];
+
+  assert(site.nav.length === expected.length, "site.nav should expose exactly eight primary items");
+  expected.forEach(([href, en, zh], index) => {
+    const item = site.nav[index];
+    assert(item?.href === href, `site.nav[${index}].href must be ${href}`);
+    assert(item.label.en === en, `site.nav[${index}].label.en must be ${en}`);
+    assert(item.label.zh === zh, `site.nav[${index}].label.zh must be ${zh}`);
+  });
+
+  assertContains(header, "xl:flex", "Header desktop navigation breakpoint");
+  assertContains(header, "quoteCta", "Header quote CTA");
+}
+
+function assertCapabilitiesPage() {
+  const site = readJson("src/content/site.json");
+  const capabilities = readJson("src/content/capabilities.json");
+  const page = readText("src/pages/capabilities.astro");
+  const component = readText("src/components/CapabilitiesPage.astro");
+
+  const navItem = site.nav.find((item) => item.href === "/capabilities");
+  assert(navItem, "site.nav must include /capabilities");
+  assert(navItem.label.en === "Capabilities", "capabilities nav English label is required");
+  assert(navItem.label.zh === "制造能力", "capabilities nav Chinese label is required");
+
+  assertLocalized(capabilities.hero.title, "capabilities.hero.title");
+  assert(
+    Array.isArray(capabilities.services) && capabilities.services.length === 6,
+    "capabilities.services must include six core manufacturing capabilities"
+  );
+  assert(
+    Array.isArray(capabilities.projectFlow.steps) && capabilities.projectFlow.steps.length === 6,
+    "capabilities project flow must include six steps"
+  );
+  assert(
+    Array.isArray(capabilities.moldFlow.steps) && capabilities.moldFlow.steps.length === 6,
+    "capabilities mold flow must include six steps"
+  );
+  assert(
+    Array.isArray(capabilities.gallery) && capabilities.gallery.length >= 4,
+    "capabilities gallery must include workshop image slots"
+  );
+  assertContains(page, "CapabilitiesPage", "Capabilities page");
+  assertContains(component, "capabilities.json", "Capabilities component");
+  assertContains(component, "ProcessStepper", "Capabilities component");
+  assertContains(component, "/contact#quote", "Capabilities component quote link");
+}
+
 function assertMaterialsProcessesPage() {
   const site = readJson("src/content/site.json");
   const materials = readJson("src/content/materials-processes.json");
@@ -111,7 +178,7 @@ function assertMaterialsProcessesPage() {
   assertContains(header, "xl:hidden", "Header mobile navigation breakpoint");
   assertContains(page, "materials-processes.json", "Materials page");
   assertContains(page, "SectionHeader", "Materials page");
-  assertContains(page, "/#quote", "Materials page quote link");
+  assertContains(page, "/contact#quote", "Materials page quote link");
 
   const requiredMaterials = [
     "ABS",
@@ -136,6 +203,7 @@ function assertMaterialsProcessesPage() {
     "Pad Printing",
     "Laser Engraving",
     "Electroplating",
+    "Assembly",
   ];
   const processNames = materials.processes.map((item) => item.title.en);
   for (const process of requiredProcesses) {
@@ -187,6 +255,7 @@ function assertNewsSeoPages() {
 
 function assertProductTaxonomy() {
   const products = readJson("src/content/products.json");
+  const showcase = readJson("src/content/showcase.json");
   const page = readText("src/pages/products.astro");
 
   const requiredCategories = [
@@ -214,9 +283,20 @@ function assertProductTaxonomy() {
   }
 
   assertLocalized(products.cta.title, "products.cta.title");
+  assert(
+    Array.isArray(showcase.products) && showcase.products.length >= 10,
+    "showcase must include at least ten product slots"
+  );
+  for (const product of showcase.products) {
+    assertLocalized(product.title, `showcase product ${product.title?.en ?? "unknown"} title`);
+    assertLocalized(product.material, `showcase product ${product.title.en} material`);
+    assertLocalized(product.process, `showcase product ${product.title.en} process`);
+    assertLocalized(product.alt, `showcase product ${product.title.en} alt`);
+  }
   assertContains(page, "products.cta", "Products page");
+  assertContains(page, "showcase.json", "Products page showcase");
   assertContains(page, "examples", "Products page category examples");
-  assertContains(page, "/#quote", "Products page quote link");
+  assertContains(page, "/contact#quote", "Products page quote link");
 }
 
 function assertAboutDepth() {
@@ -299,7 +379,7 @@ function assertHomeBuyerJourney() {
   assertContains(page, "featuredProducts", "Home page featured products");
   assertContains(page, "home.processPreview", "Home page process preview");
   assertContains(page, "home.trustStats", "Home page trust stats");
-  assertContains(page, "/#quote", "Home page quote CTA");
+  assertContains(page, "/contact#quote", "Home page quote CTA");
 }
 
 function assertSeoAndEngineeringQuality() {
@@ -330,7 +410,9 @@ function assertSeoAndEngineeringQuality() {
 }
 
 const checks = [
+  assertNavigationArchitecture,
   assertQuotePath,
+  assertCapabilitiesPage,
   assertMaterialsProcessesPage,
   assertNewsSeoPages,
   assertProductTaxonomy,

@@ -3,50 +3,73 @@
     "eyebrow": { "en": "Product Showcase", "zh": "产品展示" },
     "title": { "en": "Custom Product Gallery", "zh": "定制产品展示" },
     "subtitle": {
-      "en": "A selection of representative custom parts. Images are placeholders to be replaced with real product photos.",
-      "zh": "部分代表性定制零件展示，图片为占位，后续替换为真实产品照片。"
+      "en": "Representative product slots showing the type, material and process information buyers usually need before sending a quotation request.",
+      "zh": "展示典型产品类型、材料和工艺信息，帮助客户在询盘前快速确认项目方向。"
     }
   },
   "products": [
     {
-      "title": { "en": "Custom Part 01", "zh": "定制产品 01" },
-      "alt": { "en": "Custom molded product 01", "zh": "定制成型产品 01" }
+      "title": { "en": "Electronic Controller Housing", "zh": "电子控制器外壳" },
+      "material": { "en": "ABS / PC+ABS", "zh": "ABS / PC+ABS" },
+      "process": { "en": "Injection molding + screen printing", "zh": "注塑成型 + 丝印" },
+      "alt": {
+        "en": "Custom electronic controller plastic housing",
+        "zh": "定制电子控制器塑胶外壳"
+      }
     },
     {
-      "title": { "en": "Custom Part 02", "zh": "定制产品 02" },
-      "alt": { "en": "Custom molded product 02", "zh": "定制成型产品 02" }
+      "title": { "en": "Industrial Control Box", "zh": "工业控制盒" },
+      "material": { "en": "PC+ABS", "zh": "PC+ABS" },
+      "process": { "en": "Injection molding + assembly", "zh": "注塑成型 + 组装" },
+      "alt": { "en": "Industrial plastic control box", "zh": "工业塑胶控制盒" }
     },
     {
-      "title": { "en": "Custom Part 03", "zh": "定制产品 03" },
-      "alt": { "en": "Custom molded product 03", "zh": "定制成型产品 03" }
+      "title": { "en": "Smart Switch Panel", "zh": "智能开关面板" },
+      "material": { "en": "PC", "zh": "PC" },
+      "process": { "en": "Injection molding + spray painting", "zh": "注塑成型 + 喷油" },
+      "alt": { "en": "Smart home switch plastic panel", "zh": "智能家居开关塑胶面板" }
     },
     {
-      "title": { "en": "Custom Part 04", "zh": "定制产品 04" },
-      "alt": { "en": "Custom molded product 04", "zh": "定制成型产品 04" }
+      "title": { "en": "Automotive Sensor Cover", "zh": "汽车传感器外壳" },
+      "material": { "en": "PA / PBT", "zh": "PA / PBT" },
+      "process": { "en": "Precision injection molding", "zh": "精密注塑成型" },
+      "alt": { "en": "Automotive sensor plastic cover", "zh": "汽车传感器塑胶外壳" }
     },
     {
-      "title": { "en": "Custom Part 05", "zh": "定制产品 05" },
-      "alt": { "en": "Custom molded product 05", "zh": "定制成型产品 05" }
+      "title": { "en": "Threaded Insert Component", "zh": "螺母嵌件注塑件" },
+      "material": { "en": "PA + brass insert", "zh": "PA + 铜螺母嵌件" },
+      "process": { "en": "Insert molding", "zh": "嵌件注塑" },
+      "alt": { "en": "Plastic part with threaded metal insert", "zh": "带金属螺母嵌件的塑胶件" }
     },
     {
-      "title": { "en": "Custom Part 06", "zh": "定制产品 06" },
-      "alt": { "en": "Custom molded product 06", "zh": "定制成型产品 06" }
+      "title": { "en": "Handheld Device Shell", "zh": "手持设备外壳" },
+      "material": { "en": "ABS", "zh": "ABS" },
+      "process": { "en": "Injection molding + pad printing", "zh": "注塑成型 + 移印" },
+      "alt": { "en": "Handheld device custom plastic shell", "zh": "手持设备定制塑胶外壳" }
     },
     {
-      "title": { "en": "Custom Part 07", "zh": "定制产品 07" },
-      "alt": { "en": "Custom molded product 07", "zh": "定制成型产品 07" }
+      "title": { "en": "Transparent Display Box", "zh": "透明展示盒" },
+      "material": { "en": "PMMA / PC", "zh": "PMMA / PC" },
+      "process": { "en": "Transparent molding + polishing", "zh": "透明注塑 + 抛光" },
+      "alt": { "en": "Transparent plastic display box", "zh": "透明塑胶展示盒" }
     },
     {
-      "title": { "en": "Custom Part 08", "zh": "定制产品 08" },
-      "alt": { "en": "Custom molded product 08", "zh": "定制成型产品 08" }
+      "title": { "en": "Medical Device Housing", "zh": "医疗健康设备外壳" },
+      "material": { "en": "ABS / PC", "zh": "ABS / PC" },
+      "process": { "en": "Injection molding + laser marking", "zh": "注塑成型 + 镭雕" },
+      "alt": { "en": "Medical health device plastic housing", "zh": "医疗健康设备塑胶外壳" }
     },
     {
-      "title": { "en": "Custom Part 09", "zh": "定制产品 09" },
-      "alt": { "en": "Custom molded product 09", "zh": "定制成型产品 09" }
+      "title": { "en": "Plastic Structural Bracket", "zh": "塑胶结构支架" },
+      "material": { "en": "POM / PA", "zh": "POM / PA" },
+      "process": { "en": "Injection molding", "zh": "注塑成型" },
+      "alt": { "en": "Custom plastic structural bracket", "zh": "定制塑胶结构支架" }
     },
     {
-      "title": { "en": "Custom Part 10", "zh": "定制产品 10" },
-      "alt": { "en": "Custom molded product 10", "zh": "定制成型产品 10" }
+      "title": { "en": "Hardware-Plastic Assembly", "zh": "五金塑胶组装件" },
+      "material": { "en": "ABS + metal hardware", "zh": "ABS + 五金件" },
+      "process": { "en": "Injection molding + hardware assembly", "zh": "注塑成型 + 五金组装" },
+      "alt": { "en": "Hardware and plastic combined assembly", "zh": "五金塑胶组合装配件" }
     }
   ],
   "whyChooseUs": {
