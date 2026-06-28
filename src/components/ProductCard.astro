@@ -1,18 +1,38 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
-import PhotoPlaceholder from "./PhotoPlaceholder.astro";
+import ResponsiveImage from "./ResponsiveImage.astro";
 import T from "./T.astro";
+
+interface ImageAsset {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+}
 
 interface Props {
   title: LocalizedText;
   alt: LocalizedText;
+  image?: ImageAsset;
 }
 
-const { title, alt } = Astro.props;
+const { title, alt, image } = Astro.props;
 ---
 
 <div data-reveal class="card-base card-interactive group h-full overflow-hidden">
-  <PhotoPlaceholder alt={alt} ratio="square" labelStyle="none" class="rounded-none border-0" />
+  {
+    image ? (
+      <ResponsiveImage image={image} aspect="square" fit="contain" class="bg-white p-3" />
+    ) : (
+      <div
+        class="bg-surface flex aspect-square items-center justify-center"
+        role="img"
+        aria-label={`${alt.en} / ${alt.zh}`}
+      >
+        <span class="text-muted text-xs font-semibold tracking-widest uppercase">Image</span>
+      </div>
+    )
+  }
   <div class="p-4">
     <h3 class="font-display text-brand-700 text-base font-semibold"><T text={title} /></h3>
   </div>

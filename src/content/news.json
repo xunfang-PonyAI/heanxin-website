@@ -1,7 +1,13 @@
 {
   "header": {
-    "eyebrow": { "en": "Manufacturing Insights", "zh": "制造知识" },
-    "title": { "en": "News & Resources", "zh": "新闻资讯" },
+    "eyebrow": {
+      "en": "Manufacturing Insights",
+      "zh": "制造知识"
+    },
+    "title": {
+      "en": "News & Resources",
+      "zh": "新闻资讯"
+    },
     "subtitle": {
       "en": "Practical guides for OEM / ODM buyers planning plastic injection molding, material selection and mold development projects.",
       "zh": "面向 OEM / ODM 买家的实用指南，帮助规划塑胶注塑、选材与模具开发项目。"
@@ -31,27 +37,37 @@
       },
       "sections": [
         {
-          "heading": { "en": "Start with the product environment", "zh": "先看产品使用环境" },
+          "heading": {
+            "en": "Start with the product environment",
+            "zh": "先看产品使用环境"
+          },
           "body": {
             "en": "An enclosure used indoors, outdoors, near heat or around chemicals will need different resin properties. Share the target environment early so the material choice is based on real working conditions.",
             "zh": "室内、户外、高温或接触化学品的外壳，对材料性能要求不同。尽早说明使用环境，才能让选材基于真实工况。"
           }
         },
         {
-          "heading": { "en": "Balance appearance and performance", "zh": "平衡外观与性能" },
+          "heading": {
+            "en": "Balance appearance and performance",
+            "zh": "平衡外观与性能"
+          },
           "body": {
             "en": "Gloss, transparency, color stability and surface texture can affect the material route. Some projects require a resin that is easier to spray, print or laser mark after molding.",
             "zh": "光泽、透明度、颜色稳定性和表面纹理都会影响材料路线。有些项目还需要材料便于喷涂、印刷或激光标记。"
           }
         },
         {
-          "heading": { "en": "Confirm tooling and volume early", "zh": "尽早确认模具与数量" },
+          "heading": {
+            "en": "Confirm tooling and volume early",
+            "zh": "尽早确认模具与数量"
+          },
           "body": {
             "en": "Part size, wall thickness, tolerance and estimated quantity influence both mold design and molding cost. Drawings or 3D files make material recommendations much more accurate.",
             "zh": "产品尺寸、壁厚、公差和预计数量会影响模具设计与成型成本。提供图纸或 3D 文件能让选材建议更准确。"
           }
         }
-      ]
+      ],
+      "image": "electronic-housing-03"
     },
     {
       "slug": "abs-vs-pc-electronic-housings",
@@ -77,27 +93,37 @@
       },
       "sections": [
         {
-          "heading": { "en": "ABS is practical for many housings", "zh": "ABS 适合多数常规外壳" },
+          "heading": {
+            "en": "ABS is practical for many housings",
+            "zh": "ABS 适合多数常规外壳"
+          },
           "body": {
             "en": "ABS is often selected for electronic housings because it is easy to mold, has good impact resistance and accepts common finishing processes such as painting and printing.",
             "zh": "ABS 常用于电子外壳，因为它易成型、抗冲击性较好，也适合喷涂、丝印等常见后处理。"
           }
         },
         {
-          "heading": { "en": "PC is stronger in demanding uses", "zh": "PC 更适合高要求场景" },
+          "heading": {
+            "en": "PC is stronger in demanding uses",
+            "zh": "PC 更适合高要求场景"
+          },
           "body": {
             "en": "PC offers higher heat resistance and optical clarity. It can be a better choice when the product needs transparency, stronger mechanical performance or more demanding service conditions.",
             "zh": "PC 具备更好的耐热性和透明性。当产品需要透明、较高机械性能或更严苛使用条件时，PC 更有优势。"
           }
         },
         {
-          "heading": { "en": "PC+ABS can be a balanced option", "zh": "PC+ABS 是折中方案" },
+          "heading": {
+            "en": "PC+ABS can be a balanced option",
+            "zh": "PC+ABS 是折中方案"
+          },
           "body": {
             "en": "For projects needing better toughness than ABS while keeping good moldability, PC+ABS can provide a balanced route for many electronics and industrial components.",
             "zh": "如果项目需要比 ABS 更好的韧性，同时又希望保持较好的成型性，PC+ABS 常是电子和工业部件的折中选择。"
           }
         }
-      ]
+      ],
+      "image": "electronic-housing-06"
     },
     {
       "slug": "what-is-plastic-injection-molding",
@@ -122,14 +148,20 @@
       },
       "sections": [
         {
-          "heading": { "en": "The mold shapes the product", "zh": "模具决定产品形状" },
+          "heading": {
+            "en": "The mold shapes the product",
+            "zh": "模具决定产品形状"
+          },
           "body": {
             "en": "Injection molding uses a custom mold cavity to shape molten plastic into repeatable parts. Mold design directly affects appearance, tolerance and production stability.",
             "zh": "注塑成型通过定制模腔让熔融塑料形成可重复生产的零件。模具设计会直接影响外观、公差和量产稳定性。"
           }
         },
         {
-          "heading": { "en": "Sampling proves the process", "zh": "打样验证工艺" },
+          "heading": {
+            "en": "Sampling proves the process",
+            "zh": "打样验证工艺"
+          },
           "body": {
             "en": "Before mass production, trial molding checks part size, appearance, assembly fit and process window. This step helps correct issues before larger production runs.",
             "zh": "量产前会通过试模检查尺寸、外观、装配配合和工艺窗口，帮助在大批量生产前修正问题。"
@@ -145,7 +177,8 @@
             "zh": "稳定量产依赖材料管控、设备参数、过程检验以及出货前检查。"
           }
         }
-      ]
+      ],
+      "image": "custom-plastic-03"
     },
     {
       "slug": "start-custom-plastic-product-project",
@@ -171,27 +204,37 @@
       },
       "sections": [
         {
-          "heading": { "en": "Prepare drawings or samples", "zh": "准备图纸或样品" },
+          "heading": {
+            "en": "Prepare drawings or samples",
+            "zh": "准备图纸或样品"
+          },
           "body": {
             "en": "2D drawings, 3D files or physical samples help the engineering team understand geometry, tolerances and critical surfaces.",
             "zh": "2D 图纸、3D 文件或实物样品能帮助工程团队理解结构、公差和关键外观面。"
           }
         },
         {
-          "heading": { "en": "Define quantity and target use", "zh": "说明数量和用途" },
+          "heading": {
+            "en": "Define quantity and target use",
+            "zh": "说明数量和用途"
+          },
           "body": {
             "en": "Estimated order quantity, application environment and assembly requirements influence tooling, material choice and production planning.",
             "zh": "预计数量、应用环境和装配要求会影响模具方案、材料选择和生产计划。"
           }
         },
         {
-          "heading": { "en": "Discuss finishing and packaging", "zh": "沟通表面处理和包装" },
+          "heading": {
+            "en": "Discuss finishing and packaging",
+            "zh": "沟通表面处理和包装"
+          },
           "body": {
             "en": "Color, printing, laser marking, assembly and packaging should be discussed early because they affect both cost and delivery schedule.",
             "zh": "颜色、印刷、激光标记、组装和包装应尽早沟通，因为这些会影响成本和交期。"
           }
         }
-      ]
+      ],
+      "image": "industrial-component-08"
     },
     {
       "slug": "plastic-mold-development-process",
@@ -217,14 +260,20 @@
       },
       "sections": [
         {
-          "heading": { "en": "DFM before tooling", "zh": "开模前先做 DFM" },
+          "heading": {
+            "en": "DFM before tooling",
+            "zh": "开模前先做 DFM"
+          },
           "body": {
             "en": "Design-for-manufacturing review checks wall thickness, draft angle, gate location and assembly risks before cutting steel.",
             "zh": "可制造性分析会在加工模具前检查壁厚、脱模斜度、进胶位置和装配风险。"
           }
         },
         {
-          "heading": { "en": "Tooling and trial molding", "zh": "模具加工与试模" },
+          "heading": {
+            "en": "Tooling and trial molding",
+            "zh": "模具加工与试模"
+          },
           "body": {
             "en": "After mold fabrication, trial molding produces initial samples for dimension review, appearance inspection and functional validation.",
             "zh": "模具加工完成后，通过试模生产初样，用于尺寸评审、外观检查和功能验证。"
@@ -240,7 +289,8 @@
             "zh": "量产模具需要定期维护、参数管控和品质反馈，才能在多批次订单中保持产品一致性。"
           }
         }
-      ]
+      ],
+      "image": "insert-molding-06"
     }
   ]
 }

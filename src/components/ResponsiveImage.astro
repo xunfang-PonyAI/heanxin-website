@@ -1,0 +1,61 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import { url } from "../lib/i18n";
+
+interface ImageAsset {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+}
+
+interface Props {
+  image: ImageAsset;
+  aspect?: "auto" | "square" | "video" | "wide" | "banner" | "portrait";
+  class?: string;
+  imgClass?: string;
+  loading?: "lazy" | "eager";
+  priority?: boolean;
+  fit?: "cover" | "contain";
+  sizes?: string;
+}
+
+const {
+  image,
+  aspect = "auto",
+  class: className = "",
+  imgClass = "",
+  loading = "lazy",
+  priority = false,
+  fit = "cover",
+  sizes = "100vw",
+} = Astro.props;
+
+const aspectClass = {
+  auto: "",
+  square: "aspect-square",
+  video: "aspect-video",
+  wide: "aspect-[16/7]",
+  banner: "aspect-[16/9]",
+  portrait: "aspect-[4/5]",
+}[aspect];
+
+const fitClass = fit === "contain" ? "object-contain" : "object-cover";
+const loadingValue = priority ? "eager" : loading;
+const fetchPriority = priority ? "high" : undefined;
+const alt = `${image.alt.en} / ${image.alt.zh}`;
+---
+
+<div class:list={["bg-surface relative overflow-hidden", aspectClass, className]}>
+  <img
+    src={url(image.src)}
+    width={image.width}
+    height={image.height}
+    alt={alt}
+    loading={loadingValue}
+    decoding="async"
+    fetchpriority={fetchPriority}
+    sizes={sizes}
+    class:list={["h-full w-full", fitClass, imgClass]}
+  />
+</div>

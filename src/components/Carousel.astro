@@ -1,12 +1,14 @@
 ---
 import type { LocalizedText } from "../lib/i18n";
-import PhotoPlaceholder from "./PhotoPlaceholder.astro";
+import media from "../content/media.json";
 import Icon from "./Icon.astro";
+import ResponsiveImage from "./ResponsiveImage.astro";
 import T from "./T.astro";
 
 interface Slide {
   title: LocalizedText;
   alt: LocalizedText;
+  image?: string;
 }
 
 interface Props {
@@ -14,6 +16,7 @@ interface Props {
 }
 
 const { slides } = Astro.props;
+const assets = media.assetMap;
 ---
 
 <div
@@ -37,12 +40,25 @@ const { slides } = Astro.props;
             aria-label={`${i + 1} / ${slides.length}`}
           >
             <figure class="m-0">
-              <PhotoPlaceholder
-                alt={s.alt}
-                ratio="video"
-                labelStyle="none"
-                class="rounded-none border-0"
-              />
+              {s.image && assets[s.image] ? (
+                <ResponsiveImage
+                  image={assets[s.image]}
+                  aspect="video"
+                  fit="contain"
+                  class="bg-white p-4"
+                  sizes="(min-width: 1024px) 896px, 100vw"
+                />
+              ) : (
+                <div
+                  class="bg-surface flex aspect-video items-center justify-center"
+                  role="img"
+                  aria-label={`${s.alt.en} / ${s.alt.zh}`}
+                >
+                  <span class="text-muted text-xs font-semibold tracking-widest uppercase">
+                    Image
+                  </span>
+                </div>
+              )}
               <figcaption class="bg-surface border-line border-t px-4 py-4 text-center">
                 <span class="font-display text-brand-700 text-lg font-semibold">
                   <T text={s.title} />

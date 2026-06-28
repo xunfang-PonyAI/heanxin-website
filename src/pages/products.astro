@@ -2,12 +2,16 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import ProductGallery from "../components/ProductGallery.astro";
 import ProductTaxonomyCard from "../components/ProductTaxonomyCard.astro";
 import ProductShowcaseGrid from "../components/ProductShowcaseGrid.astro";
 import T from "../components/T.astro";
+import media from "../content/media.json";
 import products from "../content/products.json";
 import showcase from "../content/showcase.json";
 import { url } from "../lib/i18n";
+
+const assets = media.assetMap;
 ---
 
 <BaseLayout
@@ -27,9 +31,27 @@ import { url } from "../lib/i18n";
             title={category.title}
             desc={category.desc}
             examples={category.examples}
+            image={assets[category.coverImage]}
           />
         ))
       }
+    </div>
+  </section>
+
+  <section class="container-page py-14">
+    <SectionHeader
+      eyebrow={{ en: "Full Product Gallery", zh: "完整产品图库" }}
+      title={{
+        en: "Seven Product Categories With Real Project Photos",
+        zh: "七大产品分类实拍图库",
+      }}
+      subtitle={{
+        en: "All client-provided product photos are organized by category, so buyers can quickly match similar structures, materials and application directions.",
+        zh: "将甲方提供的全部产品图片按分类整理，帮助买家快速匹配相近结构、材料和应用方向。",
+      }}
+    />
+    <div class="mt-10">
+      <ProductGallery categories={products.categories} />
     </div>
   </section>
 

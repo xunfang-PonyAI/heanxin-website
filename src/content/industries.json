@@ -1,7 +1,13 @@
 {
   "header": {
-    "eyebrow": { "en": "Applications", "zh": "应用领域" },
-    "title": { "en": "Industries We Serve", "zh": "服务的行业领域" },
+    "eyebrow": {
+      "en": "Applications",
+      "zh": "应用领域"
+    },
+    "title": {
+      "en": "Industries We Serve",
+      "zh": "服务的行业领域"
+    },
     "subtitle": {
       "en": "Our custom plastic and hardware parts power products across many sectors.",
       "zh": "我们的定制塑胶与五金零件广泛应用于多个行业。"
@@ -10,7 +16,10 @@
   "industries": [
     {
       "icon": "chip",
-      "title": { "en": "Electronic Devices", "zh": "电子设备" },
+      "title": {
+        "en": "Electronic Devices",
+        "zh": "电子设备"
+      },
       "alt": {
         "en": "Electronic device plastic housing application",
         "zh": "电子设备塑胶外壳应用"
@@ -18,11 +27,15 @@
       "desc": {
         "en": "Plastic housings and structural parts for electronics, smart products, communication equipment, adapters, controllers and sensors.",
         "zh": "可为电子设备、智能产品、通信设备、电源适配器、控制器及传感器等产品提供塑胶外壳和结构件。"
-      }
+      },
+      "image": "electronic-housing-06"
     },
     {
       "icon": "control",
-      "title": { "en": "Industrial Control", "zh": "工业控制" },
+      "title": {
+        "en": "Industrial Control",
+        "zh": "工业控制"
+      },
       "alt": {
         "en": "Industrial control plastic component application",
         "zh": "工业控制塑胶零部件应用"
@@ -30,20 +43,31 @@
       "desc": {
         "en": "Durable molded parts for automation equipment, control systems, instruments, electrical devices, switches and panels.",
         "zh": "适用于自动化设备、控制系统、仪器仪表、电气设备、开关、面板及工业零部件。"
-      }
+      },
+      "image": "industrial-component-08"
     },
     {
       "icon": "home",
-      "title": { "en": "Smart Home", "zh": "智能家居" },
-      "alt": { "en": "Smart home plastic part application", "zh": "智能家居塑胶件应用" },
+      "title": {
+        "en": "Smart Home",
+        "zh": "智能家居"
+      },
+      "alt": {
+        "en": "Smart home plastic part application",
+        "zh": "智能家居塑胶件应用"
+      },
       "desc": {
         "en": "Plastic shells and internal parts for smart switches, smart sockets, thermostats and connected home devices.",
         "zh": "可制造智能开关、智能插座、温控器及智能家居设备的塑胶外壳和内部结构件。"
-      }
+      },
+      "image": "smart-home-appliance-03"
     },
     {
       "icon": "appliance",
-      "title": { "en": "Small Appliances", "zh": "小型家电" },
+      "title": {
+        "en": "Small Appliances",
+        "zh": "小型家电"
+      },
       "alt": {
         "en": "Small appliance plastic component application",
         "zh": "小型家电塑胶配件应用"
@@ -51,11 +75,15 @@
       "desc": {
         "en": "Reliable molded housings, panels, buttons and internal supports for small appliance products.",
         "zh": "为小型家电产品提供可靠外壳、面板、按键和内部支撑件。"
-      }
+      },
+      "image": "custom-plastic-06"
     },
     {
       "icon": "car",
-      "title": { "en": "Automotive Electronics", "zh": "汽车电子" },
+      "title": {
+        "en": "Automotive Electronics",
+        "zh": "汽车电子"
+      },
       "alt": {
         "en": "Automotive electronics plastic component application",
         "zh": "汽车电子塑胶配件应用"
@@ -63,11 +91,15 @@
       "desc": {
         "en": "Custom plastic parts for automotive electronics, sensors, connectors, wire protection, brackets, clips and small functional parts.",
         "zh": "支持汽车电子、传感器、连接器、线束保护件、支架、卡扣及小型功能件的塑胶定制生产。"
-      }
+      },
+      "image": "automotive-component-08"
     },
     {
       "icon": "medical",
-      "title": { "en": "Medical & Health", "zh": "医疗健康" },
+      "title": {
+        "en": "Medical & Health",
+        "zh": "医疗健康"
+      },
       "alt": {
         "en": "Medical and health device plastic housing application",
         "zh": "医疗健康设备塑胶外壳应用"
@@ -75,7 +107,8 @@
       "desc": {
         "en": "Plastic housings and components for medical, beauty, testing, therapy and home health products.",
         "zh": "为医疗健康设备、美容仪器、检测仪器、理疗设备及家用健康产品提供塑胶外壳和结构件。"
-      }
+      },
+      "image": "custom-plastic-05"
     }
   ]
 }

@@ -1,7 +1,13 @@
 {
   "header": {
-    "eyebrow": { "en": "Product Categories", "zh": "产品分类" },
-    "title": { "en": "Custom Plastic Products We Manufacture", "zh": "我们制造的定制塑胶产品" },
+    "eyebrow": {
+      "en": "Product Categories",
+      "zh": "产品分类"
+    },
+    "title": {
+      "en": "Custom Plastic Products We Manufacture",
+      "zh": "我们制造的定制塑胶产品"
+    },
     "subtitle": {
       "en": "Focused on small and medium custom plastic parts for electronics, industrial equipment, smart devices, automotive electronics and OEM / ODM projects.",
       "zh": "专注电子、工业设备、智能产品、汽车电子及 OEM / ODM 项目的中小型定制塑胶件。"
@@ -10,102 +16,275 @@
   "categories": [
     {
       "no": "01",
-      "title": { "en": "Plastic Electronic Enclosures", "zh": "塑胶电子外壳" },
+      "title": {
+        "en": "Plastic Electronic Enclosures",
+        "zh": "塑胶电子外壳"
+      },
       "desc": {
         "en": "Custom housings and protective shells for electronic products, control units and smart devices.",
         "zh": "用于电子产品、控制设备和智能终端的定制外壳与保护壳体。"
       },
       "examples": [
-        { "en": "Control box housings", "zh": "控制盒外壳" },
-        { "en": "Device covers", "zh": "设备面盖" },
-        { "en": "Sensor enclosures", "zh": "传感器外壳" }
+        {
+          "en": "Control box housings",
+          "zh": "控制盒外壳"
+        },
+        {
+          "en": "Device covers",
+          "zh": "设备面盖"
+        },
+        {
+          "en": "Sensor enclosures",
+          "zh": "传感器外壳"
+        }
+      ],
+      "coverImage": "electronic-housing-06",
+      "galleryImages": [
+        "electronic-housing-01",
+        "electronic-housing-02",
+        "electronic-housing-03",
+        "electronic-housing-04",
+        "electronic-housing-05",
+        "electronic-housing-06",
+        "electronic-housing-07",
+        "electronic-housing-08",
+        "electronic-housing-09"
       ]
     },
     {
       "no": "02",
-      "title": { "en": "Industrial Plastic Components", "zh": "工业塑胶零部件" },
+      "title": {
+        "en": "Industrial Plastic Components",
+        "zh": "工业塑胶零部件"
+      },
       "desc": {
         "en": "Durable molded parts for industrial control, equipment protection and machine-side assemblies.",
         "zh": "用于工业控制、设备防护和机械配套的耐用注塑零部件。"
       },
       "examples": [
-        { "en": "Equipment panels", "zh": "设备面板" },
-        { "en": "Structural brackets", "zh": "结构支架" },
-        { "en": "Protective covers", "zh": "防护盖板" }
+        {
+          "en": "Equipment panels",
+          "zh": "设备面板"
+        },
+        {
+          "en": "Structural brackets",
+          "zh": "结构支架"
+        },
+        {
+          "en": "Protective covers",
+          "zh": "防护盖板"
+        }
+      ],
+      "coverImage": "industrial-component-08",
+      "galleryImages": [
+        "industrial-component-01",
+        "industrial-component-02",
+        "industrial-component-03",
+        "industrial-component-04",
+        "industrial-component-05",
+        "industrial-component-06",
+        "industrial-component-07",
+        "industrial-component-08"
       ]
     },
     {
       "no": "03",
-      "title": { "en": "Smart Home & Small Appliance Parts", "zh": "智能家居与小家电配件" },
+      "title": {
+        "en": "Smart Home & Small Appliance Parts",
+        "zh": "智能家居与小家电配件"
+      },
       "desc": {
         "en": "Precision plastic parts for connected home devices, small appliances and consumer electronics.",
         "zh": "用于智能家居、小型家电和消费电子产品的精密塑胶件。"
       },
       "examples": [
-        { "en": "Smart device shells", "zh": "智能设备壳体" },
-        { "en": "Appliance knobs", "zh": "家电旋钮" },
-        { "en": "Internal supports", "zh": "内部支撑件" }
+        {
+          "en": "Smart device shells",
+          "zh": "智能设备壳体"
+        },
+        {
+          "en": "Appliance knobs",
+          "zh": "家电旋钮"
+        },
+        {
+          "en": "Internal supports",
+          "zh": "内部支撑件"
+        }
+      ],
+      "coverImage": "smart-home-appliance-03",
+      "galleryImages": [
+        "smart-home-appliance-01",
+        "smart-home-appliance-02",
+        "smart-home-appliance-03",
+        "smart-home-appliance-04",
+        "smart-home-appliance-05",
+        "smart-home-appliance-06",
+        "smart-home-appliance-07",
+        "smart-home-appliance-08"
       ]
     },
     {
       "no": "04",
-      "title": { "en": "Automotive Plastic Components", "zh": "汽车塑胶零部件" },
+      "title": {
+        "en": "Automotive Plastic Components",
+        "zh": "汽车塑胶零部件"
+      },
       "desc": {
         "en": "Small custom plastic components for automotive electronics, interior modules and auxiliary assemblies.",
         "zh": "用于汽车电子、内饰模块和辅助结构的小型定制塑胶零件。"
       },
       "examples": [
-        { "en": "Automotive electronics covers", "zh": "汽车电子盖件" },
-        { "en": "Clips and retainers", "zh": "卡扣与固定件" },
-        { "en": "Interior plastic parts", "zh": "内饰塑胶件" }
+        {
+          "en": "Automotive electronics covers",
+          "zh": "汽车电子盖件"
+        },
+        {
+          "en": "Clips and retainers",
+          "zh": "卡扣与固定件"
+        },
+        {
+          "en": "Interior plastic parts",
+          "zh": "内饰塑胶件"
+        }
+      ],
+      "coverImage": "automotive-component-08",
+      "galleryImages": [
+        "automotive-component-01",
+        "automotive-component-02",
+        "automotive-component-03",
+        "automotive-component-04",
+        "automotive-component-05",
+        "automotive-component-06",
+        "automotive-component-07",
+        "automotive-component-08"
       ]
     },
     {
       "no": "05",
-      "title": { "en": "Plastic & Metal Insert Molding Parts", "zh": "五金塑胶嵌件成型件" },
+      "title": {
+        "en": "Plastic & Metal Insert Molding Parts",
+        "zh": "五金塑胶嵌件成型件"
+      },
       "desc": {
         "en": "Integrated metal-and-plastic components produced through insert molding and hardware-plastic assembly.",
         "zh": "通过嵌件注塑和五金塑胶组合工艺制造的一体化金属塑胶部件。"
       },
       "examples": [
-        { "en": "Threaded insert parts", "zh": "螺母嵌件产品" },
-        { "en": "Metal reinforced components", "zh": "金属加强件" },
-        { "en": "Connector housings", "zh": "连接器壳体" }
+        {
+          "en": "Threaded insert parts",
+          "zh": "螺母嵌件产品"
+        },
+        {
+          "en": "Metal reinforced components",
+          "zh": "金属加强件"
+        },
+        {
+          "en": "Connector housings",
+          "zh": "连接器壳体"
+        }
+      ],
+      "coverImage": "insert-molding-06",
+      "galleryImages": [
+        "insert-molding-01",
+        "insert-molding-02",
+        "insert-molding-03",
+        "insert-molding-04",
+        "insert-molding-05",
+        "insert-molding-06",
+        "insert-molding-07",
+        "insert-molding-08"
       ]
     },
     {
       "no": "06",
-      "title": { "en": "Custom Plastic Products", "zh": "定制塑胶产品" },
+      "title": {
+        "en": "Custom Plastic Products",
+        "zh": "定制塑胶产品"
+      },
       "desc": {
         "en": "OEM / ODM plastic products developed from drawings, samples or functional requirements.",
         "zh": "根据图纸、样品或功能需求开发的 OEM / ODM 定制塑胶产品。"
       },
       "examples": [
-        { "en": "New product projects", "zh": "新品开发项目" },
-        { "en": "Sample-based parts", "zh": "来样定制零件" },
-        { "en": "Assembly-ready modules", "zh": "可组装模块" }
+        {
+          "en": "New product projects",
+          "zh": "新品开发项目"
+        },
+        {
+          "en": "Sample-based parts",
+          "zh": "来样定制零件"
+        },
+        {
+          "en": "Assembly-ready modules",
+          "zh": "可组装模块"
+        }
+      ],
+      "coverImage": "custom-plastic-03",
+      "galleryImages": [
+        "custom-plastic-01",
+        "custom-plastic-02",
+        "custom-plastic-03",
+        "custom-plastic-04",
+        "custom-plastic-05",
+        "custom-plastic-06",
+        "custom-plastic-07",
+        "custom-plastic-08"
       ]
     },
     {
       "no": "07",
-      "title": { "en": "Display Boxes", "zh": "展示盒" },
+      "title": {
+        "en": "Display Boxes",
+        "zh": "展示盒"
+      },
       "desc": {
         "en": "Plastic display and storage boxes for product presentation, protection and retail use.",
         "zh": "用于产品展示、防护和零售陈列的塑胶展示盒与收纳盒。"
       },
       "examples": [
-        { "en": "Clear display boxes", "zh": "透明展示盒" },
-        { "en": "Protective cases", "zh": "保护盒" },
-        { "en": "Retail presentation boxes", "zh": "零售陈列盒" }
+        {
+          "en": "Clear display boxes",
+          "zh": "透明展示盒"
+        },
+        {
+          "en": "Protective cases",
+          "zh": "保护盒"
+        },
+        {
+          "en": "Retail presentation boxes",
+          "zh": "零售陈列盒"
+        }
+      ],
+      "coverImage": "display-box-01",
+      "galleryImages": [
+        "display-box-01",
+        "display-box-02",
+        "display-box-03",
+        "display-box-04",
+        "display-box-05",
+        "display-box-06",
+        "display-box-07",
+        "display-box-08",
+        "display-box-09",
+        "display-box-10",
+        "display-box-11",
+        "display-box-12",
+        "display-box-13"
       ]
     }
   ],
   "cta": {
-    "title": { "en": "Have a product outside these categories?", "zh": "您的产品不在以上分类中？" },
+    "title": {
+      "en": "Have a product outside these categories?",
+      "zh": "您的产品不在以上分类中？"
+    },
     "desc": {
       "en": "Send the drawing, sample photo or application requirement. We can evaluate mold structure, material choice and production feasibility.",
       "zh": "发送图纸、样品照片或应用需求，我们可评估模具结构、材料选择和量产可行性。"
     },
-    "button": { "en": "Get a Quote", "zh": "获取报价" }
+    "button": {
+      "en": "Get a Quote",
+      "zh": "获取报价"
+    }
   }
 }

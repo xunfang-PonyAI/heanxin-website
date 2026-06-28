@@ -2,12 +2,15 @@
 import Hero from "./Hero.astro";
 import HighlightStat from "./HighlightStat.astro";
 import IconFeatureCard from "./IconFeatureCard.astro";
-import PhotoPlaceholder from "./PhotoPlaceholder.astro";
 import ProcessStepper from "./ProcessStepper.astro";
+import ResponsiveImage from "./ResponsiveImage.astro";
 import SectionHeader from "./SectionHeader.astro";
 import T from "./T.astro";
 import capabilities from "../content/capabilities.json";
+import media from "../content/media.json";
 import { url } from "../lib/i18n";
+
+const assets = media.assetMap;
 ---
 
 <Hero
@@ -63,7 +66,17 @@ import { url } from "../lib/i18n";
 
 <section class="container-page py-14">
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-    {capabilities.gallery.map((item) => <PhotoPlaceholder alt={item.alt} ratio="video" />)}
+    {
+      capabilities.gallery.map((item) => (
+        <ResponsiveImage
+          image={assets[item.image]}
+          aspect="video"
+          fit="contain"
+          class="border-line border bg-white p-3"
+          sizes="(min-width: 1024px) 24vw, 50vw"
+        />
+      ))
+    }
   </div>
 </section>
 

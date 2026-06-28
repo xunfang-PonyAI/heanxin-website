@@ -50,6 +50,16 @@ function assertNotContains(text, unexpected, label) {
   assert(!text.includes(unexpected), `${label} must not contain "${unexpected}"`);
 }
 
+function assertImageAsset(asset, label) {
+  assert(asset && typeof asset === "object", `${label} must be an image asset object`);
+  assert(typeof asset.src === "string" && asset.src.startsWith("images/"), `${label}.src`);
+  assert(typeof asset.source === "string" && asset.source.startsWith("docs/"), `${label}.source`);
+  assert(Number.isInteger(asset.width) && asset.width > 0, `${label}.width`);
+  assert(Number.isInteger(asset.height) && asset.height > 0, `${label}.height`);
+  assertLocalized(asset.alt, `${label}.alt`);
+  assert(existsSync(path.join(root, "public", asset.src)), `${label}.src file must exist`);
+}
+
 function listSourceFiles(relativeDir) {
   const absoluteDir = path.join(root, relativeDir);
   const entries = readdirSync(absoluteDir);
@@ -143,7 +153,7 @@ function assertNavigationArchitecture() {
     assert(item.label.zh === zh, `site.nav[${index}].label.zh must be ${zh}`);
   });
 
-  assertContains(header, "xl:flex", "Header desktop navigation breakpoint");
+  assertContains(header, "min-[1180px]:flex", "Header desktop navigation breakpoint");
   assertContains(header, "quoteCta", "Header quote CTA");
 }
 
@@ -192,8 +202,8 @@ function assertMaterialsProcessesPage() {
   assert(navItem.label.en === "Materials & Processes", "materials nav English label is required");
   assert(navItem.label.zh === "材料工艺", "materials nav Chinese label is required");
 
-  assertContains(header, "xl:flex", "Header desktop navigation breakpoint");
-  assertContains(header, "xl:hidden", "Header mobile navigation breakpoint");
+  assertContains(header, "min-[1180px]:flex", "Header desktop navigation breakpoint");
+  assertContains(header, "min-[1180px]:hidden", "Header mobile navigation breakpoint");
   assertContains(page, "materials-processes.json", "Materials page");
   assertContains(page, "SectionHeader", "Materials page");
   assertContains(page, "/contact#quote", "Materials page quote link");
@@ -330,6 +340,11 @@ function assertProductTaxonomy() {
   for (const category of products.categories) {
     assertLocalized(category.title, `product category ${category.no} title`);
     assertLocalized(category.desc, `product category ${category.no} desc`);
+    assert(typeof category.coverImage === "string", `product category ${category.no} coverImage`);
+    assert(
+      Array.isArray(category.galleryImages) && category.galleryImages.length >= 1,
+      `product category ${category.no} needs galleryImages`
+    );
     assert(
       Array.isArray(category.examples) && category.examples.length >= 2,
       `product category ${category.no} needs buyer-facing examples`
@@ -350,7 +365,119 @@ function assertProductTaxonomy() {
   assertContains(page, "products.cta", "Products page");
   assertContains(page, "showcase.json", "Products page showcase");
   assertContains(page, "examples", "Products page category examples");
+  assertContains(page, "ProductGallery", "Products page product gallery");
   assertContains(page, "/contact#quote", "Products page quote link");
+}
+
+function assertRealMediaAssets() {
+  const media = readJson("src/content/media.json");
+  const products = readJson("src/content/products.json");
+  const showcase = readJson("src/content/showcase.json");
+  const home = readJson("src/content/home.json");
+  const about = readJson("src/content/about.json");
+  const capabilities = readJson("src/content/capabilities.json");
+  const industries = readJson("src/content/industries.json");
+  const news = readJson("src/content/news.json");
+  const sourceFiles = listSourceFiles("src").map((file) => [file, readText(file)]);
+
+  assertImageAsset(media.banners?.home, "media.banners.home");
+  assertImageAsset(media.banners?.productLine, "media.banners.productLine");
+  assert(media.categories && typeof media.categories === "object", "media.categories");
+
+  const expectedCounts = {
+    electronicHousings: 9,
+    industrialComponents: 8,
+    smartHomeAppliance: 8,
+    automotiveComponents: 8,
+    insertMolding: 8,
+    customPlasticProducts: 8,
+    displayBoxes: 13,
+  };
+
+  for (const [key, count] of Object.entries(expectedCounts)) {
+    const items = media.categories[key];
+    assert(Array.isArray(items) && items.length === count, `media.categories.${key} count`);
+    items.forEach((asset, index) => assertImageAsset(asset, `media.categories.${key}[${index}]`));
+  }
+
+  const allAssets = [
+    media.banners.home,
+    media.banners.productLine,
+    ...Object.values(media.categories).flat(),
+  ];
+  assert(allAssets.length === 64, "all 64 client product images must be registered");
+  const srcs = new Set(allAssets.map((asset) => asset.src));
+  assert(srcs.size === allAssets.length, "media asset src values must be unique");
+
+  const referencedIds = new Set();
+  const register = (id, label) => {
+    assert(typeof id === "string" && media.assetMap[id], `${label} must reference media.assetMap`);
+    referencedIds.add(id);
+  };
+
+  register(home.hero.image, "home.hero.image");
+  register(home.intro.image, "home.intro.image");
+  home.productEntry.featuredNos.forEach((no) => {
+    const category = products.categories.find((item) => item.no === no);
+    assert(category, `home featured product ${no}`);
+    register(category.coverImage, `products.category.${no}.coverImage`);
+  });
+
+  products.categories.forEach((category) => {
+    register(category.coverImage, `products.category.${category.no}.coverImage`);
+    category.galleryImages.forEach((id) =>
+      register(id, `products.category.${category.no}.galleryImages`)
+    );
+  });
+
+  showcase.products.forEach((item, index) => register(item.image, `showcase.products[${index}]`));
+  about.visuals.forEach((id, index) => register(id, `about.visuals[${index}]`));
+  capabilities.gallery.forEach((item, index) =>
+    register(item.image, `capabilities.gallery[${index}]`)
+  );
+  industries.industries.forEach((item, index) =>
+    register(item.image, `industries.industries[${index}]`)
+  );
+  news.articles.forEach((article) => register(article.image, `news.articles.${article.slug}`));
+
+  for (const id of Object.keys(media.assetMap)) {
+    assert(referencedIds.has(id), `media asset ${id} must be used on a website page`);
+  }
+
+  const requiredComponents = [
+    "src/components/ResponsiveImage.astro",
+    "src/components/ProductGallery.astro",
+    "src/components/ImageHero.astro",
+  ];
+  for (const component of requiredComponents) {
+    assert(existsSync(path.join(root, component)), `${component} must exist`);
+  }
+
+  const placeholderUses = sourceFiles
+    .filter(([file]) => !file.endsWith("PhotoPlaceholder.astro"))
+    .filter(([, text]) => text.includes("PhotoPlaceholder"))
+    .map(([file]) => file);
+  assert(
+    placeholderUses.length === 0,
+    `PhotoPlaceholder must not be used by production pages/components:\n${placeholderUses.join(
+      "\n"
+    )}`
+  );
+}
+
+function assertLegacyRoutesCanonical() {
+  const baseLayout = readText("src/layouts/BaseLayout.astro");
+  const legacyRoutes = [
+    ["src/pages/services.astro", "/capabilities"],
+    ["src/pages/mold-capability.astro", "/capabilities"],
+    ["src/pages/showcase.astro", "/products"],
+  ];
+
+  assertContains(baseLayout, "canonicalPath", "BaseLayout canonical override");
+  for (const [file, canonicalPath] of legacyRoutes) {
+    const text = readText(file);
+    assertContains(text, `canonicalPath="${canonicalPath}"`, `${file} canonicalPath`);
+  }
 }
 
 function assertAboutDepth() {
@@ -496,6 +623,8 @@ const checks = [
   assertMaterialsProcessesPage,
   assertNewsSeoPages,
   assertProductTaxonomy,
+  assertRealMediaAssets,
+  assertLegacyRoutesCanonical,
   assertAboutDepth,
   assertHomeBuyerJourney,
   assertTopPageEyebrowsHidden,

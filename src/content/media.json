@@ -1,0 +1,1430 @@
+{
+  "banners": {
+    "home": {
+      "id": "homeBanner",
+      "src": "images/products/banner-home.webp",
+      "source": "docs/产品画册/产品图片/首页Banner图.png",
+      "width": 1600,
+      "height": 900,
+      "alt": {
+        "en": "Custom plastic injection molding manufacturer banner with product group",
+        "zh": "定制塑胶注塑制造商首页横幅产品图"
+      }
+    },
+    "productLine": {
+      "id": "productLineBanner",
+      "src": "images/products/banner-product-line.webp",
+      "source": "docs/产品画册/产品图片/Banner图-2.png",
+      "width": 1600,
+      "height": 640,
+      "alt": {
+        "en": "Custom plastic product group banner",
+        "zh": "定制塑胶产品组合横幅图"
+      }
+    }
+  },
+  "categories": {
+    "electronicHousings": [
+      {
+        "id": "electronic-housing-01",
+        "src": "images/products/electronic-housing-01.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/1.jfif",
+        "width": 800,
+        "height": 800,
+        "alt": {
+          "en": "Plastic electronic enclosure 1",
+          "zh": "塑胶电子外壳 1"
+        }
+      },
+      {
+        "id": "electronic-housing-02",
+        "src": "images/products/electronic-housing-02.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/2.jfif",
+        "width": 480,
+        "height": 480,
+        "alt": {
+          "en": "Plastic electronic enclosure 2",
+          "zh": "塑胶电子外壳 2"
+        }
+      },
+      {
+        "id": "electronic-housing-03",
+        "src": "images/products/electronic-housing-03.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/3.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic electronic enclosure 3",
+          "zh": "塑胶电子外壳 3"
+        }
+      },
+      {
+        "id": "electronic-housing-04",
+        "src": "images/products/electronic-housing-04.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/4.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic electronic enclosure 4",
+          "zh": "塑胶电子外壳 4"
+        }
+      },
+      {
+        "id": "electronic-housing-05",
+        "src": "images/products/electronic-housing-05.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/5.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic electronic enclosure 5",
+          "zh": "塑胶电子外壳 5"
+        }
+      },
+      {
+        "id": "electronic-housing-06",
+        "src": "images/products/electronic-housing-06.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/6.png",
+        "width": 800,
+        "height": 800,
+        "alt": {
+          "en": "Plastic electronic enclosure 6",
+          "zh": "塑胶电子外壳 6"
+        }
+      },
+      {
+        "id": "electronic-housing-07",
+        "src": "images/products/electronic-housing-07.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/7.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic electronic enclosure 7",
+          "zh": "塑胶电子外壳 7"
+        }
+      },
+      {
+        "id": "electronic-housing-08",
+        "src": "images/products/electronic-housing-08.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/8.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic electronic enclosure 8",
+          "zh": "塑胶电子外壳 8"
+        }
+      },
+      {
+        "id": "electronic-housing-09",
+        "src": "images/products/electronic-housing-09.webp",
+        "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/9.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic electronic enclosure 9",
+          "zh": "塑胶电子外壳 9"
+        }
+      }
+    ],
+    "industrialComponents": [
+      {
+        "id": "industrial-component-01",
+        "src": "images/products/industrial-component-01.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/5.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component 5",
+          "zh": "工业塑胶零部件 5"
+        }
+      },
+      {
+        "id": "industrial-component-02",
+        "src": "images/products/industrial-component-02.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/6.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component 6",
+          "zh": "工业塑胶零部件 6"
+        }
+      },
+      {
+        "id": "industrial-component-03",
+        "src": "images/products/industrial-component-03.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/7.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component 7",
+          "zh": "工业塑胶零部件 7"
+        }
+      },
+      {
+        "id": "industrial-component-04",
+        "src": "images/products/industrial-component-04.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/8.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component 8",
+          "zh": "工业塑胶零部件 8"
+        }
+      },
+      {
+        "id": "industrial-component-05",
+        "src": "images/products/industrial-component-05.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/Automotive & Mechanical Plastic Parts.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component Automotive & Mechanical Plastic Parts",
+          "zh": "工业塑胶零部件 Automotive & Mechanical Plastic Parts"
+        }
+      },
+      {
+        "id": "industrial-component-06",
+        "src": "images/products/industrial-component-06.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/Electronic Plastic Parts.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component Electronic Plastic Parts",
+          "zh": "工业塑胶零部件 Electronic Plastic Parts"
+        }
+      },
+      {
+        "id": "industrial-component-07",
+        "src": "images/products/industrial-component-07.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/Industrial Plastic Housings.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component Industrial Plastic Housings",
+          "zh": "工业塑胶零部件 Industrial Plastic Housings"
+        }
+      },
+      {
+        "id": "industrial-component-08",
+        "src": "images/products/industrial-component-08.webp",
+        "source": "docs/产品画册/产品图片/2.工业零部件/Plastic Structural Components.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Industrial plastic component Plastic Structural Components",
+          "zh": "工业塑胶零部件 Plastic Structural Components"
+        }
+      }
+    ],
+    "smartHomeAppliance": [
+      {
+        "id": "smart-home-appliance-01",
+        "src": "images/products/smart-home-appliance-01.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/1.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 1",
+          "zh": "智能家居与小家电塑胶件 1"
+        }
+      },
+      {
+        "id": "smart-home-appliance-02",
+        "src": "images/products/smart-home-appliance-02.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/2.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 2",
+          "zh": "智能家居与小家电塑胶件 2"
+        }
+      },
+      {
+        "id": "smart-home-appliance-03",
+        "src": "images/products/smart-home-appliance-03.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/3.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 3",
+          "zh": "智能家居与小家电塑胶件 3"
+        }
+      },
+      {
+        "id": "smart-home-appliance-04",
+        "src": "images/products/smart-home-appliance-04.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/4.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 4",
+          "zh": "智能家居与小家电塑胶件 4"
+        }
+      },
+      {
+        "id": "smart-home-appliance-05",
+        "src": "images/products/smart-home-appliance-05.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/5.png",
+        "width": 1122,
+        "height": 1402,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 5",
+          "zh": "智能家居与小家电塑胶件 5"
+        }
+      },
+      {
+        "id": "smart-home-appliance-06",
+        "src": "images/products/smart-home-appliance-06.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/6.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 6",
+          "zh": "智能家居与小家电塑胶件 6"
+        }
+      },
+      {
+        "id": "smart-home-appliance-07",
+        "src": "images/products/smart-home-appliance-07.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/7.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 7",
+          "zh": "智能家居与小家电塑胶件 7"
+        }
+      },
+      {
+        "id": "smart-home-appliance-08",
+        "src": "images/products/smart-home-appliance-08.webp",
+        "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/8.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Smart home and small appliance plastic part 8",
+          "zh": "智能家居与小家电塑胶件 8"
+        }
+      }
+    ],
+    "automotiveComponents": [
+      {
+        "id": "automotive-component-01",
+        "src": "images/products/automotive-component-01.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/2.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component 2",
+          "zh": "汽车塑胶零部件 2"
+        }
+      },
+      {
+        "id": "automotive-component-02",
+        "src": "images/products/automotive-component-02.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/3.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component 3",
+          "zh": "汽车塑胶零部件 3"
+        }
+      },
+      {
+        "id": "automotive-component-03",
+        "src": "images/products/automotive-component-03.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/4.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component 4",
+          "zh": "汽车塑胶零部件 4"
+        }
+      },
+      {
+        "id": "automotive-component-04",
+        "src": "images/products/automotive-component-04.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/5.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component 5",
+          "zh": "汽车塑胶零部件 5"
+        }
+      },
+      {
+        "id": "automotive-component-05",
+        "src": "images/products/automotive-component-05.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/6.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component 6",
+          "zh": "汽车塑胶零部件 6"
+        }
+      },
+      {
+        "id": "automotive-component-06",
+        "src": "images/products/automotive-component-06.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/7.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component 7",
+          "zh": "汽车塑胶零部件 7"
+        }
+      },
+      {
+        "id": "automotive-component-07",
+        "src": "images/products/automotive-component-07.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/8.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Automotive plastic component 8",
+          "zh": "汽车塑胶零部件 8"
+        }
+      },
+      {
+        "id": "automotive-component-08",
+        "src": "images/products/automotive-component-08.webp",
+        "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/Automotive Plastic Brackets.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Automotive plastic component Automotive Plastic Brackets",
+          "zh": "汽车塑胶零部件 Automotive Plastic Brackets"
+        }
+      }
+    ],
+    "insertMolding": [
+      {
+        "id": "insert-molding-01",
+        "src": "images/products/insert-molding-01.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/1.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 1",
+          "zh": "五金塑胶嵌件成型件 1"
+        }
+      },
+      {
+        "id": "insert-molding-02",
+        "src": "images/products/insert-molding-02.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/2.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 2",
+          "zh": "五金塑胶嵌件成型件 2"
+        }
+      },
+      {
+        "id": "insert-molding-03",
+        "src": "images/products/insert-molding-03.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/3.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 3",
+          "zh": "五金塑胶嵌件成型件 3"
+        }
+      },
+      {
+        "id": "insert-molding-04",
+        "src": "images/products/insert-molding-04.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/4.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 4",
+          "zh": "五金塑胶嵌件成型件 4"
+        }
+      },
+      {
+        "id": "insert-molding-05",
+        "src": "images/products/insert-molding-05.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/5.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 5",
+          "zh": "五金塑胶嵌件成型件 5"
+        }
+      },
+      {
+        "id": "insert-molding-06",
+        "src": "images/products/insert-molding-06.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/6.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 6",
+          "zh": "五金塑胶嵌件成型件 6"
+        }
+      },
+      {
+        "id": "insert-molding-07",
+        "src": "images/products/insert-molding-07.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/7.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 7",
+          "zh": "五金塑胶嵌件成型件 7"
+        }
+      },
+      {
+        "id": "insert-molding-08",
+        "src": "images/products/insert-molding-08.webp",
+        "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/8.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic and metal insert molded part 8",
+          "zh": "五金塑胶嵌件成型件 8"
+        }
+      }
+    ],
+    "customPlasticProducts": [
+      {
+        "id": "custom-plastic-01",
+        "src": "images/products/custom-plastic-01.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/1.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 1",
+          "zh": "定制塑胶产品 1"
+        }
+      },
+      {
+        "id": "custom-plastic-02",
+        "src": "images/products/custom-plastic-02.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/2.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 2",
+          "zh": "定制塑胶产品 2"
+        }
+      },
+      {
+        "id": "custom-plastic-03",
+        "src": "images/products/custom-plastic-03.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/3.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 3",
+          "zh": "定制塑胶产品 3"
+        }
+      },
+      {
+        "id": "custom-plastic-04",
+        "src": "images/products/custom-plastic-04.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/4.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 4",
+          "zh": "定制塑胶产品 4"
+        }
+      },
+      {
+        "id": "custom-plastic-05",
+        "src": "images/products/custom-plastic-05.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/5.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 5",
+          "zh": "定制塑胶产品 5"
+        }
+      },
+      {
+        "id": "custom-plastic-06",
+        "src": "images/products/custom-plastic-06.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/6.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 6",
+          "zh": "定制塑胶产品 6"
+        }
+      },
+      {
+        "id": "custom-plastic-07",
+        "src": "images/products/custom-plastic-07.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/7.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 7",
+          "zh": "定制塑胶产品 7"
+        }
+      },
+      {
+        "id": "custom-plastic-08",
+        "src": "images/products/custom-plastic-08.webp",
+        "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/8.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Custom plastic product 8",
+          "zh": "定制塑胶产品 8"
+        }
+      }
+    ],
+    "displayBoxes": [
+      {
+        "id": "display-box-01",
+        "src": "images/products/display-box-01.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/106#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 106#",
+          "zh": "塑胶展示盒 106#"
+        }
+      },
+      {
+        "id": "display-box-02",
+        "src": "images/products/display-box-02.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/120#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 120#",
+          "zh": "塑胶展示盒 120#"
+        }
+      },
+      {
+        "id": "display-box-03",
+        "src": "images/products/display-box-03.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/150#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 150#",
+          "zh": "塑胶展示盒 150#"
+        }
+      },
+      {
+        "id": "display-box-04",
+        "src": "images/products/display-box-04.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/150#高.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic display box 150#高",
+          "zh": "塑胶展示盒 150#高"
+        }
+      },
+      {
+        "id": "display-box-05",
+        "src": "images/products/display-box-05.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/163#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 163#",
+          "zh": "塑胶展示盒 163#"
+        }
+      },
+      {
+        "id": "display-box-06",
+        "src": "images/products/display-box-06.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/165#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 165#",
+          "zh": "塑胶展示盒 165#"
+        }
+      },
+      {
+        "id": "display-box-07",
+        "src": "images/products/display-box-07.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/165#1.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 165#1",
+          "zh": "塑胶展示盒 165#1"
+        }
+      },
+      {
+        "id": "display-box-08",
+        "src": "images/products/display-box-08.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/180#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 180#",
+          "zh": "塑胶展示盒 180#"
+        }
+      },
+      {
+        "id": "display-box-09",
+        "src": "images/products/display-box-09.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/185#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 185#",
+          "zh": "塑胶展示盒 185#"
+        }
+      },
+      {
+        "id": "display-box-10",
+        "src": "images/products/display-box-10.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/190#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 190#",
+          "zh": "塑胶展示盒 190#"
+        }
+      },
+      {
+        "id": "display-box-11",
+        "src": "images/products/display-box-11.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/200#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 200#",
+          "zh": "塑胶展示盒 200#"
+        }
+      },
+      {
+        "id": "display-box-12",
+        "src": "images/products/display-box-12.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/330#.png",
+        "width": 1200,
+        "height": 1200,
+        "alt": {
+          "en": "Plastic display box 330#",
+          "zh": "塑胶展示盒 330#"
+        }
+      },
+      {
+        "id": "display-box-13",
+        "src": "images/products/display-box-13.webp",
+        "source": "docs/产品画册/产品图片/7.展示盒/340#.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "en": "Plastic display box 340#",
+          "zh": "塑胶展示盒 340#"
+        }
+      }
+    ]
+  },
+  "assetMap": {
+    "homeBanner": {
+      "id": "homeBanner",
+      "src": "images/products/banner-home.webp",
+      "source": "docs/产品画册/产品图片/首页Banner图.png",
+      "width": 1600,
+      "height": 900,
+      "alt": {
+        "en": "Custom plastic injection molding manufacturer banner with product group",
+        "zh": "定制塑胶注塑制造商首页横幅产品图"
+      }
+    },
+    "productLineBanner": {
+      "id": "productLineBanner",
+      "src": "images/products/banner-product-line.webp",
+      "source": "docs/产品画册/产品图片/Banner图-2.png",
+      "width": 1600,
+      "height": 640,
+      "alt": {
+        "en": "Custom plastic product group banner",
+        "zh": "定制塑胶产品组合横幅图"
+      }
+    },
+    "electronic-housing-01": {
+      "id": "electronic-housing-01",
+      "src": "images/products/electronic-housing-01.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/1.jfif",
+      "width": 800,
+      "height": 800,
+      "alt": {
+        "en": "Plastic electronic enclosure 1",
+        "zh": "塑胶电子外壳 1"
+      }
+    },
+    "electronic-housing-02": {
+      "id": "electronic-housing-02",
+      "src": "images/products/electronic-housing-02.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/2.jfif",
+      "width": 480,
+      "height": 480,
+      "alt": {
+        "en": "Plastic electronic enclosure 2",
+        "zh": "塑胶电子外壳 2"
+      }
+    },
+    "electronic-housing-03": {
+      "id": "electronic-housing-03",
+      "src": "images/products/electronic-housing-03.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/3.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic electronic enclosure 3",
+        "zh": "塑胶电子外壳 3"
+      }
+    },
+    "electronic-housing-04": {
+      "id": "electronic-housing-04",
+      "src": "images/products/electronic-housing-04.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/4.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic electronic enclosure 4",
+        "zh": "塑胶电子外壳 4"
+      }
+    },
+    "electronic-housing-05": {
+      "id": "electronic-housing-05",
+      "src": "images/products/electronic-housing-05.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/5.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic electronic enclosure 5",
+        "zh": "塑胶电子外壳 5"
+      }
+    },
+    "electronic-housing-06": {
+      "id": "electronic-housing-06",
+      "src": "images/products/electronic-housing-06.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/6.png",
+      "width": 800,
+      "height": 800,
+      "alt": {
+        "en": "Plastic electronic enclosure 6",
+        "zh": "塑胶电子外壳 6"
+      }
+    },
+    "electronic-housing-07": {
+      "id": "electronic-housing-07",
+      "src": "images/products/electronic-housing-07.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/7.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic electronic enclosure 7",
+        "zh": "塑胶电子外壳 7"
+      }
+    },
+    "electronic-housing-08": {
+      "id": "electronic-housing-08",
+      "src": "images/products/electronic-housing-08.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/8.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic electronic enclosure 8",
+        "zh": "塑胶电子外壳 8"
+      }
+    },
+    "electronic-housing-09": {
+      "id": "electronic-housing-09",
+      "src": "images/products/electronic-housing-09.webp",
+      "source": "docs/产品画册/产品图片/1.电子工业塑胶外壳/9.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic electronic enclosure 9",
+        "zh": "塑胶电子外壳 9"
+      }
+    },
+    "industrial-component-01": {
+      "id": "industrial-component-01",
+      "src": "images/products/industrial-component-01.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/5.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component 5",
+        "zh": "工业塑胶零部件 5"
+      }
+    },
+    "industrial-component-02": {
+      "id": "industrial-component-02",
+      "src": "images/products/industrial-component-02.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/6.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component 6",
+        "zh": "工业塑胶零部件 6"
+      }
+    },
+    "industrial-component-03": {
+      "id": "industrial-component-03",
+      "src": "images/products/industrial-component-03.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/7.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component 7",
+        "zh": "工业塑胶零部件 7"
+      }
+    },
+    "industrial-component-04": {
+      "id": "industrial-component-04",
+      "src": "images/products/industrial-component-04.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/8.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component 8",
+        "zh": "工业塑胶零部件 8"
+      }
+    },
+    "industrial-component-05": {
+      "id": "industrial-component-05",
+      "src": "images/products/industrial-component-05.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/Automotive & Mechanical Plastic Parts.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component Automotive & Mechanical Plastic Parts",
+        "zh": "工业塑胶零部件 Automotive & Mechanical Plastic Parts"
+      }
+    },
+    "industrial-component-06": {
+      "id": "industrial-component-06",
+      "src": "images/products/industrial-component-06.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/Electronic Plastic Parts.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component Electronic Plastic Parts",
+        "zh": "工业塑胶零部件 Electronic Plastic Parts"
+      }
+    },
+    "industrial-component-07": {
+      "id": "industrial-component-07",
+      "src": "images/products/industrial-component-07.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/Industrial Plastic Housings.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component Industrial Plastic Housings",
+        "zh": "工业塑胶零部件 Industrial Plastic Housings"
+      }
+    },
+    "industrial-component-08": {
+      "id": "industrial-component-08",
+      "src": "images/products/industrial-component-08.webp",
+      "source": "docs/产品画册/产品图片/2.工业零部件/Plastic Structural Components.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Industrial plastic component Plastic Structural Components",
+        "zh": "工业塑胶零部件 Plastic Structural Components"
+      }
+    },
+    "smart-home-appliance-01": {
+      "id": "smart-home-appliance-01",
+      "src": "images/products/smart-home-appliance-01.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/1.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 1",
+        "zh": "智能家居与小家电塑胶件 1"
+      }
+    },
+    "smart-home-appliance-02": {
+      "id": "smart-home-appliance-02",
+      "src": "images/products/smart-home-appliance-02.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/2.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 2",
+        "zh": "智能家居与小家电塑胶件 2"
+      }
+    },
+    "smart-home-appliance-03": {
+      "id": "smart-home-appliance-03",
+      "src": "images/products/smart-home-appliance-03.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/3.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 3",
+        "zh": "智能家居与小家电塑胶件 3"
+      }
+    },
+    "smart-home-appliance-04": {
+      "id": "smart-home-appliance-04",
+      "src": "images/products/smart-home-appliance-04.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/4.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 4",
+        "zh": "智能家居与小家电塑胶件 4"
+      }
+    },
+    "smart-home-appliance-05": {
+      "id": "smart-home-appliance-05",
+      "src": "images/products/smart-home-appliance-05.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/5.png",
+      "width": 1122,
+      "height": 1402,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 5",
+        "zh": "智能家居与小家电塑胶件 5"
+      }
+    },
+    "smart-home-appliance-06": {
+      "id": "smart-home-appliance-06",
+      "src": "images/products/smart-home-appliance-06.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/6.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 6",
+        "zh": "智能家居与小家电塑胶件 6"
+      }
+    },
+    "smart-home-appliance-07": {
+      "id": "smart-home-appliance-07",
+      "src": "images/products/smart-home-appliance-07.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/7.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 7",
+        "zh": "智能家居与小家电塑胶件 7"
+      }
+    },
+    "smart-home-appliance-08": {
+      "id": "smart-home-appliance-08",
+      "src": "images/products/smart-home-appliance-08.webp",
+      "source": "docs/产品画册/产品图片/3.智能家居及小型家电塑胶件/8.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Smart home and small appliance plastic part 8",
+        "zh": "智能家居与小家电塑胶件 8"
+      }
+    },
+    "automotive-component-01": {
+      "id": "automotive-component-01",
+      "src": "images/products/automotive-component-01.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/2.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component 2",
+        "zh": "汽车塑胶零部件 2"
+      }
+    },
+    "automotive-component-02": {
+      "id": "automotive-component-02",
+      "src": "images/products/automotive-component-02.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/3.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component 3",
+        "zh": "汽车塑胶零部件 3"
+      }
+    },
+    "automotive-component-03": {
+      "id": "automotive-component-03",
+      "src": "images/products/automotive-component-03.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/4.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component 4",
+        "zh": "汽车塑胶零部件 4"
+      }
+    },
+    "automotive-component-04": {
+      "id": "automotive-component-04",
+      "src": "images/products/automotive-component-04.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/5.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component 5",
+        "zh": "汽车塑胶零部件 5"
+      }
+    },
+    "automotive-component-05": {
+      "id": "automotive-component-05",
+      "src": "images/products/automotive-component-05.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/6.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component 6",
+        "zh": "汽车塑胶零部件 6"
+      }
+    },
+    "automotive-component-06": {
+      "id": "automotive-component-06",
+      "src": "images/products/automotive-component-06.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/7.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component 7",
+        "zh": "汽车塑胶零部件 7"
+      }
+    },
+    "automotive-component-07": {
+      "id": "automotive-component-07",
+      "src": "images/products/automotive-component-07.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/8.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Automotive plastic component 8",
+        "zh": "汽车塑胶零部件 8"
+      }
+    },
+    "automotive-component-08": {
+      "id": "automotive-component-08",
+      "src": "images/products/automotive-component-08.webp",
+      "source": "docs/产品画册/产品图片/4.汽车小型塑胶配件/Automotive Plastic Brackets.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Automotive plastic component Automotive Plastic Brackets",
+        "zh": "汽车塑胶零部件 Automotive Plastic Brackets"
+      }
+    },
+    "insert-molding-01": {
+      "id": "insert-molding-01",
+      "src": "images/products/insert-molding-01.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/1.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 1",
+        "zh": "五金塑胶嵌件成型件 1"
+      }
+    },
+    "insert-molding-02": {
+      "id": "insert-molding-02",
+      "src": "images/products/insert-molding-02.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/2.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 2",
+        "zh": "五金塑胶嵌件成型件 2"
+      }
+    },
+    "insert-molding-03": {
+      "id": "insert-molding-03",
+      "src": "images/products/insert-molding-03.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/3.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 3",
+        "zh": "五金塑胶嵌件成型件 3"
+      }
+    },
+    "insert-molding-04": {
+      "id": "insert-molding-04",
+      "src": "images/products/insert-molding-04.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/4.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 4",
+        "zh": "五金塑胶嵌件成型件 4"
+      }
+    },
+    "insert-molding-05": {
+      "id": "insert-molding-05",
+      "src": "images/products/insert-molding-05.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/5.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 5",
+        "zh": "五金塑胶嵌件成型件 5"
+      }
+    },
+    "insert-molding-06": {
+      "id": "insert-molding-06",
+      "src": "images/products/insert-molding-06.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/6.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 6",
+        "zh": "五金塑胶嵌件成型件 6"
+      }
+    },
+    "insert-molding-07": {
+      "id": "insert-molding-07",
+      "src": "images/products/insert-molding-07.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/7.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 7",
+        "zh": "五金塑胶嵌件成型件 7"
+      }
+    },
+    "insert-molding-08": {
+      "id": "insert-molding-08",
+      "src": "images/products/insert-molding-08.webp",
+      "source": "docs/产品画册/产品图片/5.五金塑胶组合件  嵌件注塑件/8.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic and metal insert molded part 8",
+        "zh": "五金塑胶嵌件成型件 8"
+      }
+    },
+    "custom-plastic-01": {
+      "id": "custom-plastic-01",
+      "src": "images/products/custom-plastic-01.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/1.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 1",
+        "zh": "定制塑胶产品 1"
+      }
+    },
+    "custom-plastic-02": {
+      "id": "custom-plastic-02",
+      "src": "images/products/custom-plastic-02.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/2.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 2",
+        "zh": "定制塑胶产品 2"
+      }
+    },
+    "custom-plastic-03": {
+      "id": "custom-plastic-03",
+      "src": "images/products/custom-plastic-03.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/3.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 3",
+        "zh": "定制塑胶产品 3"
+      }
+    },
+    "custom-plastic-04": {
+      "id": "custom-plastic-04",
+      "src": "images/products/custom-plastic-04.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/4.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 4",
+        "zh": "定制塑胶产品 4"
+      }
+    },
+    "custom-plastic-05": {
+      "id": "custom-plastic-05",
+      "src": "images/products/custom-plastic-05.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/5.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 5",
+        "zh": "定制塑胶产品 5"
+      }
+    },
+    "custom-plastic-06": {
+      "id": "custom-plastic-06",
+      "src": "images/products/custom-plastic-06.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/6.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 6",
+        "zh": "定制塑胶产品 6"
+      }
+    },
+    "custom-plastic-07": {
+      "id": "custom-plastic-07",
+      "src": "images/products/custom-plastic-07.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/7.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 7",
+        "zh": "定制塑胶产品 7"
+      }
+    },
+    "custom-plastic-08": {
+      "id": "custom-plastic-08",
+      "src": "images/products/custom-plastic-08.webp",
+      "source": "docs/产品画册/产品图片/6.其他定制塑胶产品/8.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Custom plastic product 8",
+        "zh": "定制塑胶产品 8"
+      }
+    },
+    "display-box-01": {
+      "id": "display-box-01",
+      "src": "images/products/display-box-01.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/106#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 106#",
+        "zh": "塑胶展示盒 106#"
+      }
+    },
+    "display-box-02": {
+      "id": "display-box-02",
+      "src": "images/products/display-box-02.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/120#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 120#",
+        "zh": "塑胶展示盒 120#"
+      }
+    },
+    "display-box-03": {
+      "id": "display-box-03",
+      "src": "images/products/display-box-03.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/150#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 150#",
+        "zh": "塑胶展示盒 150#"
+      }
+    },
+    "display-box-04": {
+      "id": "display-box-04",
+      "src": "images/products/display-box-04.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/150#高.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic display box 150#高",
+        "zh": "塑胶展示盒 150#高"
+      }
+    },
+    "display-box-05": {
+      "id": "display-box-05",
+      "src": "images/products/display-box-05.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/163#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 163#",
+        "zh": "塑胶展示盒 163#"
+      }
+    },
+    "display-box-06": {
+      "id": "display-box-06",
+      "src": "images/products/display-box-06.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/165#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 165#",
+        "zh": "塑胶展示盒 165#"
+      }
+    },
+    "display-box-07": {
+      "id": "display-box-07",
+      "src": "images/products/display-box-07.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/165#1.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 165#1",
+        "zh": "塑胶展示盒 165#1"
+      }
+    },
+    "display-box-08": {
+      "id": "display-box-08",
+      "src": "images/products/display-box-08.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/180#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 180#",
+        "zh": "塑胶展示盒 180#"
+      }
+    },
+    "display-box-09": {
+      "id": "display-box-09",
+      "src": "images/products/display-box-09.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/185#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 185#",
+        "zh": "塑胶展示盒 185#"
+      }
+    },
+    "display-box-10": {
+      "id": "display-box-10",
+      "src": "images/products/display-box-10.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/190#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 190#",
+        "zh": "塑胶展示盒 190#"
+      }
+    },
+    "display-box-11": {
+      "id": "display-box-11",
+      "src": "images/products/display-box-11.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/200#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 200#",
+        "zh": "塑胶展示盒 200#"
+      }
+    },
+    "display-box-12": {
+      "id": "display-box-12",
+      "src": "images/products/display-box-12.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/330#.png",
+      "width": 1200,
+      "height": 1200,
+      "alt": {
+        "en": "Plastic display box 330#",
+        "zh": "塑胶展示盒 330#"
+      }
+    },
+    "display-box-13": {
+      "id": "display-box-13",
+      "src": "images/products/display-box-13.webp",
+      "source": "docs/产品画册/产品图片/7.展示盒/340#.png",
+      "width": 1200,
+      "height": 900,
+      "alt": {
+        "en": "Plastic display box 340#",
+        "zh": "塑胶展示盒 340#"
+      }
+    }
+  }
+}

@@ -1,7 +1,13 @@
 {
   "header": {
-    "eyebrow": { "en": "Company Profile", "zh": "公司简介" },
-    "title": { "en": "About Heanxin", "zh": "关于禾安鑫" }
+    "eyebrow": {
+      "en": "Company Profile",
+      "zh": "公司简介"
+    },
+    "title": {
+      "en": "About Heanxin",
+      "zh": "关于禾安鑫"
+    }
   },
   "intro": {
     "body": {
@@ -10,7 +16,10 @@
     }
   },
   "profile": {
-    "eyebrow": { "en": "Who We Are", "zh": "企业定位" },
+    "eyebrow": {
+      "en": "Who We Are",
+      "zh": "企业定位"
+    },
     "title": {
       "en": "A One-stop Plastic Injection Manufacturing Partner",
       "zh": "一站式塑胶注塑制造伙伴"
@@ -31,19 +40,52 @@
     ]
   },
   "facilities": {
-    "eyebrow": { "en": "Facilities", "zh": "厂房设施" },
-    "title": { "en": "Our Workshops", "zh": "生产车间" }
+    "eyebrow": {
+      "en": "Product Proof",
+      "zh": "产品实拍证明"
+    },
+    "title": {
+      "en": "Representative Custom Plastic Products",
+      "zh": "代表性定制塑胶产品"
+    }
   },
   "workshops": [
-    { "alt": { "en": "Injection molding workshop", "zh": "注塑车间" } },
-    { "alt": { "en": "Mold development workshop", "zh": "模具开发车间" } },
-    { "alt": { "en": "Quality inspection area", "zh": "品质检验区" } },
-    { "alt": { "en": "Assembly and packaging area", "zh": "组装与包装区" } }
+    {
+      "image": "electronic-housing-06",
+      "alt": {
+        "en": "Electronic plastic housing group",
+        "zh": "电子塑胶外壳组合"
+      }
+    },
+    {
+      "image": "industrial-component-08",
+      "alt": {
+        "en": "Industrial plastic component group",
+        "zh": "工业塑胶零部件组合"
+      }
+    },
+    {
+      "image": "insert-molding-06",
+      "alt": {
+        "en": "Insert molding component group",
+        "zh": "嵌件注塑产品组合"
+      }
+    },
+    {
+      "image": "display-box-01",
+      "alt": {
+        "en": "Transparent display box group",
+        "zh": "透明展示盒组合"
+      }
+    }
   ],
   "stats": [
     {
       "icon": "factory",
-      "title": { "en": "Custom Manufacturing", "zh": "定制制造" },
+      "title": {
+        "en": "Custom Manufacturing",
+        "zh": "定制制造"
+      },
       "desc": {
         "en": "Focused on customer drawings, samples and project requirements.",
         "zh": "围绕客户图纸、样品和项目需求开展生产。"
@@ -51,7 +93,10 @@
     },
     {
       "icon": "mold",
-      "title": { "en": "In-house Tooling", "zh": "自有模具能力" },
+      "title": {
+        "en": "In-house Tooling",
+        "zh": "自有模具能力"
+      },
       "desc": {
         "en": "Mold development supports faster engineering iteration.",
         "zh": "模具开发能力支持更快的工程迭代。"
@@ -59,7 +104,10 @@
     },
     {
       "icon": "shield",
-      "title": { "en": "Production Quality", "zh": "量产品质" },
+      "title": {
+        "en": "Production Quality",
+        "zh": "量产品质"
+      },
       "desc": {
         "en": "Quality checks support stable delivery across repeat orders.",
         "zh": "通过品质检查支持多批次稳定交付。"
@@ -67,12 +115,21 @@
     }
   ],
   "capabilities": {
-    "eyebrow": { "en": "Manufacturing Scope", "zh": "制造范围" },
-    "title": { "en": "What We Build", "zh": "我们能制造什么" },
+    "eyebrow": {
+      "en": "Manufacturing Scope",
+      "zh": "制造范围"
+    },
+    "title": {
+      "en": "What We Build",
+      "zh": "我们能制造什么"
+    },
     "items": [
       {
         "icon": "chip",
-        "title": { "en": "Electronic Plastic Housings", "zh": "电子塑胶外壳" },
+        "title": {
+          "en": "Electronic Plastic Housings",
+          "zh": "电子塑胶外壳"
+        },
         "desc": {
           "en": "Custom enclosures, covers and structural shells for electronics.",
           "zh": "电子产品定制外壳、盖件与结构壳体。"
@@ -80,7 +137,10 @@
       },
       {
         "icon": "control",
-        "title": { "en": "Industrial Equipment Plastic Components", "zh": "工业设备塑胶零部件" },
+        "title": {
+          "en": "Industrial Equipment Plastic Components",
+          "zh": "工业设备塑胶零部件"
+        },
         "desc": {
           "en": "Durable molded parts for industrial control and equipment assemblies.",
           "zh": "用于工业控制和设备配套的耐用注塑件。"
@@ -88,7 +148,10 @@
       },
       {
         "icon": "home",
-        "title": { "en": "Smart Home & Small Appliance Parts", "zh": "智能家居与小家电配件" },
+        "title": {
+          "en": "Smart Home & Small Appliance Parts",
+          "zh": "智能家居与小家电配件"
+        },
         "desc": {
           "en": "Plastic components for connected home devices and small appliances.",
           "zh": "智能家居设备和小家电产品的塑胶组件。"
@@ -96,7 +159,10 @@
       },
       {
         "icon": "car",
-        "title": { "en": "Automotive Small Plastic Parts", "zh": "汽车小型塑胶件" },
+        "title": {
+          "en": "Automotive Small Plastic Parts",
+          "zh": "汽车小型塑胶件"
+        },
         "desc": {
           "en": "Small custom parts for automotive electronics and interior modules.",
           "zh": "汽车电子和内饰模块用小型定制塑胶件。"
@@ -104,7 +170,10 @@
       },
       {
         "icon": "medical",
-        "title": { "en": "Medical & Health Equipment Housings", "zh": "医疗健康设备外壳" },
+        "title": {
+          "en": "Medical & Health Equipment Housings",
+          "zh": "医疗健康设备外壳"
+        },
         "desc": {
           "en": "Plastic shells and components for health device applications.",
           "zh": "医疗健康设备应用中的塑胶壳体与部件。"
@@ -112,7 +181,10 @@
       },
       {
         "icon": "combine",
-        "title": { "en": "Hardware-Plastic Combined Parts", "zh": "五金塑胶组合件" },
+        "title": {
+          "en": "Hardware-Plastic Combined Parts",
+          "zh": "五金塑胶组合件"
+        },
         "desc": {
           "en": "Metal and plastic integrated parts through insert molding or assembly.",
           "zh": "通过嵌件注塑或组装实现的金属塑胶一体化部件。"
@@ -120,7 +192,10 @@
       },
       {
         "icon": "mold",
-        "title": { "en": "Plastic Mold Design & Manufacturing", "zh": "塑胶模具设计制造" },
+        "title": {
+          "en": "Plastic Mold Design & Manufacturing",
+          "zh": "塑胶模具设计制造"
+        },
         "desc": {
           "en": "Tooling support from DFM and mold making to trial molding.",
           "zh": "从 DFM、模具制造到试模验证的模具支持。"
@@ -129,7 +204,10 @@
     ]
   },
   "advantages": {
-    "eyebrow": { "en": "Why Work With Us", "zh": "合作优势" },
+    "eyebrow": {
+      "en": "Why Work With Us",
+      "zh": "合作优势"
+    },
     "title": {
       "en": "Practical Advantages for OEM / ODM Buyers",
       "zh": "面向 OEM / ODM 客户的实际优势"
@@ -137,7 +215,10 @@
     "items": [
       {
         "icon": "factory",
-        "title": { "en": "Manufacturing Experience", "zh": "制造经验" },
+        "title": {
+          "en": "Manufacturing Experience",
+          "zh": "制造经验"
+        },
         "desc": {
           "en": "Practical engineering feedback for custom plastic projects.",
           "zh": "为定制塑胶项目提供贴近生产的工程建议。"
@@ -145,7 +226,10 @@
       },
       {
         "icon": "custom",
-        "title": { "en": "Small & Medium Custom Parts", "zh": "中小型定制塑胶件" },
+        "title": {
+          "en": "Small & Medium Custom Parts",
+          "zh": "中小型定制塑胶件"
+        },
         "desc": {
           "en": "Focused on parts that need flexible customization and stable repeat orders.",
           "zh": "专注需要灵活定制和稳定复购的中小型塑胶零件。"
@@ -153,7 +237,10 @@
       },
       {
         "icon": "oem",
-        "title": { "en": "OEM / ODM Support", "zh": "OEM / ODM 支持" },
+        "title": {
+          "en": "OEM / ODM Support",
+          "zh": "OEM / ODM 支持"
+        },
         "desc": {
           "en": "Support from idea, drawing or sample to production-ready parts.",
           "zh": "支持从想法、图纸或样品到可量产产品的落地。"
@@ -161,7 +248,10 @@
       },
       {
         "icon": "shield",
-        "title": { "en": "Stable Quality Control", "zh": "稳定品质管控" },
+        "title": {
+          "en": "Stable Quality Control",
+          "zh": "稳定品质管控"
+        },
         "desc": {
           "en": "Inspection and process control support stable delivery.",
           "zh": "通过检验和过程管控支持稳定交付。"
@@ -169,7 +259,10 @@
       },
       {
         "icon": "assembly",
-        "title": { "en": "One-stop Manufacturing", "zh": "一站式制造" },
+        "title": {
+          "en": "One-stop Manufacturing",
+          "zh": "一站式制造"
+        },
         "desc": {
           "en": "Tooling, injection molding, hardware matching, assembly and packaging in one workflow.",
           "zh": "模具、注塑、五金配套、组装与包装形成完整流程。"
@@ -178,21 +271,58 @@
     ]
   },
   "cooperation": {
-    "eyebrow": { "en": "Cooperation Directions", "zh": "合作方向" },
-    "title": { "en": "Industries We Support", "zh": "可合作行业方向" },
+    "eyebrow": {
+      "en": "Cooperation Directions",
+      "zh": "合作方向"
+    },
+    "title": {
+      "en": "Industries We Support",
+      "zh": "可合作行业方向"
+    },
     "desc": {
       "en": "We welcome custom plastic projects from electronics, industrial equipment, smart home, small appliances, automotive electronics, medical and health devices and other OEM / ODM product categories.",
       "zh": "我们欢迎电子产品、工业设备、智能家居、小型家电、汽车电子、医疗健康设备及其他 OEM / ODM 产品方向的定制塑胶项目。"
     },
     "industries": [
-      { "en": "Electronic Products", "zh": "电子产品" },
-      { "en": "Industrial Equipment", "zh": "工业设备" },
-      { "en": "Smart Home", "zh": "智能家居" },
-      { "en": "Small Appliances", "zh": "小型家电" },
-      { "en": "Automotive Electronics", "zh": "汽车电子" },
-      { "en": "Medical & Health", "zh": "医疗健康" },
-      { "en": "Other Custom Plastic Products", "zh": "其他定制塑胶产品" }
+      {
+        "en": "Electronic Products",
+        "zh": "电子产品"
+      },
+      {
+        "en": "Industrial Equipment",
+        "zh": "工业设备"
+      },
+      {
+        "en": "Smart Home",
+        "zh": "智能家居"
+      },
+      {
+        "en": "Small Appliances",
+        "zh": "小型家电"
+      },
+      {
+        "en": "Automotive Electronics",
+        "zh": "汽车电子"
+      },
+      {
+        "en": "Medical & Health",
+        "zh": "医疗健康"
+      },
+      {
+        "en": "Other Custom Plastic Products",
+        "zh": "其他定制塑胶产品"
+      }
     ],
-    "button": { "en": "Discuss Your Project", "zh": "沟通项目需求" }
-  }
+    "button": {
+      "en": "Discuss Your Project",
+      "zh": "沟通项目需求"
+    }
+  },
+  "visuals": [
+    "productLineBanner",
+    "electronic-housing-06",
+    "industrial-component-08",
+    "insert-molding-06",
+    "display-box-01"
+  ]
 }

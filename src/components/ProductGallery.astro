@@ -1,0 +1,76 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import media from "../content/media.json";
+import ResponsiveImage from "./ResponsiveImage.astro";
+import T from "./T.astro";
+
+interface Category {
+  no: string;
+  title: LocalizedText;
+  desc: LocalizedText;
+  examples: LocalizedText[];
+  coverImage: string;
+  galleryImages: string[];
+}
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+const assets = media.assetMap;
+---
+
+<div class="space-y-12">
+  {
+    categories.map((category) => {
+      const cover = assets[category.coverImage];
+      const gallery = category.galleryImages.map((id) => assets[id]).filter(Boolean);
+
+      return (
+        <article class="border-line shadow-brand-900/5 bg-white p-5 shadow-sm">
+          <div class="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+            <ResponsiveImage
+              image={cover}
+              aspect="square"
+              fit="contain"
+              loading="eager"
+              class="border-line border bg-white p-4"
+              sizes="(min-width: 1024px) 38vw, 100vw"
+            />
+            <div>
+              <p class="font-display text-ember-700 text-sm font-bold tracking-widest">
+                {category.no}
+              </p>
+              <h2 class="font-display text-brand-700 mt-3 text-2xl font-semibold">
+                <T text={category.title} />
+              </h2>
+              <p class="text-muted mt-4 leading-relaxed">
+                <T text={category.desc} />
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                {category.examples.map((example) => (
+                  <span class="bg-brand-50 text-brand-700 rounded-full px-3 py-1 text-xs font-semibold">
+                    <T text={example} />
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            {gallery.map((image) => (
+              <ResponsiveImage
+                image={image}
+                aspect="square"
+                fit="contain"
+                loading="eager"
+                class="border-line hover:shadow-brand-900/10 border bg-white p-3 transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                sizes="(min-width: 1280px) 15vw, (min-width: 1024px) 22vw, 45vw"
+              />
+            ))}
+          </div>
+        </article>
+      );
+    })
+  }
+</div>

@@ -17,13 +17,17 @@ import { ClientRouter } from "astro:transitions";
 interface Props {
   title: string;
   description: string;
+  canonicalPath?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, canonicalPath } = Astro.props;
 const { company, contact } = site;
 
 const fullTitle = `${title} | ${company.shortName.zh} Heanxin`;
-const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const canonical = new URL(
+  canonicalPath ? url(canonicalPath) : Astro.url.pathname,
+  Astro.site
+).toString();
 const ogImage = new URL(url("og-image.svg"), Astro.site).toString();
 const homeUrl = new URL(url("/"), Astro.site).toString();
 const serviceOffers = [

@@ -1,29 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
+import ImageHero from "../components/ImageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
 import ProductTaxonomyCard from "../components/ProductTaxonomyCard.astro";
 import ProcessStepper from "../components/ProcessStepper.astro";
 import HighlightStat from "../components/HighlightStat.astro";
-import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import T from "../components/T.astro";
 import { url } from "../lib/i18n";
 import home from "../content/home.json";
+import media from "../content/media.json";
 import products from "../content/products.json";
 
 const featuredProducts = products.categories.filter((category) =>
   home.productEntry.featuredNos.includes(category.no)
 );
+const assets = media.assetMap;
 ---
 
 <BaseLayout
   title="塑胶注塑与模具定制制造商"
   description="禾安鑫专注塑胶注塑、模具开发、嵌件注塑与五金塑胶组合件，为电子、汽车、医疗等行业提供 OEM / ODM 一站式定制制造服务。"
 >
-  <Hero
+  <ImageHero
     title={home.hero.title}
     subtitle={home.hero.subtitle}
+    image={assets[home.hero.image]}
     primaryCta={{ label: home.hero.primaryCta, href: "/contact#quote" }}
     secondaryCta={{ label: home.hero.secondaryCta, href: "/products" }}
   />
@@ -48,6 +51,7 @@ const featuredProducts = products.categories.filter((category) =>
             title={category.title}
             desc={category.desc}
             examples={category.examples}
+            image={assets[category.coverImage]}
           />
         ))
       }
@@ -63,18 +67,27 @@ const featuredProducts = products.categories.filter((category) =>
   </section>
 
   <section class="section-tint border-line border-y py-16">
-    <div class="container-page">
-      <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} />
-      <p class="text-muted mx-auto mt-6 max-w-3xl text-center leading-relaxed">
-        <T text={home.intro.body} />
-      </p>
-      <div class="mt-8 flex justify-center">
-        <a
-          href={url("/about")}
-          class="bg-brand-500 hover:bg-brand-600 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-        >
-          <span lang="zh">了解更多</span><span lang="en">Learn More</span>
-        </a>
+    <div class="container-page grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <ResponsiveImage
+        image={assets[home.intro.image]}
+        aspect="wide"
+        fit="cover"
+        class="border-line shadow-brand-900/10 border bg-white shadow-lg"
+        sizes="(min-width: 1024px) 50vw, 100vw"
+      />
+      <div>
+        <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} align="left" />
+        <p class="text-muted mt-6 leading-relaxed">
+          <T text={home.intro.body} />
+        </p>
+        <div class="mt-8">
+          <a
+            href={url("/about")}
+            class="bg-brand-500 hover:bg-brand-600 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+          >
+            <span lang="zh">了解更多</span><span lang="en">Learn More</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -82,7 +95,17 @@ const featuredProducts = products.categories.filter((category) =>
   <section class="container-page py-16">
     <SectionHeader eyebrow={home.factoryVisuals.eyebrow} title={home.factoryVisuals.title} />
     <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {home.factoryVisuals.items.map((item) => <PhotoPlaceholder alt={item.alt} ratio="video" />)}
+      {
+        home.factoryVisuals.items.map((item) => (
+          <ResponsiveImage
+            image={assets[item.image]}
+            aspect="video"
+            fit="contain"
+            class="border-line border bg-white p-3"
+            sizes="(min-width: 1024px) 24vw, 50vw"
+          />
+        ))
+      }
     </div>
   </section>
 

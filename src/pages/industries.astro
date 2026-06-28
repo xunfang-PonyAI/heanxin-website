@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import T from "../components/T.astro";
 import industries from "../content/industries.json";
+import media from "../content/media.json";
+
+const assets = media.assetMap;
 ---
 
 <BaseLayout
@@ -19,11 +22,12 @@ import industries from "../content/industries.json";
       {
         industries.industries.map((item) => (
           <article data-reveal class="card-base card-interactive overflow-hidden">
-            <PhotoPlaceholder
-              alt={item.alt ?? item.title}
-              ratio="video"
-              labelStyle="none"
-              class="rounded-none border-0"
+            <ResponsiveImage
+              image={assets[item.image]}
+              aspect="video"
+              fit="contain"
+              class="bg-white p-4"
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
             />
             <div class="p-5">
               <h2 class="font-display text-brand-700 text-xl font-semibold">

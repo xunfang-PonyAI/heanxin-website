@@ -2,10 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
-import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import T from "../components/T.astro";
 import about from "../content/about.json";
+import media from "../content/media.json";
 import { url } from "../lib/i18n";
+
+const assets = media.assetMap;
 ---
 
 <BaseLayout
@@ -33,12 +36,12 @@ import { url } from "../lib/i18n";
           }
         </div>
       </div>
-      <PhotoPlaceholder
-        alt={{
-          en: "Heanxin factory and custom plastic manufacturing",
-          zh: "禾安鑫工厂与定制塑胶制造",
-        }}
-        ratio="portrait"
+      <ResponsiveImage
+        image={assets[about.visuals[0]]}
+        aspect="portrait"
+        fit="cover"
+        class="border-line shadow-brand-900/10 border bg-white shadow-lg"
+        sizes="(min-width: 1024px) 42vw, 100vw"
       />
     </div>
   </section>
@@ -46,7 +49,17 @@ import { url } from "../lib/i18n";
   <section class="container-page py-12">
     <SectionHeader eyebrow={about.facilities.eyebrow} title={about.facilities.title} />
     <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {about.workshops.map((w) => <PhotoPlaceholder alt={w.alt} ratio="video" />)}
+      {
+        about.workshops.map((w) => (
+          <ResponsiveImage
+            image={assets[w.image]}
+            aspect="video"
+            fit="contain"
+            class="border-line border bg-white p-3"
+            sizes="(min-width: 1024px) 24vw, 50vw"
+          />
+        ))
+      }
     </div>
     <div class="mt-8 grid gap-5 sm:grid-cols-3">
       {about.stats.map((s) => <IconFeatureCard icon={s.icon} title={s.title} desc={s.desc} />)}
