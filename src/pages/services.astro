@@ -1,47 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHeader from "../components/SectionHeader.astro";
-import IconFeatureCard from "../components/IconFeatureCard.astro";
-import ProcessStepper from "../components/ProcessStepper.astro";
-import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
-import services from "../content/services.json";
+import CapabilitiesPage from "../components/CapabilitiesPage.astro";
 ---
 
 <BaseLayout
   title="定制服务"
-  description="禾安鑫提供定制注塑成型、模具开发、嵌件注塑、五金塑胶组合件及 OEM / ODM 代工，覆盖从设计、开模到批量生产的全流程定制服务。"
+  description="禾安鑫提供塑胶注塑生产、模具开发、嵌件注塑、组装、OEM / ODM 和品质控制等制造服务。"
 >
-  <section class="container-page pt-12 pb-8">
-    <SectionHeader
-      eyebrow={services.header.eyebrow}
-      title={services.header.title}
-      subtitle={services.header.subtitle}
-      as="h1"
-    />
-  </section>
-
-  <section class="container-page pb-14">
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        services.services.map((s, i) => (
-          <IconFeatureCard no={String(i + 1)} icon={s.icon} title={s.title} desc={s.desc} />
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="bg-surface border-line border-y py-14">
-    <div class="container-page">
-      <SectionHeader title={services.process.title} />
-      <div class="mt-10">
-        <ProcessStepper steps={services.process.steps} />
-      </div>
-    </div>
-  </section>
-
-  <section class="container-page py-14">
-    <div class="grid gap-5 sm:grid-cols-3">
-      {services.gallery.map((g) => <PhotoPlaceholder alt={g.alt} ratio="video" />)}
-    </div>
-  </section>
+  <CapabilitiesPage />
 </BaseLayout>

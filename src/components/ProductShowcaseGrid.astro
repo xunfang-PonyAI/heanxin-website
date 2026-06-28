@@ -1,0 +1,53 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import PhotoPlaceholder from "./PhotoPlaceholder.astro";
+import T from "./T.astro";
+
+interface ShowcaseItem {
+  title: LocalizedText;
+  material: LocalizedText;
+  process: LocalizedText;
+  alt: LocalizedText;
+}
+
+interface Props {
+  items: ShowcaseItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
+  {
+    items.map((item) => (
+      <article data-reveal class="group">
+        <PhotoPlaceholder alt={item.alt} ratio="square" labelStyle="none" />
+        <div class="mt-3 space-y-2 text-sm">
+          <h3 class="font-display text-brand-700 text-base leading-snug font-semibold">
+            <T text={item.title} />
+          </h3>
+          <p class="border-line text-ink border-t pt-2 text-[13px] font-medium">
+            <span class="text-muted">
+              <>
+                <span lang="en">Material</span>
+                <span lang="zh">材料</span>
+              </>
+            </span>
+            <span class="text-line mx-1">/</span>
+            <T text={item.material} />
+          </p>
+          <p class="border-line text-ink border-t pt-2 text-[13px] font-medium">
+            <span class="text-muted">
+              <>
+                <span lang="en">Process</span>
+                <span lang="zh">工艺</span>
+              </>
+            </span>
+            <span class="text-line mx-1">/</span>
+            <T text={item.process} />
+          </p>
+        </div>
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,214 @@
+{
+  "hero": {
+    "eyebrow": { "en": "Manufacturing Capabilities", "zh": "制造能力" },
+    "title": {
+      "en": "From Mold Development to Stable Production",
+      "zh": "从模具开发到稳定量产"
+    },
+    "subtitle": {
+      "en": "Heanxin supports custom plastic projects from requirement review, mold design and injection molding to insert molding, assembly, quality inspection and delivery.",
+      "zh": "禾安鑫支持从需求评审、模具设计、注塑生产到嵌件注塑、组装、品质检验与交付的定制塑胶项目。"
+    }
+  },
+  "services": [
+    {
+      "icon": "injection",
+      "title": { "en": "Plastic Injection Molding", "zh": "塑胶注塑生产" },
+      "desc": {
+        "en": "Stable production for small and medium custom plastic parts with process and appearance control.",
+        "zh": "面向中小型定制塑胶件的稳定注塑生产，兼顾工艺、尺寸和外观控制。"
+      }
+    },
+    {
+      "icon": "mold",
+      "title": { "en": "Mold Design & Manufacturing", "zh": "塑胶模具设计与制造" },
+      "desc": {
+        "en": "Tooling support from drawings, samples or product ideas through design, machining and trial molding.",
+        "zh": "根据图纸、样品或产品想法完成模具设计、加工与试模支持。"
+      }
+    },
+    {
+      "icon": "insert",
+      "title": { "en": "Insert Molding", "zh": "嵌件注塑" },
+      "desc": {
+        "en": "Metal inserts, nuts, pins and screws integrated with plastic for stronger functional structures.",
+        "zh": "将五金嵌件、螺母、金属针或螺丝与塑胶结合，形成更强的功能结构。"
+      }
+    },
+    {
+      "icon": "assembly",
+      "title": { "en": "Assembly Service", "zh": "产品组装服务" },
+      "desc": {
+        "en": "Plastic, hardware, screws and simple accessories assembled, packed and prepared for shipment.",
+        "zh": "提供塑胶件、五金件、螺丝及简单配件装配、包装和出货准备。"
+      }
+    },
+    {
+      "icon": "oem",
+      "title": { "en": "OEM & ODM Service", "zh": "OEM / ODM 定制服务" },
+      "desc": {
+        "en": "Flexible support for drawings, samples, colors, surface processes, logos and packaging.",
+        "zh": "支持图纸、样品、颜色、表面工艺、LOGO 加工与包装方案等定制需求。"
+      }
+    },
+    {
+      "icon": "shield",
+      "title": { "en": "Quality Control", "zh": "品质控制" },
+      "desc": {
+        "en": "Inspection from incoming material and trial molding to production, assembly and final shipment.",
+        "zh": "从来料、试模、注塑、组装到出货的流程检验，保障批量一致性。"
+      }
+    }
+  ],
+  "projectFlow": {
+    "title": { "en": "Custom Project Flow", "zh": "定制项目流程" },
+    "subtitle": {
+      "en": "A clear workflow helps buyers know what to prepare and when key manufacturing decisions are made.",
+      "zh": "清晰流程帮助买家了解需要准备哪些资料，以及制造决策在哪些阶段完成。"
+    },
+    "steps": [
+      {
+        "icon": "chat",
+        "title": { "en": "Idea / Concept", "zh": "需求沟通" },
+        "desc": {
+          "en": "Discuss product use, drawings, samples and quantity.",
+          "zh": "沟通产品用途、图纸、样品和数量。"
+        }
+      },
+      {
+        "icon": "drawing",
+        "title": { "en": "Design Review", "zh": "结构评估" },
+        "desc": {
+          "en": "Review structure, material, DFM and quotation direction.",
+          "zh": "评估结构、材料、DFM 和报价方向。"
+        }
+      },
+      {
+        "icon": "mold",
+        "title": { "en": "Mold Making", "zh": "模具开发" },
+        "desc": {
+          "en": "Build the mold after design confirmation.",
+          "zh": "设计确认后进行模具制造。"
+        }
+      },
+      {
+        "icon": "tray",
+        "title": { "en": "Sample Trial", "zh": "打样试模" },
+        "desc": {
+          "en": "Trial mold, inspect samples and tune the process.",
+          "zh": "试模、检查样品并优化工艺。"
+        }
+      },
+      {
+        "icon": "factory",
+        "title": { "en": "Mass Production", "zh": "批量生产" },
+        "desc": {
+          "en": "Run stable production after sample approval.",
+          "zh": "样品确认后进入稳定量产。"
+        }
+      },
+      {
+        "icon": "boxes",
+        "title": { "en": "Delivery", "zh": "交付" },
+        "desc": {
+          "en": "Inspect, assemble, pack and ship the order.",
+          "zh": "检验、组装、包装并完成出货。"
+        }
+      }
+    ]
+  },
+  "moldFlow": {
+    "title": { "en": "Mold Development & Production Capacity", "zh": "模具开发与生产能力" },
+    "subtitle": {
+      "en": "We work from samples, 2D drawings, 3D files or custom requirements to support efficient sampling and reliable mass production.",
+      "zh": "可根据样品、2D 图纸、3D 文件或定制需求进行开发，支持高效打样与稳定量产。"
+    },
+    "steps": [
+      {
+        "icon": "document",
+        "title": { "en": "Requirement", "zh": "需求" },
+        "desc": {
+          "en": "Confirm drawings, samples and target use.",
+          "zh": "确认图纸、样品和目标用途。"
+        }
+      },
+      {
+        "icon": "drawing",
+        "title": { "en": "Drawing Review", "zh": "图纸评估" },
+        "desc": {
+          "en": "Check structure, draft and tooling risks.",
+          "zh": "检查结构、脱模和开模风险。"
+        }
+      },
+      {
+        "icon": "monitor",
+        "title": { "en": "Mold Design", "zh": "模具设计" },
+        "desc": { "en": "Design mold structure for production.", "zh": "设计适合量产的模具结构。" }
+      },
+      {
+        "icon": "cnc",
+        "title": { "en": "Mold Manufacturing", "zh": "模具加工" },
+        "desc": { "en": "Machine, assemble and fit the mold.", "zh": "完成模具加工、装配与合模。" }
+      },
+      {
+        "icon": "injection",
+        "title": { "en": "Trial Molding", "zh": "试模打样" },
+        "desc": {
+          "en": "Produce samples for dimension and appearance review.",
+          "zh": "生产样品用于尺寸和外观确认。"
+        }
+      },
+      {
+        "icon": "factory",
+        "title": { "en": "Mass Production", "zh": "批量生产" },
+        "desc": {
+          "en": "Move into stable production after approval.",
+          "zh": "确认后进入稳定批量生产。"
+        }
+      }
+    ]
+  },
+  "gallery": [
+    { "alt": { "en": "Project discussion with drawings", "zh": "图纸项目沟通" } },
+    { "alt": { "en": "Precision mold manufacturing", "zh": "精密模具制造" } },
+    { "alt": { "en": "Injection molding machines", "zh": "注塑机生产线" } },
+    { "alt": { "en": "Inspection and samples", "zh": "样品检验" } }
+  ],
+  "capacityStats": [
+    {
+      "icon": "mold",
+      "title": { "en": "Custom Mold Development", "zh": "定制模具开发" },
+      "desc": {
+        "en": "Tooling from drawings, samples or product requirements.",
+        "zh": "支持图纸、样品或项目需求开模。"
+      }
+    },
+    {
+      "icon": "press",
+      "title": { "en": "Up to 800T Injection Machines", "zh": "注塑机最大 800T" },
+      "desc": {
+        "en": "Capacity for varied small and medium plastic products.",
+        "zh": "覆盖多类中小型塑胶产品生产。"
+      }
+    },
+    {
+      "icon": "shield",
+      "title": { "en": "Stable OEM / ODM Production", "zh": "稳定 OEM / ODM 生产" },
+      "desc": {
+        "en": "Process control supports repeated production orders.",
+        "zh": "通过过程管控支持多批次稳定交付。"
+      }
+    }
+  ],
+  "cta": {
+    "title": {
+      "en": "Ready to review your plastic part project?",
+      "zh": "准备评估您的塑胶件项目？"
+    },
+    "desc": {
+      "en": "Send drawings, samples, material requirements and quantity so our team can evaluate tooling and production feasibility.",
+      "zh": "发送图纸、样品、材料要求和数量，我们会评估开模与生产可行性。"
+    },
+    "button": { "en": "Get a Quote", "zh": "获取报价" }
+  }
+}

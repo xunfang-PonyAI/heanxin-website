@@ -33,9 +33,13 @@ import { url } from "../lib/i18n";
           }
         </div>
       </div>
-      <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-        {about.stats.map((s) => <IconFeatureCard icon={s.icon} title={s.title} desc={s.desc} />)}
-      </div>
+      <PhotoPlaceholder
+        alt={{
+          en: "Heanxin factory and custom plastic manufacturing",
+          zh: "禾安鑫工厂与定制塑胶制造",
+        }}
+        ratio="portrait"
+      />
     </div>
   </section>
 
@@ -43,6 +47,9 @@ import { url } from "../lib/i18n";
     <SectionHeader eyebrow={about.facilities.eyebrow} title={about.facilities.title} />
     <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
       {about.workshops.map((w) => <PhotoPlaceholder alt={w.alt} ratio="video" />)}
+    </div>
+    <div class="mt-8 grid gap-5 sm:grid-cols-3">
+      {about.stats.map((s) => <IconFeatureCard icon={s.icon} title={s.title} desc={s.desc} />)}
     </div>
   </section>
 
@@ -91,7 +98,7 @@ import { url } from "../lib/i18n";
             }
           </div>
           <a
-            href={url("/#quote")}
+            href={url("/contact#quote")}
             class="bg-ember-500 hover:bg-ember-600 mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
           >
             <T text={about.cooperation.button} />

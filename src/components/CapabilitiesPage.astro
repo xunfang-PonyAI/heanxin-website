@@ -1,0 +1,103 @@
+---
+import Hero from "./Hero.astro";
+import HighlightStat from "./HighlightStat.astro";
+import IconFeatureCard from "./IconFeatureCard.astro";
+import PhotoPlaceholder from "./PhotoPlaceholder.astro";
+import ProcessStepper from "./ProcessStepper.astro";
+import SectionHeader from "./SectionHeader.astro";
+import T from "./T.astro";
+import capabilities from "../content/capabilities.json";
+import { url } from "../lib/i18n";
+---
+
+<Hero
+  eyebrow={capabilities.hero.eyebrow}
+  title={capabilities.hero.title}
+  subtitle={capabilities.hero.subtitle}
+  primaryCta={{ label: capabilities.cta.button, href: "/contact#quote" }}
+  compact
+/>
+
+<section class="container-page py-14">
+  <SectionHeader
+    eyebrow={{ en: "Core Services", zh: "核心服务" }}
+    title={{ en: "Six Manufacturing Capabilities", zh: "六项制造能力" }}
+  />
+  <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      capabilities.services.map((item, index) => (
+        <IconFeatureCard
+          no={String(index + 1)}
+          icon={item.icon}
+          title={item.title}
+          desc={item.desc}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<section class="section-tint border-line border-y py-14">
+  <div class="container-page">
+    <SectionHeader
+      title={capabilities.projectFlow.title}
+      subtitle={capabilities.projectFlow.subtitle}
+    />
+    <div class="mt-10">
+      <ProcessStepper steps={capabilities.projectFlow.steps} />
+    </div>
+  </div>
+</section>
+
+<section class="bg-deep py-16 text-white">
+  <div class="container-page">
+    <SectionHeader
+      title={capabilities.moldFlow.title}
+      subtitle={capabilities.moldFlow.subtitle}
+      tone="dark"
+    />
+    <div class="mt-12">
+      <ProcessStepper steps={capabilities.moldFlow.steps} variant="timeline" tone="dark" />
+    </div>
+  </div>
+</section>
+
+<section class="container-page py-14">
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+    {capabilities.gallery.map((item) => <PhotoPlaceholder alt={item.alt} ratio="video" />)}
+  </div>
+</section>
+
+<section class="bg-brand-700 py-14">
+  <div class="container-page">
+    <SectionHeader title={{ en: "Production Capability", zh: "生产能力亮点" }} tone="dark" />
+    <div class="mt-10 grid gap-5 sm:grid-cols-3">
+      {
+        capabilities.capacityStats.map((stat) => (
+          <HighlightStat icon={stat.icon} title={stat.title} desc={stat.desc} />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="container-page py-14">
+  <div class="section-tint border-line rounded-[var(--radius-card)] border p-6 sm:p-8">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-brand-700 text-3xl font-bold">
+          <T text={capabilities.cta.title} />
+        </h2>
+        <p class="text-muted mt-3 leading-relaxed">
+          <T text={capabilities.cta.desc} />
+        </p>
+      </div>
+      <a
+        href={url("/contact#quote")}
+        class="bg-ember-500 hover:bg-ember-600 inline-flex shrink-0 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+      >
+        <T text={capabilities.cta.button} />
+      </a>
+    </div>
+  </div>
+</section>

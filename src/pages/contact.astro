@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import IconFeatureCard from "../components/IconFeatureCard.astro";
+import QuoteSection from "../components/QuoteSection.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import T from "../components/T.astro";
+import contact from "../content/contact.json";
+import { site } from "../lib/i18n";
+---
+
+<BaseLayout
+  title="联系我们"
+  description="联系东莞市禾安鑫五金塑胶制品有限公司，发送塑胶注塑、模具开发、嵌件注塑、五金塑胶组合件和 OEM / ODM 项目需求。"
+>
+  <Hero
+    eyebrow={contact.header.eyebrow}
+    title={contact.header.title}
+    subtitle={contact.header.subtitle}
+    compact
+  />
+
+  <section class="container-page py-14">
+    <div class="grid gap-5 sm:grid-cols-3">
+      {
+        contact.highlights.map((item) => (
+          <IconFeatureCard icon={item.icon} title={item.title} desc={item.desc} />
+        ))
+      }
+    </div>
+  </section>
+
+  <QuoteSection />
+
+  <section class="container-page py-14">
+    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <div>
+        <SectionHeader
+          eyebrow={contact.prepare.eyebrow}
+          title={contact.prepare.title}
+          align="left"
+        />
+        <ul class="mt-8 space-y-3">
+          {
+            contact.prepare.items.map((item, index) => (
+              <li class="border-line flex gap-3 rounded-[var(--radius-card)] border bg-white p-4">
+                <span class="bg-brand-100 text-brand-700 font-display flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span class="text-muted pt-0.5 text-sm font-medium">
+                  <T text={item} />
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <aside class="bg-deep rounded-[var(--radius-card)] p-6 text-white sm:p-8">
+        <p class="eyebrow text-ember-300">
+          <span lang="en">Direct Contact</span><span lang="zh">直接联系</span>
+        </p>
+        <h2 class="font-display mt-3 text-3xl font-bold">
+          <span lang="en">Factory Contact Information</span><span lang="zh">工厂联系方式</span>
+        </h2>
+        <div class="mt-8 space-y-4">
+          {
+            contact.contactCards.map((card) => (
+              <div class="rounded-[var(--radius-card)] border border-white/15 bg-white/5 p-4">
+                <p class="font-display text-lg font-semibold text-white">
+                  <T text={card.title} />
+                </p>
+                <p class="text-brand-100/85 mt-2 text-sm leading-relaxed">
+                  <T text={card.desc} />
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href={`mailto:${site.contact.email}?subject=${encodeURIComponent("Custom Plastic Injection Molding Quote Request")}`}
+            class="bg-ember-500 hover:bg-ember-600 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
+          >
+            <span lang="en">Email Now</span><span lang="zh">发送邮件</span>
+          </a>
+          <a
+            href={`https://wa.me/${site.contact.phoneRaw}`}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex rounded-full border border-white/35 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

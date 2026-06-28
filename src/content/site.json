@@ -22,20 +22,19 @@
   },
   "nav": [
     { "href": "/", "label": { "en": "Home", "zh": "首页" } },
-    { "href": "/about", "label": { "en": "About", "zh": "公司简介" } },
-    { "href": "/services", "label": { "en": "Services", "zh": "定制服务" } },
+    { "href": "/about", "label": { "en": "About Us", "zh": "关于我们" } },
+    { "href": "/products", "label": { "en": "Products", "zh": "产品分类" } },
+    { "href": "/capabilities", "label": { "en": "Capabilities", "zh": "制造能力" } },
     {
       "href": "/materials-processes",
       "label": { "en": "Materials & Processes", "zh": "材料工艺" }
     },
-    { "href": "/industries", "label": { "en": "Industries", "zh": "应用领域" } },
-    { "href": "/mold-capability", "label": { "en": "Capability", "zh": "模具产能" } },
-    { "href": "/products", "label": { "en": "Products", "zh": "产品分类" } },
+    { "href": "/industries", "label": { "en": "Industries", "zh": "应用行业" } },
     { "href": "/news", "label": { "en": "News", "zh": "新闻资讯" } },
-    { "href": "/showcase", "label": { "en": "Showcase", "zh": "产品展示" } }
+    { "href": "/contact", "label": { "en": "Contact Us", "zh": "联系我们" } }
   ],
   "quoteCta": {
-    "href": "/#quote",
+    "href": "/contact#quote",
     "label": { "en": "Get a Quote", "zh": "获取报价" }
   },
   "footer": {

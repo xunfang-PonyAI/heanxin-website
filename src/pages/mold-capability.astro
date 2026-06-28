@@ -1,44 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import SectionHeader from "../components/SectionHeader.astro";
-import HighlightStat from "../components/HighlightStat.astro";
-import ProcessStepper from "../components/ProcessStepper.astro";
-import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
-import mold from "../content/mold.json";
+import CapabilitiesPage from "../components/CapabilitiesPage.astro";
 ---
 
 <BaseLayout
   title="模具开发与生产能力"
-  description="禾安鑫拥有自有模具车间与最大 800 吨注塑机群，提供从模具设计、CNC 加工、试模到量产维护的完整模具开发与精密注塑生产能力。"
+  description="禾安鑫提供模具设计制造、试模打样、最大 800T 注塑生产和稳定 OEM / ODM 量产支持。"
 >
-  <Hero eyebrow={mold.hero.eyebrow} title={mold.hero.title} subtitle={mold.hero.subtitle} compact />
-
-  <section class="bg-brand-700 py-14">
-    <div class="container-page">
-      <SectionHeader title={mold.process.title} tone="dark" />
-      <div class="mt-10">
-        <ProcessStepper steps={mold.process.steps} variant="timeline" tone="dark" />
-      </div>
-    </div>
-  </section>
-
-  <section class="container-page py-14">
-    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {mold.gallery.map((g) => <PhotoPlaceholder alt={g.alt} ratio="square" />)}
-    </div>
-  </section>
-
-  <section class="from-brand-600 to-brand-800 bg-gradient-to-br py-14">
-    <div class="container-page">
-      <SectionHeader title={{ en: "Production Capability", zh: "生产能力亮点" }} tone="dark" />
-      <div class="mt-10 grid gap-5 sm:grid-cols-3">
-        {
-          mold.capabilities.map((c) => (
-            <HighlightStat icon={c.icon} title={c.title} desc={c.desc} />
-          ))
-        }
-      </div>
-    </div>
-  </section>
+  <CapabilitiesPage />
 </BaseLayout>

@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import Carousel from "../components/Carousel.astro";
 import IconFeatureCard from "../components/IconFeatureCard.astro";
+import ProductShowcaseGrid from "../components/ProductShowcaseGrid.astro";
+import T from "../components/T.astro";
 import showcase from "../content/showcase.json";
+import { url } from "../lib/i18n";
 ---
 
 <BaseLayout
@@ -20,7 +22,7 @@ import showcase from "../content/showcase.json";
   </section>
 
   <section class="container-page pb-14">
-    <Carousel slides={showcase.products} />
+    <ProductShowcaseGrid items={showcase.products} />
   </section>
 
   <section class="section-tint border-line border-t py-14">
@@ -32,6 +34,29 @@ import showcase from "../content/showcase.json";
             <IconFeatureCard icon={r.icon} title={r.title} desc={r.desc} />
           ))
         }
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-14">
+    <div class="bg-deep rounded-[var(--radius-card)] p-6 text-white sm:p-8">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-2xl">
+          <p class="eyebrow text-ember-300">
+            <span lang="en">Custom Project</span><span lang="zh">定制项目</span>
+          </p>
+          <h2 class="font-display mt-2 text-3xl font-bold">
+            <span lang="en">Send a similar part for evaluation.</span><span lang="zh"
+              >发送类似产品需求进行评估。</span
+            >
+          </h2>
+        </div>
+        <a
+          href={url("/contact#quote")}
+          class="bg-ember-500 hover:bg-ember-600 inline-flex shrink-0 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+        >
+          <T text={{ en: "Get a Quote", zh: "获取报价" }} />
+        </a>
       </div>
     </div>
   </section>

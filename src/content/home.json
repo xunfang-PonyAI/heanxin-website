@@ -49,6 +49,19 @@
       "zh": "禾安鑫专注于塑胶注塑、模具开发与五金塑胶组合件，协助客户从产品构想、可制造性分析，到模具开发、批量生产与品质保证的全流程落地。"
     }
   },
+  "factoryVisuals": {
+    "eyebrow": { "en": "Factory Overview", "zh": "工厂概况" },
+    "title": {
+      "en": "Mold Workshop, Injection Workshop and Assembly QC",
+      "zh": "模具车间、注塑车间与组装品检"
+    },
+    "items": [
+      { "alt": { "en": "Factory overview", "zh": "工厂概况" } },
+      { "alt": { "en": "Mold workshop", "zh": "模具车间" } },
+      { "alt": { "en": "Injection workshop", "zh": "注塑车间" } },
+      { "alt": { "en": "Assembly and quality control", "zh": "组装与品检" } }
+    ]
+  },
   "productEntry": {
     "eyebrow": { "en": "What Buyers Ask For", "zh": "买家常见需求" },
     "title": {

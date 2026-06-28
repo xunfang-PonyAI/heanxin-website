@@ -1,0 +1,75 @@
+{
+  "header": {
+    "eyebrow": { "en": "Contact Us", "zh": "联系我们" },
+    "title": {
+      "en": "Send Your Project Details",
+      "zh": "发送您的项目需求"
+    },
+    "subtitle": {
+      "en": "Tell us the product type, material, quantity and drawing status. We will review the project and reply with the next manufacturing step.",
+      "zh": "请告诉我们产品类型、材料要求、数量和图纸情况，我们会评估项目并回复下一步制造建议。"
+    }
+  },
+  "highlights": [
+    {
+      "icon": "document",
+      "title": { "en": "Drawings or Samples", "zh": "图纸或样品" },
+      "desc": {
+        "en": "2D drawings, 3D files or sample photos help us evaluate mold structure quickly.",
+        "zh": "2D 图纸、3D 文件或样品照片有助于快速评估模具结构。"
+      }
+    },
+    {
+      "icon": "injection",
+      "title": { "en": "Material & Quantity", "zh": "材料与数量" },
+      "desc": {
+        "en": "Material requirements, finish, assembly and estimated quantity affect cost and lead time.",
+        "zh": "材料、表面处理、组装和预计数量会影响成本与交期。"
+      }
+    },
+    {
+      "icon": "chat",
+      "title": { "en": "Fast Manufacturing Review", "zh": "快速制造评估" },
+      "desc": {
+        "en": "Our team replies by email or WhatsApp with practical tooling and production suggestions.",
+        "zh": "团队将通过邮件或 WhatsApp 回复开模与生产建议。"
+      }
+    }
+  ],
+  "contactCards": [
+    {
+      "icon": "location",
+      "title": { "en": "Factory Address", "zh": "工厂地址" },
+      "desc": {
+        "en": "Room 101, No. 606 Miaobianwang Road, Shipai Town, Dongguan, Guangdong, China",
+        "zh": "中国广东省东莞市石排镇庙边王路606号101室"
+      }
+    },
+    {
+      "icon": "chat",
+      "title": { "en": "WhatsApp", "zh": "WhatsApp" },
+      "desc": { "en": "+86 191 6633 8895", "zh": "+86 191 6633 8895" }
+    },
+    {
+      "icon": "mail",
+      "title": { "en": "Email", "zh": "邮箱" },
+      "desc": { "en": "mia@haxplastic.com", "zh": "mia@haxplastic.com" }
+    }
+  ],
+  "prepare": {
+    "eyebrow": { "en": "Before Quotation", "zh": "报价前准备" },
+    "title": {
+      "en": "Information That Speeds Up Evaluation",
+      "zh": "这些信息能加快评估"
+    },
+    "items": [
+      { "en": "Product drawings, 3D files or sample photos", "zh": "产品图纸、3D 文件或样品照片" },
+      { "en": "Application environment and assembly requirements", "zh": "应用环境和装配要求" },
+      {
+        "en": "Material, color, finish and logo processing needs",
+        "zh": "材料、颜色、表面处理和 LOGO 加工要求"
+      },
+      { "en": "Estimated quantity and target delivery schedule", "zh": "预计数量和目标交期" }
+    ]
+  }
+}
