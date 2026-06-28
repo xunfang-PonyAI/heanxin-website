@@ -425,6 +425,32 @@ function assertHomeBuyerJourney() {
   assertContains(page, "/contact#quote", "Home page quote CTA");
 }
 
+function assertTopPageEyebrowsHidden() {
+  const expectations = [
+    ["src/pages/index.astro", "eyebrow={home.hero.eyebrow}", "Home hero"],
+    ["src/pages/about.astro", "eyebrow={about.header.eyebrow}", "About page header"],
+    ["src/pages/products.astro", "eyebrow={products.header.eyebrow}", "Products page header"],
+    [
+      "src/components/CapabilitiesPage.astro",
+      "eyebrow={capabilities.hero.eyebrow}",
+      "Capabilities hero",
+    ],
+    [
+      "src/pages/materials-processes.astro",
+      "eyebrow={materials.header.eyebrow}",
+      "Materials page header",
+    ],
+    ["src/pages/industries.astro", "eyebrow={industries.header.eyebrow}", "Industries page header"],
+    ["src/pages/news.astro", "eyebrow={news.header.eyebrow}", "News page header"],
+    ["src/pages/showcase.astro", "eyebrow={showcase.header.eyebrow}", "Showcase page header"],
+    ["src/pages/contact.astro", "eyebrow={contact.header.eyebrow}", "Contact hero"],
+  ];
+
+  for (const [file, hiddenEyebrow, label] of expectations) {
+    assertNotContains(readText(file), hiddenEyebrow, label);
+  }
+}
+
 function assertSeoAndEngineeringQuality() {
   const readme = readText("README.md");
   const baseLayout = readText("src/layouts/BaseLayout.astro");
@@ -461,6 +487,7 @@ const checks = [
   assertProductTaxonomy,
   assertAboutDepth,
   assertHomeBuyerJourney,
+  assertTopPageEyebrowsHidden,
   assertSeoAndEngineeringQuality,
 ];
 
