@@ -602,6 +602,11 @@ function assertHomeVisualRefinement() {
 
   assertNotContains(hero, "shadow-2xl", "Home hero must not frame the banner with a heavy shadow");
   assertNotContains(hero, "bg-white p-2", "Home hero must not wrap the banner in a white frame");
+  assertNotContains(
+    hero,
+    "home-hero__machine-line",
+    "Home hero must not render transparent placeholder-like frames"
+  );
   assertContains(
     hero,
     "mix-blend-multiply",

@@ -70,9 +70,6 @@ const alt = `${image.alt.en} / ${image.alt.zh}`;
     </div>
 
     <div data-reveal class="home-hero__stage relative z-10 min-h-[360px] lg:min-h-[460px]">
-      <div class="home-hero__machine-line" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
       <div class="home-hero__curve" aria-hidden="true"></div>
       <img
         src={url(image.src)}
@@ -142,33 +139,6 @@ const alt = `${image.alt.en} / ${image.alt.zh}`;
     box-shadow: inset 22px 0 0 color-mix(in srgb, var(--color-brand-400) 54%, transparent);
   }
 
-  .home-hero__machine-line {
-    position: absolute;
-    inset: 4% -5% auto 12%;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(4rem, 1fr));
-    gap: 0.625rem;
-    opacity: 0.18;
-  }
-
-  .home-hero__machine-line span {
-    height: clamp(7rem, 14vw, 11rem);
-    border: 1px solid color-mix(in srgb, var(--color-brand-500) 28%, transparent);
-    border-radius: 0.75rem;
-    background:
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--color-canvas) 86%, transparent),
-        transparent
-      ),
-      linear-gradient(
-        90deg,
-        transparent 0 42%,
-        color-mix(in srgb, var(--color-brand-500) 34%, transparent) 42% 46%,
-        transparent 46% 100%
-      );
-  }
-
   @media (max-width: 1023px) {
     .home-hero {
       background: linear-gradient(180deg, var(--color-canvas) 0%, var(--color-brand-50) 100%);
@@ -178,10 +148,6 @@ const alt = `${image.alt.en} / ${image.alt.zh}`;
       inset: 6% -22% 0 -10%;
       border-radius: 2rem;
       box-shadow: none;
-    }
-
-    .home-hero__machine-line {
-      inset-inline: 0;
     }
   }
 </style>
