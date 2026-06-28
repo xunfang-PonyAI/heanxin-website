@@ -2,13 +2,13 @@
   "banners": {
     "home": {
       "id": "homeBanner",
-      "src": "images/products/banner-home.webp",
+      "src": "images/products/banner-home-clean.webp",
       "source": "docs/产品画册/产品图片/首页Banner图.png",
-      "width": 1600,
+      "width": 900,
       "height": 900,
       "alt": {
-        "en": "Custom plastic injection molding manufacturer banner with product group",
-        "zh": "定制塑胶注塑制造商首页横幅产品图"
+        "en": "Text-free custom plastic injection product group for homepage hero",
+        "zh": "首页首屏无文字定制塑胶注塑产品组合图"
       }
     },
     "productLine": {
@@ -724,13 +724,13 @@
   "assetMap": {
     "homeBanner": {
       "id": "homeBanner",
-      "src": "images/products/banner-home.webp",
+      "src": "images/products/banner-home-clean.webp",
       "source": "docs/产品画册/产品图片/首页Banner图.png",
-      "width": 1600,
+      "width": 900,
       "height": 900,
       "alt": {
-        "en": "Custom plastic injection molding manufacturer banner with product group",
-        "zh": "定制塑胶注塑制造商首页横幅产品图"
+        "en": "Text-free custom plastic injection product group for homepage hero",
+        "zh": "首页首屏无文字定制塑胶注塑产品组合图"
       }
     },
     "productLineBanner": {

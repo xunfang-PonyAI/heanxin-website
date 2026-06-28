@@ -1,0 +1,39 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import T from "./T.astro";
+
+interface CapabilityItem {
+  icon: string;
+  title: LocalizedText;
+  desc: LocalizedText;
+}
+
+interface Props {
+  items: CapabilityItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div data-reveal class="bg-brand-50 border-line rounded-lg border px-5 py-5">
+  <div class="lg:divide-brand-200 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x">
+    {
+      items.map((item) => (
+        <div class="flex items-center gap-4 lg:px-5 lg:first:pl-0 lg:last:pr-0">
+          <div class="text-brand-500 bg-canvas inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full shadow-sm">
+            <Icon name={item.icon} class="h-7 w-7" />
+          </div>
+          <div class="min-w-0">
+            <p class="font-display text-brand-600 text-xl leading-tight font-bold">
+              <T text={item.title} />
+            </p>
+            <p class="text-brand-800/80 mt-1 text-sm leading-snug">
+              <T text={item.desc} />
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

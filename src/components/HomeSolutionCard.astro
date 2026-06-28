@@ -1,0 +1,59 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import { url } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import T from "./T.astro";
+
+interface ImageAsset {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+}
+
+interface Props {
+  icon: string;
+  title: LocalizedText;
+  desc: LocalizedText;
+  image: ImageAsset;
+  href: string;
+}
+
+const { icon, title, desc, image, href } = Astro.props;
+const alt = `${image.alt.en} / ${image.alt.zh}`;
+---
+
+<a
+  data-reveal
+  href={url(href)}
+  class="group border-line hover:border-brand-200 relative grid h-full grid-cols-[6.5rem_1fr] items-center gap-3 rounded-lg border bg-white/80 p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[var(--shadow-card)] max-sm:grid-cols-1"
+>
+  <img
+    src={url(image.src)}
+    width={image.width}
+    height={image.height}
+    alt={alt}
+    loading="lazy"
+    decoding="async"
+    sizes="(min-width: 1024px) 16vw, 42vw"
+    class="h-24 w-full object-contain mix-blend-multiply drop-shadow-md transition duration-300 group-hover:scale-105 max-sm:h-32"
+  />
+  <div class="min-w-0">
+    <div class="text-brand-500 mb-2 inline-flex items-center gap-2 text-sm font-semibold">
+      <Icon name={icon} class="h-4 w-4" />
+      <span class="h-px w-8 bg-current opacity-40"></span>
+    </div>
+    <h3 class="font-display text-brand-700 text-base leading-snug font-semibold sm:text-lg">
+      <T text={title} />
+    </h3>
+    <p class="text-muted mt-2 text-sm leading-relaxed">
+      <T text={desc} />
+    </p>
+  </div>
+  <span
+    class="border-brand-200 text-brand-500 group-hover:bg-brand-500 absolute right-4 bottom-4 hidden h-8 w-8 items-center justify-center rounded-full border transition group-hover:text-white lg:inline-flex"
+    aria-hidden="true"
+  >
+    <Icon name="chevronRight" class="h-4 w-4" />
+  </span>
+</a>

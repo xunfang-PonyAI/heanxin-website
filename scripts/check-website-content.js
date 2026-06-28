@@ -96,10 +96,13 @@ function assertQuotePath() {
   assert(home.hero.primaryCta.en === "Get a Quote", "home hero primary CTA should request a quote");
   assert(home.hero.primaryCta.zh === "获取报价", "home hero primary CTA should request a quote");
   assert(
-    home.hero.secondaryCta.en === "View Products",
-    "home hero secondary CTA should show products"
+    home.hero.secondaryCta.en === "Contact Us",
+    "home hero secondary CTA should open the contact path"
   );
-  assert(home.hero.secondaryCta.zh === "查看产品", "home hero secondary CTA should show products");
+  assert(
+    home.hero.secondaryCta.zh === "联系我们",
+    "home hero secondary CTA should open the contact path"
+  );
 
   assertContains(header, "quoteCta", "Header");
   assertContains(contactPage, "QuoteSection", "Contact page");
@@ -417,6 +420,9 @@ function assertRealMediaAssets() {
 
   register(home.hero.image, "home.hero.image");
   register(home.intro.image, "home.intro.image");
+  home.coreSolutions.items.forEach((item, index) =>
+    register(item.image, `home.coreSolutions.items[${index}].image`)
+  );
   home.productEntry.featuredNos.forEach((no) => {
     const category = products.categories.find((item) => item.no === no);
     assert(category, `home featured product ${no}`);
@@ -530,13 +536,16 @@ function assertHomeBuyerJourney() {
   const home = readJson("src/content/home.json");
   const page = readText("src/pages/index.astro");
 
-  assertLocalized(home.productEntry.title, "home.productEntry.title");
+  assertLocalized(home.coreSolutions.title, "home.coreSolutions.title");
   assert(
-    Array.isArray(home.productEntry.featuredNos) && home.productEntry.featuredNos.length >= 3,
-    "home.productEntry.featuredNos must include homepage product entries"
+    Array.isArray(home.coreSolutions.items) && home.coreSolutions.items.length === 4,
+    "home.coreSolutions.items must include the reference-style four core solutions"
   );
-  for (const no of ["01", "02", "05"]) {
-    assert(home.productEntry.featuredNos.includes(no), `home product entry must include ${no}`);
+  for (const item of home.coreSolutions.items) {
+    assertLocalized(item.title, "home.coreSolutions item title");
+    assertLocalized(item.desc, "home.coreSolutions item desc");
+    assert(typeof item.image === "string" && item.image, "home.coreSolutions item image");
+    assert(typeof item.href === "string" && item.href.startsWith("/"), "home.coreSolutions href");
   }
 
   assertLocalized(home.processPreview.title, "home.processPreview.title");
@@ -545,22 +554,60 @@ function assertHomeBuyerJourney() {
     "home.processPreview.steps must outline buyer workflow"
   );
 
-  const requiredTrustTitles = [
-    "20+ Years Manufacturing Experience",
-    "Up to 800T Injection Capacity",
-    "OEM / ODM Project Support",
-    "One-stop Manufacturing Workflow",
-  ];
-  const trustTitles = home.trustStats.map((item) => item.title.en);
-  for (const title of requiredTrustTitles) {
-    assert(trustTitles.includes(title), `home.trustStats must include ${title}`);
-  }
-
-  assertContains(page, "home.productEntry", "Home page product entry");
-  assertContains(page, "featuredProducts", "Home page featured products");
+  assertContains(page, "home.coreSolutions", "Home page core solutions");
+  assertContains(page, "HomeSolutionCard", "Home page solution cards");
   assertContains(page, "home.processPreview", "Home page process preview");
-  assertContains(page, "home.trustStats", "Home page trust stats");
+  assertContains(page, "home.capabilityStrip", "Home page capability strip");
   assertContains(page, "/contact#quote", "Home page quote CTA");
+}
+
+function assertHomeVisualRefinement() {
+  const home = readJson("src/content/home.json");
+  const media = readJson("src/content/media.json");
+  const page = readText("src/pages/index.astro");
+  const hero = readText("src/components/HomeHero.astro");
+
+  assert(
+    media.banners.home.src === "images/products/banner-home-clean.webp",
+    "home banner must use the text-free derivative"
+  );
+  assert(
+    existsSync(path.join(root, "public", media.banners.home.src)),
+    "text-free home banner file must exist"
+  );
+  assert(home.hero.image === "homeBanner", "home.hero.image must keep the registered home banner");
+
+  assertContains(page, "HomeHero", "Home page must use the dedicated home hero");
+  assertNotContains(page, "ImageHero", "Home page must not use the generic framed ImageHero");
+  assertNotContains(
+    page,
+    "ProductTaxonomyCard",
+    "Home page product images should not use framed taxonomy cards"
+  );
+  assertContains(page, "home.coreSolutions", "Home page must render the reference-style solutions");
+  assertContains(
+    page,
+    "home.capabilityStrip",
+    "Home page must render the reference-style capability strip"
+  );
+
+  assert(
+    Array.isArray(home.coreSolutions?.items) && home.coreSolutions.items.length === 4,
+    "home.coreSolutions.items must include four homepage solution cards"
+  );
+  assert(
+    Array.isArray(home.capabilityStrip?.items) && home.capabilityStrip.items.length === 4,
+    "home.capabilityStrip.items must include four capability items"
+  );
+
+  assertNotContains(hero, "shadow-2xl", "Home hero must not frame the banner with a heavy shadow");
+  assertNotContains(hero, "bg-white p-2", "Home hero must not wrap the banner in a white frame");
+  assertContains(
+    hero,
+    "mix-blend-multiply",
+    "Home hero product art must blend into the background"
+  );
+  assertContains(hero, "drop-shadow", "Home hero product art should use natural product shadow");
 }
 
 function assertTopPageEyebrowsHidden() {
@@ -627,6 +674,7 @@ const checks = [
   assertLegacyRoutesCanonical,
   assertAboutDepth,
   assertHomeBuyerJourney,
+  assertHomeVisualRefinement,
   assertTopPageEyebrowsHidden,
   assertSeoAndEngineeringQuality,
 ];

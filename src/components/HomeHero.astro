@@ -1,0 +1,187 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import { url } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import T from "./T.astro";
+
+interface ImageAsset {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+}
+
+interface Cta {
+  label: LocalizedText;
+  href: string;
+  icon?: string;
+}
+
+interface Props {
+  title: LocalizedText;
+  subtitle: LocalizedText;
+  image: ImageAsset;
+  primaryCta: Cta;
+  secondaryCta?: Cta;
+}
+
+const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
+const alt = `${image.alt.en} / ${image.alt.zh}`;
+---
+
+<section class="home-hero border-line relative overflow-hidden border-b">
+  <div class="home-hero__wash" aria-hidden="true"></div>
+  <div
+    class="container-page relative grid min-h-[540px] gap-8 py-10 lg:grid-cols-[0.76fr_1.24fr] lg:items-center lg:py-12"
+  >
+    <div data-reveal class="relative z-20 max-w-2xl">
+      <h1
+        class="font-display text-brand-800 max-w-3xl text-4xl leading-[1.05] font-bold sm:text-5xl xl:text-6xl"
+      >
+        <T text={title} />
+      </h1>
+      <p class="text-brand-500 mt-4 max-w-xl text-xl leading-snug font-semibold">
+        <span lang="en">Factory-Direct. Mold Development. OEM & ODM.</span>
+        <span lang="zh">工厂直供 · 模具开发 · OEM / ODM 定制</span>
+      </p>
+      <p class="text-muted mt-4 max-w-xl leading-relaxed">
+        <T text={subtitle} />
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a
+          href={url(primaryCta.href)}
+          class="bg-brand-500 hover:bg-brand-600 inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-ember)] transition hover:-translate-y-0.5"
+        >
+          <Icon name={primaryCta.icon ?? "document"} class="h-5 w-5" />
+          <T text={primaryCta.label} />
+        </a>
+        {
+          secondaryCta && (
+            <a
+              href={url(secondaryCta.href)}
+              class="border-brand-300 text-brand-600 hover:bg-brand-50 inline-flex items-center justify-center gap-2 rounded-lg border bg-white/70 px-7 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5"
+            >
+              <Icon name={secondaryCta.icon ?? "mail"} class="h-5 w-5" />
+              <T text={secondaryCta.label} />
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <div data-reveal class="home-hero__stage relative z-10 min-h-[360px] lg:min-h-[460px]">
+      <div class="home-hero__machine-line" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="home-hero__curve" aria-hidden="true"></div>
+      <img
+        src={url(image.src)}
+        width={image.width}
+        height={image.height}
+        alt={alt}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        sizes="(min-width: 1024px) 56vw, 100vw"
+        class="home-hero__art relative z-10 ml-auto h-auto w-full max-w-[580px] mix-blend-multiply"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-hero {
+    background:
+      linear-gradient(100deg, var(--color-canvas) 0 46%, transparent 46%),
+      linear-gradient(
+        135deg,
+        var(--color-canvas) 0%,
+        var(--color-brand-50) 62%,
+        var(--color-surface) 100%
+      );
+  }
+
+  .home-hero__wash {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        60% 58% at 82% 18%,
+        color-mix(in srgb, var(--color-brand-100) 80%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        42% 44% at 44% 88%,
+        color-mix(in srgb, var(--color-ember-100) 36%, transparent),
+        transparent 68%
+      );
+    pointer-events: none;
+  }
+
+  .home-hero__stage {
+    display: grid;
+    align-items: end;
+  }
+
+  .home-hero__art {
+    filter: drop-shadow(0 2rem 1.75rem color-mix(in srgb, var(--color-brand-900) 14%, transparent));
+    mask-image: radial-gradient(ellipse 76% 78% at 56% 50%, black 58%, transparent 95%);
+  }
+
+  .home-hero__curve {
+    position: absolute;
+    inset: 5% -10% 8% -4%;
+    border-radius: 46% 0 0 54% / 52% 0 0 48%;
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--color-brand-200) 48%, transparent),
+        transparent 36%
+      ),
+      linear-gradient(180deg, var(--color-canvas) 0%, var(--color-brand-50) 100%);
+    box-shadow: inset 22px 0 0 color-mix(in srgb, var(--color-brand-400) 54%, transparent);
+  }
+
+  .home-hero__machine-line {
+    position: absolute;
+    inset: 4% -5% auto 12%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(4rem, 1fr));
+    gap: 0.625rem;
+    opacity: 0.18;
+  }
+
+  .home-hero__machine-line span {
+    height: clamp(7rem, 14vw, 11rem);
+    border: 1px solid color-mix(in srgb, var(--color-brand-500) 28%, transparent);
+    border-radius: 0.75rem;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-canvas) 86%, transparent),
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 0 42%,
+        color-mix(in srgb, var(--color-brand-500) 34%, transparent) 42% 46%,
+        transparent 46% 100%
+      );
+  }
+
+  @media (max-width: 1023px) {
+    .home-hero {
+      background: linear-gradient(180deg, var(--color-canvas) 0%, var(--color-brand-50) 100%);
+    }
+
+    .home-hero__curve {
+      inset: 6% -22% 0 -10%;
+      border-radius: 2rem;
+      box-shadow: none;
+    }
+
+    .home-hero__machine-line {
+      inset-inline: 0;
+    }
+  }
+</style>

@@ -5,8 +5,8 @@
       "zh": "塑胶与五金定制制造"
     },
     "title": {
-      "en": "Precision Plastic Injection & Mold Solutions",
-      "zh": "精密塑胶注塑与模具一站式方案"
+      "en": "Custom Plastic Injection Molding Manufacturer",
+      "zh": "定制塑胶注塑制造商"
     },
     "subtitle": {
       "en": "From mold design to mass production, Heanxin delivers custom injection parts, insert molding and hardware-plastic combined components for OEM / ODM customers.",
@@ -17,8 +17,8 @@
       "zh": "获取报价"
     },
     "secondaryCta": {
-      "en": "View Products",
-      "zh": "查看产品"
+      "en": "Contact Us",
+      "zh": "联系我们"
     },
     "image": "homeBanner"
   },
@@ -57,6 +57,114 @@
       }
     }
   ],
+  "coreSolutions": {
+    "title": {
+      "en": "Our Core Solutions",
+      "zh": "核心解决方案"
+    },
+    "items": [
+      {
+        "icon": "injection",
+        "image": "electronic-housing-06",
+        "title": {
+          "en": "Custom Plastic Parts",
+          "zh": "定制塑胶件"
+        },
+        "desc": {
+          "en": "High-precision parts for electronics, industrial equipment, automotive and more.",
+          "zh": "面向电子、工业设备、汽车等场景的高精度塑胶零件。"
+        },
+        "href": "/products"
+      },
+      {
+        "icon": "mold",
+        "image": "industrial-component-08",
+        "title": {
+          "en": "Mold Development In-House",
+          "zh": "厂内模具开发"
+        },
+        "desc": {
+          "en": "DFM analysis, mold design, manufacturing and trial mold support.",
+          "zh": "支持 DFM 分析、模具设计、制造与试模验证。"
+        },
+        "href": "/capabilities"
+      },
+      {
+        "icon": "oem",
+        "image": "insert-molding-06",
+        "title": {
+          "en": "OEM / ODM Customization",
+          "zh": "OEM / ODM 定制"
+        },
+        "desc": {
+          "en": "From concept and samples to stable mass production with engineering support.",
+          "zh": "从概念、样品到稳定量产，提供工程配合与制造支持。"
+        },
+        "href": "/contact#quote"
+      },
+      {
+        "icon": "shield",
+        "image": "display-box-01",
+        "title": {
+          "en": "Stable Production & Quality",
+          "zh": "稳定生产与品质"
+        },
+        "desc": {
+          "en": "Advanced equipment, strict QC and reliable delivery for export orders.",
+          "zh": "设备配套、严格品控与可靠交付，支持外贸订单。"
+        },
+        "href": "/capabilities"
+      }
+    ]
+  },
+  "capabilityStrip": {
+    "items": [
+      {
+        "icon": "press",
+        "title": {
+          "en": "800T",
+          "zh": "800T"
+        },
+        "desc": {
+          "en": "Max Injection Machine",
+          "zh": "最大注塑机吨位"
+        }
+      },
+      {
+        "icon": "oem",
+        "title": {
+          "en": "OEM / ODM",
+          "zh": "OEM / ODM"
+        },
+        "desc": {
+          "en": "One-Stop Custom Solutions",
+          "zh": "一站式定制方案"
+        }
+      },
+      {
+        "icon": "shield",
+        "title": {
+          "en": "Quality Control",
+          "zh": "品质控制"
+        },
+        "desc": {
+          "en": "Strict Inspection, Consistent Quality",
+          "zh": "严格检验，稳定质量"
+        }
+      },
+      {
+        "icon": "globe",
+        "title": {
+          "en": "Export Support",
+          "zh": "出口支持"
+        },
+        "desc": {
+          "en": "Global Shipping, Documentation Support",
+          "zh": "国际运输与文件支持"
+        }
+      }
+    ]
+  },
   "intro": {
     "eyebrow": {
       "en": "Who We Are",

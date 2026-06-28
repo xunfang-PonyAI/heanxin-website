@@ -1,21 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ImageHero from "../components/ImageHero.astro";
+import CapabilityStrip from "../components/CapabilityStrip.astro";
+import HomeHero from "../components/HomeHero.astro";
+import HomeSolutionCard from "../components/HomeSolutionCard.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import IconFeatureCard from "../components/IconFeatureCard.astro";
-import ProductTaxonomyCard from "../components/ProductTaxonomyCard.astro";
 import ProcessStepper from "../components/ProcessStepper.astro";
-import HighlightStat from "../components/HighlightStat.astro";
-import ResponsiveImage from "../components/ResponsiveImage.astro";
 import T from "../components/T.astro";
 import { url } from "../lib/i18n";
 import home from "../content/home.json";
 import media from "../content/media.json";
-import products from "../content/products.json";
 
-const featuredProducts = products.categories.filter((category) =>
-  home.productEntry.featuredNos.includes(category.no)
-);
 const assets = media.assetMap;
 ---
 
@@ -23,89 +17,33 @@ const assets = media.assetMap;
   title="塑胶注塑与模具定制制造商"
   description="禾安鑫专注塑胶注塑、模具开发、嵌件注塑与五金塑胶组合件，为电子、汽车、医疗等行业提供 OEM / ODM 一站式定制制造服务。"
 >
-  <ImageHero
+  <HomeHero
     title={home.hero.title}
     subtitle={home.hero.subtitle}
     image={assets[home.hero.image]}
-    primaryCta={{ label: home.hero.primaryCta, href: "/contact#quote" }}
-    secondaryCta={{ label: home.hero.secondaryCta, href: "/products" }}
+    primaryCta={{ label: home.hero.primaryCta, href: "/contact#quote", icon: "document" }}
+    secondaryCta={{ label: home.hero.secondaryCta, href: "/contact", icon: "mail" }}
   />
 
-  <section class="container-page py-14">
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {home.highlights.map((h) => <IconFeatureCard icon={h.icon} title={h.title} desc={h.desc} />)}
-    </div>
-  </section>
-
-  <section class="container-page pb-16">
-    <SectionHeader
-      eyebrow={home.productEntry.eyebrow}
-      title={home.productEntry.title}
-      subtitle={home.productEntry.subtitle}
-    />
-    <div class="mt-10 grid gap-5 lg:grid-cols-3">
+  <section class="container-page py-10">
+    <h2 class="font-display text-brand-800 text-center text-3xl font-bold">
+      <T text={home.coreSolutions.title} />
+    </h2>
+    <div class="mt-7 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
       {
-        featuredProducts.map((category) => (
-          <ProductTaxonomyCard
-            no={category.no}
-            title={category.title}
-            desc={category.desc}
-            examples={category.examples}
-            image={assets[category.coverImage]}
-          />
-        ))
-      }
-    </div>
-    <div class="mt-8 flex justify-center">
-      <a
-        href={url("/products")}
-        class="border-line text-brand-700 hover:bg-brand-50 inline-flex items-center rounded-full border px-6 py-3 text-sm font-semibold transition"
-      >
-        <T text={home.productEntry.cta} />
-      </a>
-    </div>
-  </section>
-
-  <section class="section-tint border-line border-y py-16">
-    <div class="container-page grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-      <ResponsiveImage
-        image={assets[home.intro.image]}
-        aspect="wide"
-        fit="cover"
-        class="border-line shadow-brand-900/10 border bg-white shadow-lg"
-        sizes="(min-width: 1024px) 50vw, 100vw"
-      />
-      <div>
-        <SectionHeader eyebrow={home.intro.eyebrow} title={home.intro.title} align="left" />
-        <p class="text-muted mt-6 leading-relaxed">
-          <T text={home.intro.body} />
-        </p>
-        <div class="mt-8">
-          <a
-            href={url("/about")}
-            class="bg-brand-500 hover:bg-brand-600 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-          >
-            <span lang="zh">了解更多</span><span lang="en">Learn More</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container-page py-16">
-    <SectionHeader eyebrow={home.factoryVisuals.eyebrow} title={home.factoryVisuals.title} />
-    <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {
-        home.factoryVisuals.items.map((item) => (
-          <ResponsiveImage
+        home.coreSolutions.items.map((item) => (
+          <HomeSolutionCard
+            icon={item.icon}
+            title={item.title}
+            desc={item.desc}
             image={assets[item.image]}
-            aspect="video"
-            fit="contain"
-            class="border-line border bg-white p-3"
-            sizes="(min-width: 1024px) 24vw, 50vw"
+            href={item.href}
           />
         ))
       }
+    </div>
+    <div class="mt-8">
+      <CapabilityStrip items={home.capabilityStrip.items} />
     </div>
   </section>
 
@@ -120,34 +58,18 @@ const assets = media.assetMap;
     </div>
   </section>
 
-  <section class="bg-brand-700 py-16">
-    <div class="container-page">
-      <SectionHeader
-        title={{ en: "Why Buyers Choose Heanxin", zh: "为什么选择禾安鑫" }}
-        tone="dark"
-      />
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          home.trustStats.map((stat) => (
-            <HighlightStat icon={stat.icon} title={stat.title} desc={stat.desc} />
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="section-tint border-line border-y py-14">
+  <section class="bg-brand-700 py-14">
     <div class="container-page flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
       <div class="max-w-2xl">
-        <p class="eyebrow text-ember-700">
+        <p class="eyebrow text-ember-400">
           <span lang="en">Request a Quote</span><span lang="zh">项目询盘</span>
         </p>
-        <h2 class="font-display text-brand-700 mt-2 text-3xl font-bold">
+        <h2 class="font-display mt-2 text-3xl font-bold text-white">
           <span lang="en">Send drawings, samples or project requirements.</span><span lang="zh"
             >发送图纸、样品或项目需求。</span
           >
         </h2>
-        <p class="text-muted mt-3 leading-relaxed">
+        <p class="text-brand-100 mt-3 leading-relaxed">
           <span lang="en"
             >Share product type, material, quantity and file status so we can evaluate tooling and
             production feasibility.</span
