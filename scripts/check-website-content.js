@@ -737,7 +737,7 @@ function assertHomeVisualRefinement() {
   );
   assertContains(
     hero,
-    "max-width: min(34vw, 31rem)",
+    "max-width: min(46vw, 42rem)",
     "English home hero title must be narrow enough to avoid product overlap"
   );
   assertContains(
@@ -752,8 +752,13 @@ function assertHomeVisualRefinement() {
   );
   assertContains(
     hero,
-    "transform: translateX(-2rem)",
+    "transform: translateX(-2.5rem)",
     "Home hero copy must move left on desktop without moving the background"
+  );
+  assertContains(
+    hero,
+    "transform: translateX(-3rem)",
+    "Home hero copy must move slightly farther left on wide desktop"
   );
   assertNotContains(hero, "object-fit: cover", "Home hero must not crop the source PNG");
   assertNotContains(

@@ -99,7 +99,7 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
   }
 
   :global(html[data-lang="en"]) .home-hero__title {
-    max-width: min(34vw, 31rem);
+    max-width: min(46vw, 42rem);
   }
 
   @media (min-width: 1280px) {
@@ -110,7 +110,13 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
 
   @media (min-width: 1024px) {
     .home-hero__copy {
-      transform: translateX(-2rem);
+      transform: translateX(-2.5rem);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .home-hero__copy {
+      transform: translateX(-3rem);
     }
   }
 
