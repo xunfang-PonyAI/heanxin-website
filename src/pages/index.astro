@@ -3,8 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CapabilityStrip from "../components/CapabilityStrip.astro";
 import HomeHero from "../components/HomeHero.astro";
 import HomeSolutionCard from "../components/HomeSolutionCard.astro";
-import SectionHeader from "../components/SectionHeader.astro";
-import ProcessStepper from "../components/ProcessStepper.astro";
 import T from "../components/T.astro";
 import { url } from "../lib/i18n";
 import home from "../content/home.json";
@@ -44,17 +42,6 @@ const assets = media.assetMap;
     </div>
     <div class="mt-8">
       <CapabilityStrip items={home.capabilityStrip.items} />
-    </div>
-  </section>
-
-  <section class="container-page py-16">
-    <SectionHeader
-      eyebrow={home.processPreview.eyebrow}
-      title={home.processPreview.title}
-      subtitle={home.processPreview.subtitle}
-    />
-    <div class="mt-10">
-      <ProcessStepper steps={home.processPreview.steps} />
     </div>
   </section>
 

@@ -632,17 +632,16 @@ function assertHomeBuyerJourney() {
     assert(typeof item.href === "string" && item.href.startsWith("/"), "home.coreSolutions href");
   }
 
-  assertLocalized(home.processPreview.title, "home.processPreview.title");
   assert(
-    Array.isArray(home.processPreview.steps) && home.processPreview.steps.length >= 4,
-    "home.processPreview.steps must outline buyer workflow"
+    home.processPreview === undefined,
+    "home.processPreview should be removed from the home content"
   );
-
   assertContains(page, "home.coreSolutions", "Home page core solutions");
   assertContains(page, "HomeSolutionCard", "Home page solution cards");
-  assertContains(page, "home.processPreview", "Home page process preview");
   assertContains(page, "home.capabilityStrip", "Home page capability strip");
   assertContains(page, "/contact#quote", "Home page quote CTA");
+  assertNotContains(page, "home.processPreview", "Home page process preview");
+  assertNotContains(page, "ProcessStepper", "Home page process preview");
 }
 
 function assertHomeVisualRefinement() {
