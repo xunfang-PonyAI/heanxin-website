@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { inflateSync } from "node:zlib";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -14,6 +15,89 @@ function readText(relativePath) {
 
 function readJson(relativePath) {
   return JSON.parse(readText(relativePath));
+}
+
+function readPngRgba(relativePath) {
+  const absolutePath = path.join(root, "public", relativePath);
+  const buffer = readFileSync(absolutePath);
+  const signature = "89504e470d0a1a0a";
+  assert(buffer.subarray(0, 8).toString("hex") === signature, `${relativePath} must be a PNG`);
+
+  let offset = 8;
+  let width = 0;
+  let height = 0;
+  let bitDepth = 0;
+  let colorType = 0;
+  const idat = [];
+
+  while (offset < buffer.length) {
+    const length = buffer.readUInt32BE(offset);
+    const type = buffer.subarray(offset + 4, offset + 8).toString("ascii");
+    const data = buffer.subarray(offset + 8, offset + 8 + length);
+
+    if (type === "IHDR") {
+      width = data.readUInt32BE(0);
+      height = data.readUInt32BE(4);
+      bitDepth = data[8];
+      colorType = data[9];
+    } else if (type === "IDAT") {
+      idat.push(data);
+    } else if (type === "IEND") {
+      break;
+    }
+
+    offset += 12 + length;
+  }
+
+  assert(bitDepth === 8 && colorType === 6, `${relativePath} must be 8-bit RGBA`);
+
+  const inflated = inflateSync(Buffer.concat(idat));
+  const channels = 4;
+  const stride = width * channels;
+  const pixels = Buffer.alloc(height * stride);
+  let sourceOffset = 0;
+
+  function paeth(a, b, c) {
+    const p = a + b - c;
+    const pa = Math.abs(p - a);
+    const pb = Math.abs(p - b);
+    const pc = Math.abs(p - c);
+    if (pa <= pb && pa <= pc) return a;
+    if (pb <= pc) return b;
+    return c;
+  }
+
+  for (let y = 0; y < height; y += 1) {
+    const filter = inflated[sourceOffset];
+    sourceOffset += 1;
+    const row = Buffer.from(inflated.subarray(sourceOffset, sourceOffset + stride));
+    sourceOffset += stride;
+    const previousRow = y > 0 ? pixels.subarray((y - 1) * stride, y * stride) : null;
+
+    for (let i = 0; i < stride; i += 1) {
+      const left = i >= channels ? row[i - channels] : 0;
+      const up = previousRow ? previousRow[i] : 0;
+      const upLeft = previousRow && i >= channels ? previousRow[i - channels] : 0;
+
+      if (filter === 1) row[i] = (row[i] + left) & 0xff;
+      else if (filter === 2) row[i] = (row[i] + up) & 0xff;
+      else if (filter === 3) row[i] = (row[i] + Math.floor((left + up) / 2)) & 0xff;
+      else if (filter === 4) row[i] = (row[i] + paeth(left, up, upLeft)) & 0xff;
+      else assert(filter === 0, `${relativePath} uses unsupported PNG filter ${filter}`);
+    }
+
+    row.copy(pixels, y * stride);
+  }
+
+  const alphaAt = (x, y) => pixels[(y * width + x) * channels + 3];
+  let transparentPixels = 0;
+  let opaquePixels = 0;
+  for (let i = 3; i < pixels.length; i += channels) {
+    if (pixels[i] === 0) transparentPixels += 1;
+    if (pixels[i] > 240) opaquePixels += 1;
+  }
+
+  return { width, height, alphaAt, transparentPixels, opaquePixels };
 }
 
 function assert(condition, message) {
@@ -570,8 +654,8 @@ function assertHomeVisualRefinement() {
   const oldCleanBanner = path.join(root, "public", "images/products/banner-home-clean.webp");
 
   assert(
-    media.banners.home.src === "images/products/banner-home.jpg",
-    "home banner must use the new client JPG asset"
+    media.banners.home.src === "images/products/banner-home-transparent.png",
+    "home banner must use the transparent PNG cutout"
   );
   assert(
     media.banners.home.source === "docs/产品画册/产品图片/首页Banner图.jpg",
@@ -583,11 +667,30 @@ function assertHomeVisualRefinement() {
   );
   assert(
     existsSync(path.join(root, "public", media.banners.home.src)),
-    "new text-free JPG home banner file must exist"
+    "transparent PNG home banner file must exist"
   );
   assertNotContains(mediaText, "首页Banner图.png", "Home media registry");
   assertNotContains(mediaText, "banner-home-clean.webp", "Home media registry");
   assert(!existsSync(oldCleanBanner), "unused banner-home-clean.webp should be removed");
+
+  const transparentBanner = readPngRgba(media.banners.home.src);
+  assert(
+    transparentBanner.width === 1672 && transparentBanner.height === 941,
+    "transparent home banner PNG must preserve original JPG dimensions"
+  );
+  assert(transparentBanner.alphaAt(0, 0) === 0, "transparent home banner top-left must be clear");
+  assert(
+    transparentBanner.alphaAt(80, 120) === 0,
+    "transparent home banner left text area must be clear"
+  );
+  assert(
+    transparentBanner.alphaAt(980, 360) > 240,
+    "transparent home banner product area must remain opaque"
+  );
+  assert(
+    transparentBanner.transparentPixels > transparentBanner.opaquePixels,
+    "transparent home banner should remove the dominant white background"
+  );
   assert(home.hero.image === "homeBanner", "home.hero.image must keep the registered home banner");
 
   assertContains(page, "HomeHero", "Home page must use the dedicated home hero");
@@ -625,13 +728,17 @@ function assertHomeVisualRefinement() {
     "mask-image",
     "Home hero must not use a circular mask that clips the wide JPG"
   );
+  assertContains(hero, "home-hero__media", "Home hero product image must sit in a middle layer");
   assertContains(
     hero,
-    "mix-blend-multiply",
-    "Home hero product art must blend into the background"
+    "home-hero__copy",
+    "Home hero copy must sit above the transparent product image"
   );
-  assertContains(hero, "home-hero__art-shell", "Home hero must keep an unframed product art shell");
-  assertContains(hero, "::after", "Home hero art shell should soften JPG edges without a frame");
+  assertContains(
+    hero,
+    "pointer-events-none",
+    "Home hero middle image layer should not block text CTA interactions"
+  );
   assertContains(hero, "drop-shadow", "Home hero product art should use natural product shadow");
 }
 

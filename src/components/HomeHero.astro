@@ -26,15 +26,27 @@ interface Props {
 }
 
 const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
-const alt = `${image.alt.en} / ${image.alt.zh}`;
 ---
 
 <section class="home-hero border-line relative overflow-hidden border-b">
   <div class="home-hero__wash" aria-hidden="true"></div>
-  <div
-    class="container-page relative grid min-h-[540px] gap-8 py-10 lg:grid-cols-[0.76fr_1.24fr] lg:items-center lg:py-12"
-  >
-    <div data-reveal class="relative z-20 max-w-2xl">
+  <div class="container-page relative min-h-[620px] py-10 lg:min-h-[560px] lg:py-12">
+    <div class="home-hero__media pointer-events-none absolute inset-0 z-10" aria-hidden="true">
+      <div class="home-hero__curve" aria-hidden="true"></div>
+      <img
+        src={url(image.src)}
+        width={image.width}
+        height={image.height}
+        alt=""
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        sizes="(min-width: 1024px) 88vw, 110vw"
+        class="home-hero__art absolute h-auto max-w-none"
+      />
+    </div>
+
+    <div data-reveal class="home-hero__copy relative z-20 max-w-2xl">
       <h1
         class="font-display text-brand-800 max-w-3xl text-4xl leading-[1.05] font-bold sm:text-5xl xl:text-6xl"
       >
@@ -66,23 +78,6 @@ const alt = `${image.alt.en} / ${image.alt.zh}`;
             </a>
           )
         }
-      </div>
-    </div>
-
-    <div data-reveal class="home-hero__stage relative z-10 min-h-[300px] lg:min-h-[430px]">
-      <div class="home-hero__curve" aria-hidden="true"></div>
-      <div class="home-hero__art-shell relative z-10 ml-auto w-full max-w-[760px]">
-        <img
-          src={url(image.src)}
-          width={image.width}
-          height={image.height}
-          alt={alt}
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-          sizes="(min-width: 1024px) 58vw, 100vw"
-          class="home-hero__art h-auto w-full mix-blend-multiply"
-        />
       </div>
     </div>
   </div>
@@ -117,49 +112,35 @@ const alt = `${image.alt.en} / ${image.alt.zh}`;
     pointer-events: none;
   }
 
-  .home-hero__stage {
-    display: grid;
-    align-items: center;
+  .home-hero__copy {
+    padding-top: clamp(2.75rem, 7vw, 5rem);
   }
 
-  .home-hero__art-shell {
+  .home-hero__media {
+    overflow: visible;
+  }
+
+  .home-hero__art {
+    right: -5.5rem;
+    bottom: 1.4rem;
+    width: min(82vw, 980px);
     filter: drop-shadow(
-      0 1.4rem 1.45rem color-mix(in srgb, var(--color-brand-900) 11%, transparent)
+      0 1.35rem 1.55rem color-mix(in srgb, var(--color-brand-900) 13%, transparent)
     );
-  }
-
-  .home-hero__art-shell::after {
-    position: absolute;
-    inset: -1px;
-    content: "";
-    background:
-      linear-gradient(
-        90deg,
-        var(--color-canvas) 0%,
-        color-mix(in srgb, var(--color-canvas) 92%, transparent) 8%,
-        transparent 22%,
-        transparent 88%,
-        color-mix(in srgb, var(--color-brand-50) 90%, transparent) 100%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--color-brand-50) 82%, transparent) 0%,
-        transparent 18%,
-        transparent 90%,
-        color-mix(in srgb, var(--color-brand-50) 78%, transparent) 100%
-      );
-    pointer-events: none;
   }
 
   .home-hero__curve {
     position: absolute;
     z-index: 0;
-    inset: 0 -12% 0 0;
+    right: -10rem;
+    bottom: -3.6rem;
+    width: min(88vw, 1040px);
+    height: min(42vw, 500px);
     border-radius: 48% 0 0 52% / 54% 0 0 46%;
     background:
       linear-gradient(
         135deg,
-        color-mix(in srgb, var(--color-brand-100) 62%, transparent),
+        color-mix(in srgb, var(--color-brand-100) 46%, transparent),
         transparent 42%
       ),
       linear-gradient(
@@ -176,8 +157,25 @@ const alt = `${image.alt.en} / ${image.alt.zh}`;
       background: linear-gradient(180deg, var(--color-canvas) 0%, var(--color-brand-50) 100%);
     }
 
+    .home-hero .container-page {
+      min-height: 760px;
+    }
+
+    .home-hero__copy {
+      padding-top: 2.25rem;
+    }
+
+    .home-hero__art {
+      right: -8.25rem;
+      bottom: -0.2rem;
+      width: min(145vw, 565px);
+    }
+
     .home-hero__curve {
-      inset: 8% -20% 0 -8%;
+      right: -12rem;
+      bottom: -0.8rem;
+      width: min(170vw, 680px);
+      height: 19rem;
       border-radius: 2rem 0 0 2rem;
       box-shadow: none;
     }

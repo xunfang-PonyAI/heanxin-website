@@ -2,13 +2,13 @@
   "banners": {
     "home": {
       "id": "homeBanner",
-      "src": "images/products/banner-home.jpg",
+      "src": "images/products/banner-home-transparent.png",
       "source": "docs/产品画册/产品图片/首页Banner图.jpg",
       "width": 1672,
       "height": 941,
       "alt": {
-        "en": "Text-free custom plastic injection product group on a white background for the homepage hero",
-        "zh": "首页首屏白底无文字定制塑胶注塑产品组合图"
+        "en": "Transparent custom plastic injection product group for the homepage hero",
+        "zh": "首页首屏透明底定制塑胶注塑产品组合图"
       }
     },
     "productLine": {
@@ -724,13 +724,13 @@
   "assetMap": {
     "homeBanner": {
       "id": "homeBanner",
-      "src": "images/products/banner-home.jpg",
+      "src": "images/products/banner-home-transparent.png",
       "source": "docs/产品画册/产品图片/首页Banner图.jpg",
       "width": 1672,
       "height": 941,
       "alt": {
-        "en": "Text-free custom plastic injection product group on a white background for the homepage hero",
-        "zh": "首页首屏白底无文字定制塑胶注塑产品组合图"
+        "en": "Transparent custom plastic injection product group for the homepage hero",
+        "zh": "首页首屏透明底定制塑胶注塑产品组合图"
       }
     },
     "productLineBanner": {
