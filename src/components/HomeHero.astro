@@ -89,7 +89,8 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
     background: linear-gradient(
       135deg,
       var(--color-brand-50) 0%,
-      var(--color-surface) 48%,
+      color-mix(in srgb, var(--color-brand-50) 62%, var(--color-canvas)) 30%,
+      color-mix(in srgb, var(--color-canvas) 92%, var(--color-brand-50)) 58%,
       var(--color-canvas) 100%
     );
   }
@@ -123,24 +124,25 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
   .home-hero__product-field {
     position: absolute;
     z-index: 1;
+    left: -50vw;
     right: -8rem;
-    bottom: -2.8rem;
-    width: min(78vw, 980px);
-    height: min(44vw, 520px);
+    top: -4rem;
+    bottom: -3rem;
     background:
       radial-gradient(
-        ellipse 76% 68% at 72% 50%,
+        ellipse 68% 78% at 76% 46%,
         var(--color-canvas) 0%,
-        var(--color-canvas) 58%,
-        color-mix(in srgb, var(--color-canvas) 78%, transparent) 76%,
+        var(--color-canvas) 66%,
+        color-mix(in srgb, var(--color-canvas) 88%, transparent) 80%,
         transparent 100%
       ),
       linear-gradient(
         90deg,
         transparent 0%,
-        color-mix(in srgb, var(--color-canvas) 36%, transparent) 18%,
-        color-mix(in srgb, var(--color-canvas) 84%, transparent) 34%,
-        var(--color-canvas) 54%,
+        transparent 34%,
+        color-mix(in srgb, var(--color-canvas) 24%, transparent) 46%,
+        color-mix(in srgb, var(--color-canvas) 82%, transparent) 56%,
+        var(--color-canvas) 64%,
         var(--color-canvas) 100%
       );
     pointer-events: none;
@@ -167,10 +169,10 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
     background: radial-gradient(
       ellipse at 42% 52%,
       transparent 57%,
-      color-mix(in srgb, var(--color-brand-200) 30%, transparent) 58%,
+      color-mix(in srgb, var(--color-brand-200) 16%, transparent) 58%,
       transparent 63%
     );
-    opacity: 0.5;
+    opacity: 0.28;
   }
 
   @media (max-width: 1023px) {
@@ -187,24 +189,24 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
     }
 
     .home-hero__product-field {
+      left: -50vw;
       right: -9rem;
-      bottom: -1.25rem;
-      width: min(154vw, 600px);
-      height: 22rem;
+      top: 27.5rem;
+      bottom: -1.5rem;
       background:
         radial-gradient(
-          ellipse 80% 66% at 68% 52%,
+          ellipse 84% 72% at 68% 50%,
           var(--color-canvas) 0%,
-          var(--color-canvas) 58%,
-          color-mix(in srgb, var(--color-canvas) 76%, transparent) 78%,
+          var(--color-canvas) 66%,
+          color-mix(in srgb, var(--color-canvas) 88%, transparent) 82%,
           transparent 100%
         ),
         linear-gradient(
           90deg,
           transparent 0%,
-          color-mix(in srgb, var(--color-canvas) 34%, transparent) 20%,
-          color-mix(in srgb, var(--color-canvas) 84%, transparent) 38%,
-          var(--color-canvas) 58%,
+          color-mix(in srgb, var(--color-canvas) 24%, transparent) 26%,
+          color-mix(in srgb, var(--color-canvas) 88%, transparent) 40%,
+          var(--color-canvas) 56%,
           var(--color-canvas) 100%
         );
     }
@@ -221,7 +223,7 @@ const { title, subtitle, image, primaryCta, secondaryCta } = Astro.props;
       width: min(150vw, 620px);
       height: 18rem;
       border-radius: 50% 0 0 50%;
-      opacity: 0.35;
+      opacity: 0.2;
     }
   }
 </style>

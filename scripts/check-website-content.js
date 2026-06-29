@@ -718,13 +718,48 @@ function assertHomeVisualRefinement() {
   );
   assertContains(
     hero,
+    "color-mix(in srgb, var(--color-canvas) 92%, var(--color-brand-50)) 58%",
+    "Home hero desktop background must transition smoothly into near-white before the product area"
+  );
+  assertNotContains(
+    hero,
+    "var(--color-surface) 48%",
+    "Home hero desktop background must not create a hard transition line"
+  );
+  assertContains(
+    hero,
     "home-hero__product-field",
     "Home hero product shadows must sit on a dedicated white support field"
   );
   assertContains(
     hero,
-    "var(--color-canvas) 58%",
+    "top: -4rem;",
+    "Home hero product support field must begin above the visible hero to avoid a top seam"
+  );
+  assertContains(
+    hero,
+    "left: -50vw;",
+    "Home hero product support field must span from the left so no vertical edge is visible"
+  );
+  assertContains(
+    hero,
+    "var(--color-canvas) 64%",
     "Home hero product support field must keep the product area near pure white"
+  );
+  assertContains(
+    hero,
+    "transparent 34%",
+    "Home hero product support field must turn white early enough under product shadows"
+  );
+  assertNotContains(
+    hero,
+    "bottom: -2.8rem;",
+    "Home hero product support field must not expose a visible top edge"
+  );
+  assertNotContains(
+    hero,
+    "width: min(86vw, 1080px);",
+    "Home hero product support field must not create a visible rectangular left edge"
   );
   assertContains(hero, "z-index: 2;", "Home hero product image must sit above the support field");
 
