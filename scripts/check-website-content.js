@@ -651,46 +651,40 @@ function assertHomeVisualRefinement() {
   const mediaText = readText("src/content/media.json");
   const page = readText("src/pages/index.astro");
   const hero = readText("src/components/HomeHero.astro");
+  const oldJpgBanner = path.join(root, "public", "images/products/banner-home.jpg");
+  const oldWebpBanner = path.join(root, "public", "images/products/banner-home.webp");
   const oldCleanBanner = path.join(root, "public", "images/products/banner-home-clean.webp");
+  const oldTransparentBanner = path.join(
+    root,
+    "public",
+    "images/products/banner-home-transparent.png"
+  );
 
   assert(
-    media.banners.home.src === "images/products/banner-home-transparent.png",
-    "home banner must use the transparent PNG cutout"
+    media.banners.home.src === "images/products/banner-home.png",
+    "home banner must use the source PNG background image"
   );
   assert(
-    media.banners.home.source === "docs/产品画册/产品图片/首页Banner图.jpg",
-    "home banner source must be the new text-free JPG"
+    media.banners.home.source === "docs/产品画册/产品图片/首页Banner图.png",
+    "home banner source must be the client PNG"
   );
   assert(
     media.banners.home.width === 1672 && media.banners.home.height === 941,
-    "home banner dimensions must match the new JPG"
+    "home banner dimensions must match the client PNG"
   );
   assert(
     existsSync(path.join(root, "public", media.banners.home.src)),
-    "transparent PNG home banner file must exist"
+    "PNG home banner background file must exist"
   );
-  assertNotContains(mediaText, "首页Banner图.png", "Home media registry");
+  assertNotContains(mediaText, "首页Banner图.jpg", "Home media registry");
+  assertNotContains(mediaText, "banner-home.jpg", "Home media registry");
+  assertNotContains(mediaText, "banner-home.webp", "Home media registry");
+  assertNotContains(mediaText, "banner-home-transparent.png", "Home media registry");
   assertNotContains(mediaText, "banner-home-clean.webp", "Home media registry");
+  assert(!existsSync(oldJpgBanner), "unused banner-home.jpg should be removed");
+  assert(!existsSync(oldWebpBanner), "unused banner-home.webp should be removed");
   assert(!existsSync(oldCleanBanner), "unused banner-home-clean.webp should be removed");
-
-  const transparentBanner = readPngRgba(media.banners.home.src);
-  assert(
-    transparentBanner.width === 1672 && transparentBanner.height === 941,
-    "transparent home banner PNG must preserve original JPG dimensions"
-  );
-  assert(transparentBanner.alphaAt(0, 0) === 0, "transparent home banner top-left must be clear");
-  assert(
-    transparentBanner.alphaAt(80, 120) === 0,
-    "transparent home banner left text area must be clear"
-  );
-  assert(
-    transparentBanner.alphaAt(980, 360) > 240,
-    "transparent home banner product area must remain opaque"
-  );
-  assert(
-    transparentBanner.transparentPixels > transparentBanner.opaquePixels,
-    "transparent home banner should remove the dominant white background"
-  );
+  assert(!existsSync(oldTransparentBanner), "abandoned transparent banner PNG should be removed");
   assert(home.hero.image === "homeBanner", "home.hero.image must keep the registered home banner");
 
   assertContains(page, "HomeHero", "Home page must use the dedicated home hero");
@@ -708,60 +702,38 @@ function assertHomeVisualRefinement() {
   );
   assertContains(
     hero,
-    "var(--color-brand-50) 0%",
-    "Home hero desktop background must mirror to light blue on the left and white on the right"
+    "home-hero__background",
+    "Home hero must render the PNG as a single background layer"
   );
   assertContains(
     hero,
-    "var(--color-canvas) 100%",
-    "Home hero desktop background must end with white on the right"
+    "src={url(image.src)}",
+    "Home hero background image must use url() for base path safety"
   );
   assertContains(
     hero,
-    "color-mix(in srgb, var(--color-canvas) 92%, var(--color-brand-50)) 58%",
-    "Home hero desktop background must transition smoothly into near-white before the product area"
+    "object-fit: cover",
+    "Home hero desktop background image must span the full hero without a visible image edge"
+  );
+  assertContains(
+    hero,
+    "clamp(620px, calc(100vw * 941 / 1672), 760px)",
+    "Home hero desktop height must follow the PNG ratio enough to avoid harsh product cropping"
   );
   assertNotContains(
     hero,
-    "var(--color-surface) 48%",
-    "Home hero desktop background must not create a hard transition line"
+    "background: linear-gradient",
+    "Home hero must not add an extra gradient behind the source PNG"
   );
-  assertContains(
+  assertNotContains(
     hero,
     "home-hero__product-field",
-    "Home hero product shadows must sit on a dedicated white support field"
+    "Home hero must not keep the transparent-image white support field"
   );
-  assertContains(
-    hero,
-    "top: -4rem;",
-    "Home hero product support field must begin above the visible hero to avoid a top seam"
-  );
-  assertContains(
-    hero,
-    "left: -50vw;",
-    "Home hero product support field must span from the left so no vertical edge is visible"
-  );
-  assertContains(
-    hero,
-    "var(--color-canvas) 64%",
-    "Home hero product support field must keep the product area near pure white"
-  );
-  assertContains(
-    hero,
-    "transparent 34%",
-    "Home hero product support field must turn white early enough under product shadows"
-  );
-  assertNotContains(
-    hero,
-    "bottom: -2.8rem;",
-    "Home hero product support field must not expose a visible top edge"
-  );
-  assertNotContains(
-    hero,
-    "width: min(86vw, 1080px);",
-    "Home hero product support field must not create a visible rectangular left edge"
-  );
-  assertContains(hero, "z-index: 2;", "Home hero product image must sit above the support field");
+  assertNotContains(hero, "home-hero__wash", "Home hero must not keep the extra wash layer");
+  assertNotContains(hero, "home-hero__curve", "Home hero must not keep the blue curve layer");
+  assertNotContains(hero, "home-hero__media", "Home hero must not keep the middle cutout layer");
+  assertNotContains(hero, "home-hero__art", "Home hero must not keep the cutout product art layer");
 
   assert(
     Array.isArray(home.coreSolutions?.items) && home.coreSolutions.items.length === 4,
@@ -782,20 +754,15 @@ function assertHomeVisualRefinement() {
   assertNotContains(
     hero,
     "mask-image",
-    "Home hero must not use a circular mask that clips the wide JPG"
+    "Home hero must not use a circular mask that clips the source PNG"
   );
-  assertContains(hero, "home-hero__media", "Home hero product image must sit in a middle layer");
-  assertContains(
-    hero,
-    "home-hero__copy",
-    "Home hero copy must sit above the transparent product image"
-  );
+  assertContains(hero, "home-hero__copy", "Home hero copy must sit above the PNG background image");
   assertContains(
     hero,
     "pointer-events-none",
-    "Home hero middle image layer should not block text CTA interactions"
+    "Home hero background image should not block text CTA interactions"
   );
-  assertContains(hero, "drop-shadow", "Home hero product art should use natural product shadow");
+  assertNotContains(hero, "drop-shadow", "Home hero must rely on the source PNG's natural shadows");
 }
 
 function assertTopPageEyebrowsHidden() {
