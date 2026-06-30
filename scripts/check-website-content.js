@@ -619,6 +619,7 @@ function assertAboutDepth() {
 function assertHomeBuyerJourney() {
   const home = readJson("src/content/home.json");
   const page = readText("src/pages/index.astro");
+  const quoteComponentPath = "src/components/HomeQuoteCta.astro";
 
   assertLocalized(home.coreSolutions.title, "home.coreSolutions.title");
   assert(
@@ -640,6 +641,38 @@ function assertHomeBuyerJourney() {
   assertContains(page, "HomeSolutionCard", "Home page solution cards");
   assertContains(page, "home.capabilityStrip", "Home page capability strip");
   assertContains(page, "/contact#quote", "Home page quote CTA");
+  assertContains(page, "HomeQuoteCta", "Home page quote CTA component");
+  assertNotContains(page, 'class="bg-brand-700 py-14"', "Home page quote CTA");
+  assertLocalized(home.quoteCta?.eyebrow, "home.quoteCta.eyebrow");
+  assertLocalized(home.quoteCta?.title, "home.quoteCta.title");
+  assertLocalized(home.quoteCta?.desc, "home.quoteCta.desc");
+  assertLocalized(home.quoteCta?.primaryCta?.label, "home.quoteCta.primaryCta.label");
+  assert(
+    home.quoteCta?.primaryCta?.href === "/contact#quote",
+    "home.quoteCta.primaryCta.href must point to /contact#quote"
+  );
+  assertLocalized(home.quoteCta?.secondaryCta?.label, "home.quoteCta.secondaryCta.label");
+  assert(
+    home.quoteCta?.secondaryCta?.href === "/contact",
+    "home.quoteCta.secondaryCta.href must point to /contact"
+  );
+  assert(
+    Array.isArray(home.quoteCta?.prepItems) && home.quoteCta.prepItems.length === 3,
+    "home.quoteCta.prepItems must include three preparation prompts"
+  );
+  home.quoteCta.prepItems.forEach((item, index) => {
+    assert(typeof item.icon === "string" && item.icon, `home.quoteCta.prepItems[${index}].icon`);
+    assertLocalized(item.title, `home.quoteCta.prepItems[${index}].title`);
+    assertLocalized(item.desc, `home.quoteCta.prepItems[${index}].desc`);
+  });
+  assert(existsSync(path.join(root, quoteComponentPath)), `${quoteComponentPath} must exist`);
+  const quoteComponent = readText(quoteComponentPath);
+  assertContains(quoteComponent, 'id="home-quote-cta"', "Home quote CTA component");
+  assertContains(quoteComponent, "url(primaryCta.href)", "Home quote CTA component");
+  assertContains(quoteComponent, "prepItems", "Home quote CTA component");
+  assertContains(quoteComponent, "Icon", "Home quote CTA component");
+  assertNotContains(quoteComponent, "bg-brand-700", "Home quote CTA component");
+  assertNotContains(quoteComponent, "shadow-[var(--shadow-ember)]", "Home quote CTA component");
   assertNotContains(page, "home.processPreview", "Home page process preview");
   assertNotContains(page, "ProcessStepper", "Home page process preview");
 }

@@ -1,0 +1,90 @@
+---
+import type { LocalizedText } from "../lib/i18n";
+import { url } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import T from "./T.astro";
+
+interface PrepItem {
+  icon: string;
+  title: LocalizedText;
+  desc: LocalizedText;
+}
+
+interface Cta {
+  label: LocalizedText;
+  href: string;
+}
+
+interface Props {
+  eyebrow: LocalizedText;
+  title: LocalizedText;
+  desc: LocalizedText;
+  prepItems: PrepItem[];
+  primaryCta: Cta;
+  secondaryCta: Cta;
+}
+
+const { eyebrow, title, desc, prepItems, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section id="home-quote-cta" class="container-page scroll-mt-24 pb-16">
+  <div
+    data-reveal
+    class="border-line bg-canvas relative overflow-hidden rounded-[var(--radius-card)] border p-5 shadow-[var(--shadow-card)] sm:p-6 lg:p-7"
+  >
+    <div
+      class="from-brand-50 pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l to-transparent lg:block"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div class="relative grid gap-6 lg:grid-cols-[1.05fr_1.4fr_auto] lg:items-center">
+      <div>
+        <p class="eyebrow text-ember-600">
+          <T text={eyebrow} />
+        </p>
+        <h2 class="font-display text-brand-800 mt-2 text-2xl leading-tight font-bold sm:text-3xl">
+          <T text={title} />
+        </h2>
+        <p class="text-muted mt-3 max-w-xl text-sm leading-relaxed sm:text-base">
+          <T text={desc} />
+        </p>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-3">
+        {
+          prepItems.map((item) => (
+            <div class="border-line hover:border-brand-200 bg-brand-50/55 group rounded-lg border p-4 transition duration-200 hover:-translate-y-0.5 hover:bg-white">
+              <div class="text-brand-600 bg-canvas border-line group-hover:text-ember-600 inline-flex h-10 w-10 items-center justify-center rounded-full border transition">
+                <Icon name={item.icon} class="h-5 w-5" />
+              </div>
+              <h3 class="font-display text-brand-700 mt-3 text-sm leading-snug font-semibold">
+                <T text={item.title} />
+              </h3>
+              <p class="text-muted mt-1 text-xs leading-relaxed">
+                <T text={item.desc} />
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col gap-3 lg:min-w-44">
+        <a
+          href={url(primaryCta.href)}
+          class="bg-ember-500 hover:bg-ember-600 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+        >
+          <T text={primaryCta.label} />
+          <Icon name="arrowRight" class="h-4 w-4" />
+        </a>
+        <a
+          href={url(secondaryCta.href)}
+          class="border-brand-200 text-brand-700 hover:border-brand-300 hover:bg-brand-50 inline-flex items-center justify-center gap-2 rounded-full border bg-white px-6 py-3 text-sm font-semibold transition"
+        >
+          <Icon name="mail" class="h-4 w-4" />
+          <T text={secondaryCta.label} />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
